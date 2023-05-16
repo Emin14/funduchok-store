@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  display: grid;
+  row-gap: 10px;
+  column-gap: 30px;
+  grid-template-areas: 
+    'header header'
+    'sidebar main'
+    'footer footer';
+    grid-template-columns: 150px 1fr;
+}
+
+.header-area {
+  grid-area: header;
+}
+
+.main-area {
+  grid-area: main;
+}
+
+.sidebar-area {
+  grid-area: sidebar;
+}
+
+.footer-area{
+  grid-area: footer;
+}
+

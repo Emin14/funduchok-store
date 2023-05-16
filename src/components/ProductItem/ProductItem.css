@@ -1,0 +1,21 @@
+.productItem {
+    padding: 10px 8px 4px;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    height: 250px;
+}
+
+.productItem__img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.productItem__link {
+display: flex;
+flex-direction: column;
+/* justify-content: space-between; */
+height: 100%;
+align-items: center;
+}

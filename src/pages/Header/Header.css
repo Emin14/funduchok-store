@@ -1,0 +1,115 @@
+.header {
+    margin: 5px 0 10px;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    color: #23a53c;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.header__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 15px;
+}
+
+.header__location {
+    font-size: 16px;
+}
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.header__contacts_tel {
+    font-size: 22px;
+    font-weight: 300;
+    position: relative;
+}
+
+.header__contacts_tel::before {
+    content: 'бесплатно по России';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 300;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.header__contacts_mail {
+    font-size: 14px;
+}
+
+.header__working-hours {
+    font-size: 13px;
+}
+
+.header__working-hours_desc {
+    font-size: 11px;
+}
+
+.header__input {
+    height: 35px;
+    border-radius: 8px;
+    width: 400px;
+
+    border: 1px solid #d3d6db;
+    padding-left: 10px;
+    transition: .5s;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,.2);
+    margin-right: 5px;
+}
+
+.header__input:focus {
+    outline: 0;
+    border-color: #23a53c;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+
+.header__seach_btn {
+    color: #30353e;
+    padding: 9px 22px;
+    border-radius: 8px;
+}
+
+
+
+.header__links-account {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.header__bonus {
+    display: flex;
+    line-height: 1.5;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 2px 0;
+    color: #fff;
+    margin-top: 10px;
+    width: 100%;
+    background: #23a53c;
+}

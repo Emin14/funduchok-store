@@ -1,0 +1,39 @@
+.basket {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.SlBasket__wrapper {
+    width: 40px;
+    height: 40px;
+    background: #23a53c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.SlBasket {
+    font-size: 30px;
+    color: #fff;
+}
+
+.basket__money {
+    text-align: center;
+} 
+
+.basket__money p:first-child {
+    margin-bottom: 10px;
+}
+
+.basket__basket-word {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.basket__total {
+    font-size: 12px;
+    width: 100%;
+    color: #23a53c;
+}

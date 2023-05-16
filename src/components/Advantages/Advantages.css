@@ -1,0 +1,16 @@
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.advantages:nth-child(2n) {
+    color: #ffc702;
+    font-size: 14px;
+}
+
+.advantages *:nth-child(2n+1) {
+    color: #23a53c;
+    font-size: 30px;
+}
