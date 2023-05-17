@@ -1,16 +1,14 @@
-import React from 'react'
-import { useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import BasketProductItem from '../../components/BasketProductItem/BasketProductItem';
 import './Basketpage.css'
 
-// В Последней td значение (итоговая сумма товаров в корзине) скорее всего должна осуществляться через Redux, так
-// как когда в этом компоненте меняю количество товаров в Header у иконки с корзинкой (<Basket />) не меняется сумма
-// Пытался написать action подсчета суммы товаров в корзине, но не понял как, так как эта сумма является суммой по сути 
-// разных BasketProductItem, а не одного какого то компонента
 
+// Компонент страницы Корзины
 export default function Basketpage() {
 
     const tovar = useSelector((state) => state.product);
+    const totalAmount  = useSelector((state) => state.product.total);
 
   return (
     <div>
@@ -34,12 +32,9 @@ export default function Basketpage() {
           <td></td>
           <td></td>
           <td className='basketpage__total'>
-            {tovar.cart.reduce((accum, item) => {
-              return accum + (+item.price * +item.count)
-            }, 0)} ₽
-          </td>
+          {true ? totalAmount : ''} ₽
+          </td> : ''
         </tr>
-
       </table>
       </div>
   )

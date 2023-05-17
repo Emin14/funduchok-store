@@ -52,3 +52,11 @@
     position: relative;
     right: -5px
 }
+
+.basketProductItem__RiDeleteBin2Line {
+    font-size: 20px;
+    color: #898989
+}
+.basketProductItem__RiDeleteBin2Line:hover {
+    color: #0DB14B
+}

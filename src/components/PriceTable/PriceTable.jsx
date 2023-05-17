@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { addProduct } from '../../Redux/slices/productSlice';
 import './PriceTable.css';
 
-// Компонент для выбора фасовки и количества товара для добавления в корзину
-// Нало ли было количество товара может реализовать через redux, но тогда я сталкнулся со множеством ошибок....
+// Компонент для выбора фасовки и количества товара для добавления в корзину (желтый прямоугольник на странице с продуктом)
+// При переходе между Input запускается функция valueReset которая обнуляет значение count, не знаю
+// насколько это востребовано, на оригинальном сайте значения не обнуляются 
 export default function PriceTable({product}) {
 
     const {price} = product
@@ -28,6 +29,7 @@ export default function PriceTable({product}) {
         setCount(count+1)
     }
 
+    // Подсчет баллов и скидки
     const amountOfDiscount = (e) => {
         const basePrice = +e.target.nextSibling.nextSibling.nextSibling.nextSibling.childNodes[0].data
         const salePrice = +e.target.nextSibling.childNodes[0].data
@@ -50,45 +52,52 @@ export default function PriceTable({product}) {
         }
     }
 
-    const calcBonus = (val, koef) => {
+    // Вычисление Со скидкой цены в зависимости от фасовки
+    const calcDiscountPrice = (val, koef) => {
         return (Math.round(((val*price)*koef) - ((val*price)*koef)*0.1))
     }
 
-    const calcPrice = (val, koef) => {
+    // Вычисление Базовой цены в зависимости от фасовки
+    const calcBasicPrice = (val, koef) => {
         return Math.round((val*price)*koef)
+    }
+
+    // Сброс выбранного количества товара при смене input-a
+    const valueReset = () =>  {
+        setCount(0)
     }
 
   return (
     <form  className='priceTable' onChange={amountOfDiscount} onSubmit={handleSubmit}>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="100"></input>
-            <span>{calcBonus(0.1, 1.7)} руб.</span> <span className='priceTable__weight'>/ 100 гр </span> 
-            <span className='priceTable__undiscounted'>{calcPrice(0.1, 1.7)} руб.</span>
+            <input type="radio" name="options[packaging]" value="100" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(0.1, 1.7)} руб.</span> <span className='priceTable__weight'>/ 100 гр </span> 
+            <span className='priceTable__undiscounted'>{calcBasicPrice(0.1, 1.7)} руб.</span>
         </label>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="250" onChange={() => console.log('выбран этот')}></input>
-            <span>{calcBonus(0.25, 1.25)} руб.</span> <span className='priceTable__weight'>/ 250 гр </span> 
-            <span className='priceTable__undiscounted'>{calcPrice(0.25, 1.25)} руб.</span>
+            <input type="radio" name="options[packaging]" value="250" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(0.25, 1.25)} руб.</span> <span className='priceTable__weight'>/ 250 гр </span> 
+            <span className='priceTable__undiscounted'>{calcBasicPrice(0.25, 1.25)} руб.</span>
         </label>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="500"></input>
-            <span>{calcBonus(0.5, 1.05)} руб.</span> <span className='priceTable__weight'>/ 0.5 кг </span> 
-            <span className='priceTable__undiscounted'>{calcPrice(0.5, 1.05)} руб.</span>
+            <input type="radio" name="options[packaging]" value="500" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(0.5, 1.05)} руб.</span> <span className='priceTable__weight'>/ 0.5 кг </span> 
+            <span className='priceTable__undiscounted'>{calcBasicPrice(0.5, 1.05)} руб.</span>
         </label>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="750"></input>
-            <span>{calcBonus(0.75, 1.1)} руб.</span> <span className='priceTable__weight'>/ 750 гр </span> 
-            <span className='priceTable__undiscounted'>{calcPrice(0.75, 1.1)} руб.</span>
+            <input type="radio" name="options[packaging]" value="750" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(0.75, 1.1)} руб.</span> <span className='priceTable__weight'>/ 750 гр </span> 
+            <span className='priceTable__undiscounted'>{calcBasicPrice(0.75, 1.1)} руб.</span>
         </label>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="1000"></input>
-            <span>{calcBonus(1, 1)} руб.</span> <span className='priceTable__weight'>/ 1000 гр </span> 
+            <input type="radio" name="options[packaging]" value="1000" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(1, 1)} руб.</span> <span className='priceTable__weight'>/ 1000 гр </span> 
             <span className='priceTable__undiscounted'>{price} руб.</span>
         </label>
         <label htmlFor="" className='priceTable__label'>
-            <input type="radio" name="options[packaging]" value="25"></input>
-            <span>{calcBonus(0.025, 1.85)} руб.</span> <span className='priceTable__weight'>/ пробник </span> 
-            <span className='priceTable__undiscounted'>{calcPrice(0.025, 1.85)} руб.</span>
+            <input type="radio" name="options[packaging]" value="25" onChange={valueReset}></input>
+            <span>{calcDiscountPrice(0.025, 1.85)} руб.</span> <span className='priceTable__weight'>/ пробник </span> 
+            <span className='priceTable__undiscounted'>{calcBasicPrice(0.025, 1.85)} руб.</span>
         </label>
         <p>Скидка: {discount} руб. (10%)</p>
         <p>До конца акции: </p>

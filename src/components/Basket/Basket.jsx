@@ -4,13 +4,10 @@ import { useSelector } from 'react-redux';
 import {SlBasket} from 'react-icons/sl'
 import './Basket.css'
 
-// Компонент отображения корзины в шапке сайта (Header)
-// Скорее всего должна быть другая функция в redux, так как эта не работает корректно когда меняется количество товара в компоненте <Basketpage/> 
-// Является дочерним для <Header/>
+// Компонент отображения корзины в шапке сайта (Header) 
 export default function Basket() {
-    
-  const tovar = useSelector((state) => state.product);
-  const count = useSelector((state) => state.product.value);
+
+  const totalAmount  = useSelector((state) => state.product.total);
 
   return (
     <Link to='korzina' className='basket'>
@@ -20,9 +17,7 @@ export default function Basket() {
     <div className='basket__money'>
       <p className='basket__basket-word'>Корзина</p>
       <p className='basket__total'>
-        {tovar.cart.reduce((accum, item) => {
-        return accum + (+item.price * count)
-      }, 0)} руб.
+        {totalAmount} ₽
       </p>
       <div></div>
       <div></div>
