@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import Basket from '../../components/Basket/Basket'
 import './Header.css'
+import SearchProduct from '../../components/SearchProduct/SearchProduct'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { writingCity } from '../../Redux/slices/dataSlice';
+import {MdOutlineFavoriteBorder} from 'react-icons/md'
+import DeliveryTime from '../../components/DeliveryTime/DeliveryTime'
+import User from '../../components/User/User'
+import { useEffect } from 'react'
 
-// Тут много работы: сделать вход и регистрацию и т.д. еще не супел
+
+// При рестриции данные записываются в state, но при обновлении пропадают куда то 
+// Посмотреть как я делал в том проекте. Может в local storage записывать
+
+// !!! Может вход и выход из аккаунта в отдельный компонент
 export default function Header() {
+
+  const dispatch = useDispatch()
+
+  const points = useSelector((state) => state.data.points)
+  const [city, setCity] = useState('Баку')
+
+
+  // Функция для записи в redux смену города
+  // const changeCity = (e) => {
+  //   dispatch(writingCity(e.target.value))
+  // }
+
+  useEffect(() => {
+    dispatch(writingCity(city))
+  }, [city])
 
   return (
     <header className='header header-area'>
@@ -27,9 +54,9 @@ export default function Header() {
             </div>
             <div className='header__location'>
               <p>Ваш город</p>
-              <select name="" id="" className='yellow-text'>
-                <option value="">Баку</option>
-                <option value="">Москва</option>
+              <select name="" id="" className='yellow-text' value={city} onChange={(e) => setCity(e.target.value)}>
+                <option value="Баку">Баку</option>
+                <option value="Москва">Москва</option>
               </select>
             </div>
             <div className='header__bottom_center'>
@@ -42,24 +69,27 @@ export default function Header() {
                   <p className='header__working-hours_desc'>суббота с 10:00 до 14:00</p>
                 </div>
               </div>
-              <div className='header__seach'>
-                <input type="text" className='header__input'/>
-                <button className='button yellow-text header__seach_btn' >Поиск</button>
-              </div>
+              <SearchProduct />
             </div>
             <div>
-              <div className='header__links-account'> 
-                <Link>Войти</Link>
-                <span>|</span>
-                <Link>Регистрация</Link>
-              </div>
+              <User/>
               <div className='header__bonus'>
-                Бонусных рублей
+                <p>Бонусных рублей</p>
+                <p>{points}</p>
               </div>
             </div>
         <Basket />
+        <div>
+          <Link to='favorits' className='header-favorits'>
+          <span><MdOutlineFavoriteBorder className='header__MdOutlineFavoriteBorder'/></span>
+          <span className='header-favorits-text'>Избранное</span>
+          </Link>
+        </div>
+
         </div>
       </div>
+      <DeliveryTime />
+
 
     </header>
   )

@@ -1,8 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import productReducer from './slices/productSlice'
+import cartReducer from './slices/cartSlice'
+import userReducer from './slices/userSlice';
+import favoritsReducer from './slices/favoritsSlice'
+import searchReducer from './slices/searchSlice'
+import dataReducer from './slices/dataSlice'
 
 export default configureStore({
   reducer: {
-    product: productReducer
+    cart: cartReducer,
+    user: userReducer,
+    favorits: favoritsReducer,
+    search: searchReducer,
+    data: dataReducer
   },
 });

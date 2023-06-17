@@ -1,0 +1,49 @@
+.user-orders__wrapper {
+    margin-bottom: 20px;
+}
+
+.user-orders_title {
+    width: 100%;
+    background: #fafafa;
+    padding: 12px 0;
+    display: flex;
+    z-index: 2;
+    border-radius: 8px 8px 0 0;
+}
+
+.user-orders_text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.user-orders__products-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.user-orders__products {
+    cursor: pointer;
+    text-decoration: underline;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0d61af;
+
+}
+
+.user-orders__MdOutlineArrowDropDownCircle {
+    position: absolute;
+   left: 150px;
+    top: 4px;
+    cursor: pointer;
+    color: #0d61af;
+}
+
+.user-orders_data {
+    font-size: 14px;
+}
+
+.user-orders__totalAmount {
+    color: #23a53c;
+}

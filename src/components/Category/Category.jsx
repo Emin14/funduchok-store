@@ -5,6 +5,7 @@ import './Category.css'
 // Компонент карточки категории
 // Является дочерним для компонента <Categories/> 
 export default function Category({title, img, id, path}) {
+
   return (
     <Link to={`/${path}`} className='category'>
         <img src={img} alt="" />

@@ -1,0 +1,39 @@
+.total-amount {
+    text-align: end;
+    margin-right: 250px;
+}
+
+.total-amount_count {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0DB14B;
+}
+
+.total-amount_text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.total-amount__points {
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
+    background: #ffd944;
+    border-radius: 3px;
+    width: 230px;
+    margin: 0 -20px 10px auto;
+}
+
+.total-amount__points span:first-child {
+    margin-right: 5px;
+}
+
+.total-amount__points2 {
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    width: 220px;
+    margin: 0 -20px 10px auto;
+}

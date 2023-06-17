@@ -8,4 +8,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .3s;
+}
+
+.category:hover {
+    box-shadow: 0 0 20px 2px #f2e6819b;
+    transition: .3s;
 }

@@ -1,0 +1,30 @@
+.productCard {
+    padding: 10px 8px 4px;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    height: 250px;
+    box-shadow: 5px black;
+    transition: .3s;
+    position: relative;
+}
+
+.productCard:hover {
+    box-shadow: 0 0 20px 2px #f2e6819b;
+    transform: translate(2px, -2px);
+    transition: .3s;
+}
+
+.productCard__img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+
+.productCard__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+

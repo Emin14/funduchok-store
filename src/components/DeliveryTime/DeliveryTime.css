@@ -1,0 +1,7 @@
+.deliveryTime {
+    font-size: 12px;
+}
+
+.deliveryTime span:not(:first-child) {
+    color: #23a53c;
+}

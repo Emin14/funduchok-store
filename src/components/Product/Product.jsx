@@ -1,71 +1,68 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import products from '../../db.json'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useParams } from 'react-router-dom'
+// import products from '../../db.json'
 import './Product.css'
 import Advantages from '../Advantages/Advantages'
 import PriceTable from '../PriceTable/PriceTable'
-import Characteristics from '../Characteristics/Characteristics'
-import Reviews from '../Reviews/Reviews'
+import axios from '../../axios'
+import ProductProperties from '../ProductProperties/ProductProperties'
+import Favorit from '../Favorit/Favorit'
 
+
+// Стилизовать хлебные крошки
 export default function Product() {
-    const params = useParams()
 
-    const product  = products.products.find( currentValue => currentValue.id === +(params.id) )
+  const params = useParams()
+  const location = useLocation()
 
-    const [paragraph, setParagraph] = useState({
-      description: true,
-      characteristics: false,
-      reviews: false
+  const [product, setProduct] = useState({
+    title: "",
+    image: "",
+    basePrice: 0,
+    category: 0,
+    description: ""
+  })
+
+  const [category, setCategory] = useState('')
+
+  useEffect(()=> {
+    axios(`products/${params.idProduct}`)
+    .then(res => {
+      setProduct(res.data);
+        axios(`category/${res.data.category}`)
+        .then(data => setCategory(data.data))
     })
+    .catch(err => console.log(err))
+  }, [location])
 
-    const changeParagraf = (e) => {
-      console.log(e.target.innerText) 
-      if (e.target.innerText === 'Описание') {
-        setParagraph({
-          description: true,
-          characteristics: false,
-          reviews: false
-        })
-      }
-      if (e.target.innerText === 'Характеристики') {
-        setParagraph({
-          description: false,
-          characteristics: true,
-          reviews: false
-        })
-      }
-      if (e.target.innerText === 'Отзывы') {
-        setParagraph({
-          description: false,
-          characteristics: false,
-          reviews: true
-        })
-      }
-    }
-    console.log(paragraph)
+  const classNameFavorit__MdOutlineFavoriteBorder = {
+    color: '#999'
+  }
 
   return (
     <>
-    <h1 className='product__title'>{product.title}</h1>
-    <div className='product-wrapper'>
-        <Advantages />
+    <ul className='product__bread-crumbs'>
+      <li><Link to='/'>Главная  </Link></li>
+      <li><Link to={`/${category.pathname}`}>{category.title}  </Link></li>
+      <li><span>{product.title}</span></li>
+    </ul>
+      <h1 className='product__title'>{product.title}</h1>
+      <div className='product-wrapper'>
+        <div className='product__advantages-wrapper'>
+          <Advantages>
+            <Favorit item={product} classNameFavorit__MdOutlineFavoriteBorder={classNameFavorit__MdOutlineFavoriteBorder} text="Добавить в избранное"/>
+          </Advantages>
+          </div>
         <div className='product'>
-            <p className='product__statistics'>
-              <span>10 отзывов</span>
-              <span>купили 15095 раз</span>
-            </p>
-            <img src={product.image} alt="" />
-            <ul className='product__characteristics' onClick={changeParagraf}>
-              <li className={paragraph.description ? 'product__characteristics-ative' : null} >Описание</li>
-              <li className={paragraph.characteristics ? 'product__characteristics-ative' : null}>Характеристики</li>
-              <li className={paragraph.reviews ? 'product__characteristics-ative' : null}>Отзывы</li>
-            </ul>
-            <p>{paragraph.description ? product.description : null}</p>
-            <p>{paragraph.characteristics ? <Characteristics /> : null}</p>
-            <p>{paragraph.reviews ? <Reviews /> : null}</p>
+          <p className='product__statistics'>
+            <span>10 отзывов</span>
+            <span>купили 15095 раз</span>
+          </p>
+          <img src={product.image} alt="" />
         </div>
-        <PriceTable product={product}/>
-    </div>
+        <PriceTable product={product} />
+      </div>
+      <ProductProperties product={product}/>
     </>
   )
 }

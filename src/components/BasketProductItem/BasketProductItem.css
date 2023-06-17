@@ -1,5 +1,9 @@
 .basketProductItem__tr {
+    display: grid;
+    grid-template-columns: 70px 250px 80px 120px 70px 70px 70px 150px;
 
+    text-align: center;
+    align-items:center
 }
 
 .basketProductItem__image img{
@@ -19,8 +23,8 @@
 }
 
 .basketProductItem__total {
-    color: #ef4545;
     text-align: center;
+    position: relative;
 }
 
 .basketProductItem__count {
@@ -28,35 +32,92 @@
 }
 
 .basketProductItem__count-btn-left {
-    width: 32px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    background: #e7e7e7;
-    z-index: 2;
-    height: 32px;
-    font-weight: 600;
-    cursor: pointer;
+    transition: .2s;
+    border: 1px solid #0DB14B;
+    padding: 8px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background-color: #0db14b;
     position: relative;
-    left: -5px
+
+    border-radius: 0 4px 4px 0;
+    min-height: 24px;
+    min-width: 22px;
+    cursor: pointer;
 }
 
 .basketProductItem__count-btn-right {
-    width: 32px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    background: #e7e7e7;
-    z-index: 2;
-    height: 32px;
-    font-weight: 600;
-    cursor: pointer;
+    transition: .2s;
+    border: 1px solid #0DB14B;
+    padding: 8px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background-color: #0db14b;
     position: relative;
-    right: -5px
+
+    border-radius: 4px 0 0 4px;
+    min-height: 24px;
+    min-width: 22px;
+    cursor: pointer;
 }
 
+/* .basketProductItem__RiDeleteBin2Line-wrapper {
+    position: relative;
+
+} */
+
 .basketProductItem__RiDeleteBin2Line {
+    position: absolute;
+    top: 0;
+    right: -20px;
     font-size: 20px;
-    color: #898989
+    color: #898989;
+    cursor: pointer;
 }
+
 .basketProductItem__RiDeleteBin2Line:hover {
-    color: #0DB14B
+    color: #b32442
+}
+
+
+.basketProductItem__counter {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    font-size: .875rem;
+    text-align: center;
+    max-width: 28px;
+    min-width: 14px;
+    border-left: none;
+    border-right: none;
+    padding: 6px 8px;
+}
+
+.basketProductItem__fasovka {
+    text-align: center;
+}
+
+.basketProductItem__baseprice {
+    position: relative;
+}
+
+.basketProductItem__baseprice_count {
+    color: #909090;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.basketProductItem__baseprice_discountPercentage {
+    position: absolute;
+    transform: rotate(-20deg);
+    right: 15px;
+    top: -14px;
+    background-color: #ffd600;
+    color: #121214;
+    padding: 0 4px;
+    border: 0;
+    text-overflow: ellipsis;
+    border-radius: 28px;
+    font: 500 12px/16px Roboto,sans-serif;
 }

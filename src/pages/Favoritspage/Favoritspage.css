@@ -1,0 +1,15 @@
+.favorits__list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.favorits__img {
+    width: 80px;
+}
+
+.favorits__list {
+    display: flex;
+    flex-wrap: wrap;
+}

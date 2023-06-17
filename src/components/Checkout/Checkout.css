@@ -1,0 +1,37 @@
+.checkout__link {
+    margin: 0 auto; 
+    display: block;
+
+    background: #eef1f2;
+    color: #8c959c;
+
+    padding: 12px 55px;
+
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    width: 130px;
+}
+
+
+.checkout-active {
+    background: #23a53c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.checkout-active:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.checkout__minimum-amount {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.checkout__link_text {
+    font-size: 14px;
+    margin-top: 10px;
+}

@@ -1,14 +1,17 @@
 import React from 'react'
 import Category from '../Category/Category'
-import products from '../../db.json'
+import { useSelector } from 'react-redux'
 import './Categories.css'
 
 // Компонент вывода категорий из базы данных (db.json) на странице <Homepage/> 
 export default function Categories() {
+
+    const category = useSelector((state) => state.data.category)
+
     return (
         <div className='categories__wrapper'>
-            {products.category.map(item => (
-                <Category title={item.title} img={item.img} id={item.id} path={item.pathname}/>
+            {category.map(item => (
+                <Category key={item.id} title={item.title} img={item.img} id={item.id} path={item.pathname} />
             ))}
         </div>
     )

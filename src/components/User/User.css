@@ -1,0 +1,71 @@
+.user__links-account {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.user__out-links {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items:flex-start;
+    position: relative;
+}
+
+.user__out-links_button {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user__out-links_button:hover {
+    text-decoration: underline;
+}
+
+.user__links-account button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.user__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.user__info ul {
+    margin-top: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 2px black solid;
+    font-size: 14px;
+}
+
+/* .user__info li{
+    background-color: white;
+    border: 2px black solid;
+
+} */
+
+.user__myaccount-text {
+    font-size: 14px;
+
+}
+
+.user__out-links_user {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user__RiArrowDownSLine {
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+.user__info_item:not(:last-child) {
+    padding: 4px 0;
+   border-bottom: 1px solid rgb(231, 228, 228); 
+}

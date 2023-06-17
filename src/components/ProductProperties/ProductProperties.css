@@ -1,0 +1,22 @@
+.productProperties__list {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+.productProperties__item {
+    padding: 8px 16px;
+}
+
+.productProperties__item:hover {
+    border: 1px solid #c3ccc5;
+    border-bottom: none;
+    /* transition: .3s; */
+}
+
+.productProperties__item-active {
+    padding: 8px 16px;
+    color: #23a53c;
+    border: 1px solid #23a53c;
+    border-bottom: none;
+}

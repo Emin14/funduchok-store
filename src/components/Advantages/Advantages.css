@@ -2,15 +2,26 @@
 .advantages {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
+    align-items: center;
+    width: 30%;
 }
 
-.advantages:nth-child(2n) {
+.advantages__list_item {
+    text-align: center;
+}
+
+.advantages__list_item * {
+    color: #23a53c;
+    font-size: 30px;
+}
+
+.advantages__list_item p {
     color: #ffc702;
     font-size: 14px;
 }
 
-.advantages *:nth-child(2n+1) {
-    color: #23a53c;
-    font-size: 30px;
+.advantages__favorit {
+    margin-top: 14px;
+    text-align: center; 
 }

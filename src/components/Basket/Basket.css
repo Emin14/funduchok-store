@@ -1,3 +1,7 @@
+.basket__wrapper {
+    position: relative;
+}
+
 .basket {
     display: flex;
     align-items: center;
@@ -36,4 +40,45 @@
     font-size: 12px;
     width: 100%;
     color: #23a53c;
+}
+
+.basket__info {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    padding: 10px 10px 10px 10px;
+    z-index: 3;
+    margin-top: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.basket__info_products {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.basket__info_button {
+    display: block;
+    padding: 10px;
+    background-color: #23a53c;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.basket__info_button:hover {
+    background-color: #0c9241;
+}
+
+
+.basket__minimum-text {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 14px;
+    margin-right: 14px;
 }
