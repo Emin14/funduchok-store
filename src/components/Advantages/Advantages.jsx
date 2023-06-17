@@ -19,10 +19,11 @@ export default function Advantages({children}) {
         <MdPayment/>
         <p className='advantages__text'>Оплата</p>
       </li>
-      {children && 
-          <li className='advantages__favorit'>
+      {
+        children && 
+        <li className='advantages__favorit'>
             {children}
-          </li>
+        </li>
       }
     </ul>
   )
