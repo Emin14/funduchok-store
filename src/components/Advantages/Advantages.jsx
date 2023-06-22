@@ -4,6 +4,7 @@ import {TbTruckDelivery} from 'react-icons/tb'
 import {MdPayment} from 'react-icons/md'
 import './Advantages.css'
 
+// Является дочерним для <Product/>
 export default function Advantages({children}) {
   return (
     <ul className='advantages'>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
-// import products from '../../db.json'
 import './Product.css'
 import Advantages from '../Advantages/Advantages'
 import PriceTable from '../PriceTable/PriceTable'
@@ -9,7 +8,7 @@ import ProductProperties from '../ProductProperties/ProductProperties'
 import Favorit from '../Favorit/Favorit'
 
 
-// Стилизовать хлебные крошки
+// Компонент товара
 export default function Product() {
 
   const params = useParams()
@@ -29,11 +28,12 @@ export default function Product() {
     axios(`products/${params.idProduct}`)
     .then(res => {
       setProduct(res.data);
-        axios(`category/${res.data.category}`)
-        .then(data => setCategory(data.data))
+      axios(`category/${res.data.category}`)
+      .then(data => setCategory(data.data))
     })
     .catch(err => console.log(err))
   }, [location])
+
 
   const classNameFavorit__MdOutlineFavoriteBorder = {
     color: '#999'
@@ -54,13 +54,14 @@ export default function Product() {
           </Advantages>
           </div>
         <div className='product'>
+        {/* Можно было бы реализовать не стал заморачиваться
           <p className='product__statistics'>
             <span>10 отзывов</span>
             <span>купили 15095 раз</span>
-          </p>
+          </p> */}
           <img src={product.image} alt="" />
         </div>
-        <PriceTable product={product} />
+        <PriceTable product={product} category={category}/>
       </div>
       <ProductProperties product={product}/>
     </>

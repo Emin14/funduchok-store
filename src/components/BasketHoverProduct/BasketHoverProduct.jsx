@@ -1,33 +1,18 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import './BasketHoverProduct.css'
 
-// Компонент карточки товара в корзине
 // Является дочерним для <Basket/>
+// Компонент выводит товары добавленные в корзину при наведении на корзину 
 export default function BasketHoverProduct({ item }) {
 
   const [show, setShow] = useState(false)
-
-  const handleShow = () => {
-    setShow(true)
-  }
-
-  const handleNoShow = () => {
-    setShow(false)
-  }
-
-
   const dispatch = useDispatch();
 
-  const deleteItem = () => {
-    dispatch(deleteProduct(item))
-  }
-
-
   return (
-    <tr className='basketHoverProduct__tr' onMouseOver={handleShow} onMouseOut={handleNoShow}>
+    <tr className='basketHoverProduct__tr' onMouseOver={() => setShow(true)} onMouseOut={() => setShow(false)}>
       <td className='basketHoverProduct__image'><img src={item.image} alt="" /></td>
       <td className='basketHoverProduct__title'>
         <span>{item.title}</span>
@@ -42,7 +27,7 @@ export default function BasketHoverProduct({ item }) {
       {item.salePrice
        ? <span>{+item.salePrice * item.count} ₽</span>
        :  <span>{+item.basePrice * item.count} ₽</span>}
-        {show && <span className='basketHoverProduct__RiDeleteBin2Line' onClick={deleteItem}><RiDeleteBin2Line /></span> }
+        {show && <span className='basketHoverProduct__RiDeleteBin2Line' onClick={() => dispatch(deleteProduct(item))}><RiDeleteBin2Line /></span> }
       </td>
     </tr>
   )

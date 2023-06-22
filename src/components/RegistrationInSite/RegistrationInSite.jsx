@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from "react-hook-form";
 import axios from '../../axios.js';
 import './RegistrationInSite.css'
@@ -7,7 +7,6 @@ import { registerInSite } from '../../Redux/slices/userSlice.js';
 
 export default function RegistrationInSite({show, setShow}) {
 
-    const [user, setUser] = useState('');
     const dispatch = useDispatch()
 
     const {
@@ -26,7 +25,6 @@ export default function RegistrationInSite({show, setShow}) {
             orders: []
         })
         .then((res) => {
-            setUser(res.data.user)
             dispatch(registerInSite(res.data.user))
             reset()
         })

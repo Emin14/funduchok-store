@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import { Line, Circle } from 'rc-progress';
+import { Line} from 'rc-progress';
 import './Progressbar.css'
 
+// Является дочерним для <Basket />
+// Компонент показывает прогрессбар до набора клиентом суммы минимального заказа
 export default function Progressbar() {
     
     const totalAmount  = useSelector((state) => state.cart.total);

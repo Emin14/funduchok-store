@@ -23,6 +23,11 @@ reducers: {
     logout (state, action) {
         state.user = action.payload
         localStorage.removeItem('user')
+        localStorage.removeItem('total')
+        localStorage.removeItem('favorits')
+        localStorage.removeItem('totalCount')
+        localStorage.removeItem('products')
+        localStorage.removeItem('points')
       },
 }
 }

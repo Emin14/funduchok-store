@@ -1,125 +1,97 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { pushOrders } from '../../Redux/slices/dataSlice'
 import { clearCart } from '../../Redux/slices/cartSlice';
 import axios from '../../axios';
 import { Link } from 'react-router-dom';
 import './Checkout.css'
 
-// Проверить нету ли лишних селекторов
-
-// Без регистрации и баллы не должны считаться
+// Компонент для оформления заказа на странице корзины
+// Является дочерним для <Basketpage/>
 export default function Checkout({nameUser, phoneUser}) {
 
     const dispatch = useDispatch();
 
     const productsInOrder = useSelector((state) => state.cart.cart);
+
+    // Формируем из productsInOrder массив только с теми свойствами, которые нужны в истории заказов, чтобы не передавать изображение и т.д.
+    let newTovar = []
+    for(let i = 0; i < productsInOrder.length; i++) {
+      const { description, image, amountOfDiscount, basePrice, ...rest} = productsInOrder[i];
+      newTovar[i] = rest
+    }
+
     const orderAmount  = useSelector((state) => state.cart.total);
 
-    // Мне кажется нужно где то в Апп получать последний заказ, чтобы выводить эту функцию, а также чтобы показывать статус заказа....
     const currentUser = JSON.parse(localStorage.getItem('user'))
     const pointsInCard   = useSelector((state) => state.cart.points);
     const pointsInOrders = useSelector((state) => state.data.points)
     const city = useSelector((state) => state.data.city)
-    // const city = useSelector((state) => state.data.city)
 
     const [currentUserOrders, setCurrentUserOrders] = useState('')
 
-    const getUserFromDatabase = async() => {
+    useEffect(() => {
+      getUserFromDatabase()
+    }, [])
+
+    const getUserFromDatabase = () => {
       if(currentUser) {
         // Получаем из базы данных текущего пользователя
-        const user = await axios.get(`users/${currentUser.id}`)
+        axios.get(`users/${currentUser.id}`)
         .then(res => setCurrentUserOrders(res.data.orders))
-        // Записываем в useState чтобы ниже у нас был доступ к нему
-        // setCurrentUserInDataBase(user)
       }
       if(!currentUser) {
         // Получаем последний заказ который без регистрации
-        const order = await axios.get(`notLoginOrders`)
+        axios.get(`notLoginOrders`)
         .then(res => setCurrentUserOrders(res.data))
-        // Записываем в useState чтобы ниже у нас был доступ к нему
-        // setCurrentUserInDataBase(user)
       }
-
-      }
-
-
-      useEffect(() => {
-        getUserFromDatabase()
-      }, [])
+    }
 
 
     const addOrder = () => {
-
+      // Вытаскиваем ID последнего заказа, если он есть
+      // Не знаю насколько верно получать эти данные тут по идее их можно получать в каком то верхнем компоненте и записывать в state
       let lastId = 0
+      if(currentUserOrders.length) {
+        lastId = +currentUserOrders.at(-1).id
+      }
+      // При оформлении заказов добавляются только баллы при сумме заказа от 3000 р.
+      let orderPoints = 0
+      if(currentUser && orderAmount > 3000) {
+        orderPoints = pointsInCard
+      }
+      const pointsTotal = pointsInOrders + orderPoints
+    
+      // Формируем объект со свойствами заказа
+      const newOrder = {
+        id: lastId+1,
+        datе: new Date(),
+        status: "notProcessed",
+        orderAmount,
+        orderPoints,
+        city,
+        products: newTovar
+      }
+
+      // Передаю в базу данных заказ (по разным ключам в зависимости от того зарегистрирован пользователь или нет)
       if(currentUser) {
-        // Находим заказы текущего пользователя
-        // const currentUserOrders = currentUserInDataBase.data.orders
-        // Если у текущего юзера нету заказов тогда последний id = 0
-        // let lastId = 0
-        if(currentUserOrders.length) {
-          lastId = +currentUserOrders.at(-1).id
-        }
+        axios.patch(`users/${currentUser.id}`, {
+          orders: [...currentUserOrders, newOrder],
+          points: pointsTotal,
+        })
       }
       if(!currentUser) {
-        // Находим заказы текущего пользователя
-        // const currentUserOrders = currentUserInDataBase.data.orders
-        // Если у текущего юзера нету заказов тогда последний id = 0
-        // let lastId = 0
-        if(currentUserOrders.length) {
-          lastId = +currentUserOrders.at(-1).id
-        }
+        axios.post(`notLoginOrders`, {
+          name: nameUser, 
+          phone: phoneUser,
+          ...newOrder,
+        })
+        localStorage.setItem('noLoginUser', JSON.stringify({
+          name: nameUser, 
+          phone: phoneUser
+        }))
       }
-
-    
-        // Формируем массив только с теми свойствами, которые нужны в истории заказов, чтобы не передавать изображение и т.д.
-        let newTovar = []
-          for(let i = 0; i < productsInOrder.length; i++) {
-            const { description, image, amountOfDiscount, basePrice, ...rest} = productsInOrder[i];
-            newTovar[i] = rest
-          }
-    
-        // При оформлении заказов добавляются только баллы при сумме заказа от 3000 р.
-        let orderPoints = pointsInCard
-        if(!currentUser || orderAmount < 3000) {
-          orderPoints = 0
-        }
-
-    
-        // Формируем объект для передачи на сервер
-        const newOrder = {
-          id: lastId+1,
-          datе: new Date(),
-          status: "notProcessed",
-          orderAmount,
-          orderPoints,
-          city,
-          products: newTovar
-        }
-    
-        // dispatch(pushOrders(newOrder))
-    
-
-        // записываю общее количество баллов
-
-        if(currentUser) {
-          const pointsTotal = pointsInOrders + orderPoints
-          axios.patch(`users/${currentUser.id}`, {
-            orders: [...currentUserOrders, newOrder],
-            points: pointsTotal,
-          })
-        }
-
-        if(!currentUser) {
-          axios.post(`notLoginOrders`, {
-            name: nameUser, 
-            phone: phoneUser,
-            ...newOrder,
-          })
-        }
-    
-        dispatch(clearCart())
-      }
+      dispatch(clearCart())
+    }
 
 if(!currentUser && !(nameUser && phoneUser)) {
   return (

@@ -7,6 +7,7 @@ import { logout} from '../../Redux/slices/userSlice.js';
 import {RiArrowDownSLine} from 'react-icons/ri'
 import { NavLink} from 'react-router-dom'
 import './User.css'
+import { getPoints } from '../../Redux/slices/dataSlice'
 
 // Компонент для отображения в Header состояния входа и выхода для юзера
 export default function User() {
@@ -17,28 +18,18 @@ export default function User() {
     const [showUserinfo, setShowUserinfo] = useState(false);
     const dispatch = useDispatch()
 
-// Функция для обработкт события MouseOver
-  const handleMouseOver = () => {
-    setShowUserinfo(true)
-  }
-
- // Функция для обработкт события MouseOut
-  const handleMouseOut = () => {
-    setShowUserinfo(false)
-  }
-
 // Функция для выхода из аккаунта.
   const logOutUser = () => {
     dispatch(logout(''))
+    dispatch(getPoints(0))
   }
-
 
   return (
     <>
     
     {user 
     ? <div className='user__out-links' >
-      <div className='user__out-links_user' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <div className='user__out-links_user' onMouseOver={() => setShowUserinfo(true)} onMouseOut={() => setShowUserinfo(false)}>
         <p>Привет, {user.name}</p>
           <div>
             <span className='user__myaccount-text'>Мой аккаунт</span>
@@ -46,7 +37,7 @@ export default function User() {
           </div>
       </div>
         {showUserinfo &&
-        <div className='user__info' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <div className='user__info' onMouseOver={() => setShowUserinfo(true)} onMouseOut={() => setShowUserinfo(false)}>
           <ul>
             <li className='user__info_item'><NavLink to='/user/orders'>Мои заказы</NavLink></li>
             <li className='user__info_item'><NavLink to='/user/data'>Данные профиля</NavLink></li>

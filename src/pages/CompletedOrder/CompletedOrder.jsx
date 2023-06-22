@@ -1,19 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
 import './CompletedOrder.css'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from '../../axios'
-import { useNavigate } from 'react-router-dom';
 
-
-// Неправильно работает. Выводит последний заказ. а без регистрации не работает
-// Или же надо чтобы без рагестрации брало из какого то стейта
-// А при регистрации последний заказ
 
 // Откуда берется orders.totalAmount
 // orders.orderspoints проверить
 export default function CompletedOrder() {
+
+    const noLoginUser = JSON.parse(localStorage.getItem('noLoginUser'))
 
     // Получаем текущего юзера из redux
     const [orders, setOrders] = useState({
@@ -35,7 +31,7 @@ export default function CompletedOrder() {
         }
         else {
             const  notLoginOrders  = await axios.get(`notLoginOrders`);
-            lastOrders = await notLoginOrders.data.at(-1)
+            lastOrders = await notLoginOrders.data.filter(item => item.phone === noLoginUser.phone && item.name.toUpperCase() === noLoginUser.name.toUpperCase()).at(-1)
         }
 
         if (lastOrders) {

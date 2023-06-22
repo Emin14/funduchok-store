@@ -21,7 +21,7 @@ import Favoritspage from './pages/Favoritspage/Favoritspage';
 import axios from './axios';
 import { getProducts, getCategory, getPoints } from './Redux/slices/dataSlice';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import NotFound from './pages/NotFound/NotFound';
 import UserData from './pages/UserOrders/UserData/UserData';
 

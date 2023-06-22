@@ -10,12 +10,9 @@ import {MdOutlineFavoriteBorder} from 'react-icons/md'
 import DeliveryTime from '../../components/DeliveryTime/DeliveryTime'
 import User from '../../components/User/User'
 import { useEffect } from 'react'
+import { ToastContainer } from 'react-toastify';
 
 
-// При рестриции данные записываются в state, но при обновлении пропадают куда то 
-// Посмотреть как я делал в том проекте. Может в local storage записывать
-
-// !!! Может вход и выход из аккаунта в отдельный компонент
 export default function Header() {
 
   const dispatch = useDispatch()
@@ -23,18 +20,13 @@ export default function Header() {
   const points = useSelector((state) => state.data.points)
   const [city, setCity] = useState('Баку')
 
-
-  // Функция для записи в redux смену города
-  // const changeCity = (e) => {
-  //   dispatch(writingCity(e.target.value))
-  // }
-
   useEffect(() => {
     dispatch(writingCity(city))
   }, [city])
 
   return (
     <header className='header header-area'>
+            <ToastContainer />
       <div className='container '>
         <div className='header__top'>
             <NavLink to='skidki' className='yellow-text'>Товары со скидкой</NavLink>
@@ -89,7 +81,6 @@ export default function Header() {
         </div>
       </div>
       <DeliveryTime />
-
 
     </header>
   )

@@ -1,34 +1,34 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from "react-hook-form";
 import axios from '../../axios.js';
 import './LoginInSite.css'
 import { useDispatch } from 'react-redux';
 import { registerInSite } from '../../Redux/slices/userSlice.js';
+import { getPoints } from '../../Redux/slices/dataSlice.js';
 
 export default function LoginInSite ({show, setShow}) {
     const dispatch = useDispatch()
 
-  const {
+    const {
       register,
       reset,
       handleSubmit,
       formState: {
           errors
       }
-  } = useForm()
+    } = useForm()
 
-
-
-  const sigInHandler = (data) => {
-    console.log(data)
+    const sigInHandler = (data) => {
     axios.post('/login', data)
     .then((res) => {
+        console.log(res.data)
         dispatch(registerInSite(res.data.user))
+        dispatch(getPoints(res.data.user.points))
         reset()
     })
     .catch(err => alert(err))
     setShow(false)
-}
+    }
 
   return (
     <div className={show ? 'loginpage active' : 'loginpage'} onClick={() => setShow(false)} onSubmit={handleSubmit(sigInHandler)}>

@@ -4,7 +4,6 @@ const initialState = {
     favorits: JSON.parse(localStorage.getItem('favorits')) || []
 };
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!Сделать чтобы работало
 const favoritsSlice = createSlice({
     name: 'favorits',
     initialState,

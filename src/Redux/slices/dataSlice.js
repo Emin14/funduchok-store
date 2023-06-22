@@ -21,10 +21,6 @@ const dataSlice = createSlice ({
         getPoints(state, action) {
             state.points = action.payload
         },
-        // pushOrders (state, action) {
-        //     state.points += action.payload.orderPoints
-        //     state.order = action.payload
-        //   },
         writingCity (state, action)  {
           state.city = action.payload
         }

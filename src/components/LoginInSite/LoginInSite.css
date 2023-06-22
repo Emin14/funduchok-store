@@ -13,6 +13,7 @@
 
 .loginpage.active {
     transform: scale(1);
+    z-index: 3;
 } 
 
 .loginpage__form {

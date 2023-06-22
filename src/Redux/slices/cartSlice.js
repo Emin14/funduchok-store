@@ -1,15 +1,9 @@
-// К каждой функции добавил
-//  код: state.total = state.cart.reduce((accum, product) => accum + (product.count * product.discountPrice), 0);
-// не знаю насколько это правильно. Но не смог реализовать подсчет итоговой суммы всех товаров отдельным Action, поэтому пришлось привязывать 
-// к каждой функции
-
-// Не знаю насколько правильно было писать функцию deleteProduct через splice. Через filter что то никак не получилось 
 // Не знаю насколько правильно было писать localStorage.setItem в каждой функции и получать начальные значения с localStorage
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   cart: JSON.parse(localStorage.getItem('products')) || [],
-  value: 1,
+  totalCount: JSON.parse(localStorage.getItem('totalCount')) || 0,
   total: JSON.parse(localStorage.getItem('total')) || 0,
   points: JSON.parse(localStorage.getItem('points')) || 0,
 };
@@ -42,6 +36,9 @@ const cartSlice = createSlice({
       
       state.points = state.cart.reduce((accum, product) => accum += Math.ceil(product.totalPoints), 0);
       localStorage.setItem('points', JSON.stringify(state.points))
+
+      state.totalCount += action.payload.count
+      localStorage.setItem('totalCount', JSON.stringify(state.totalCount))
     },
 
     // Уменьшает количество продукта на странице корзины
@@ -66,6 +63,9 @@ const cartSlice = createSlice({
 
         state.points = state.cart.reduce((accum, product) => accum += Math.ceil(product.totalPoints), 0);
         localStorage.setItem('points', JSON.stringify(state.points))
+
+        state.totalCount = state.totalCount - 1
+        localStorage.setItem('totalCount', JSON.stringify(state.totalCount))
       }
     },
     // Увеличивает количество продукта на странице корзины
@@ -87,6 +87,9 @@ const cartSlice = createSlice({
 
       state.points = state.cart.reduce((accum, product) => accum += Math.ceil(product.totalPoints), 0);
       localStorage.setItem('points', JSON.stringify(state.points))
+
+      state.totalCount = state.totalCount + 1
+      localStorage.setItem('totalCount', JSON.stringify(state.totalCount))
     },
     // Удаляет продукт на странице Basketpage 
     deleteProduct (state, action) {
@@ -105,19 +108,26 @@ const cartSlice = createSlice({
 
       state.points = state.cart.reduce((accum, product) => accum += Math.ceil(product.totalPoints), 0);
       localStorage.setItem('points', JSON.stringify(state.points))
+
+      state.totalCount = state.cart.reduce((accum, item) => accum + item.count, 0);
+      localStorage.setItem('totalCount', JSON.stringify(state.totalCount))
     },
     //  Очистить корзину
      clearCart (state, action) {
       state.cart = [];
       state.total = 0;
       state.points = 0;
+      state.totalCount = 0
 
       localStorage.removeItem('products')
       localStorage.removeItem('total')
       localStorage.removeItem('points')
+      localStorage.removeItem('totalCount')
      }
   },
 });
 
 export const { addProduct, reduceProduct, incrementProduct, deleteProduct, registerInSite, clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
+
+

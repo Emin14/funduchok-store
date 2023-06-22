@@ -14,8 +14,7 @@
     /* transition: .3s; */
 }
 
-.productProperties__item-active {
-    padding: 8px 16px;
+.productProperties__item.active {
     color: #23a53c;
     border: 1px solid #23a53c;
     border-bottom: none;

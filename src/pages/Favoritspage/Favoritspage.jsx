@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './Favoritspage.css'
-import Favorit from '../../components/Favorit/Favorit'
 import ProductCard from '../../components/ProductCard/ProductCard'
 
 export default function Favorits() {

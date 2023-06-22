@@ -6,7 +6,9 @@ export default function Footer() {
   return (
     <footer className='container footer-area footer-wrapper' >
         <div>
-        <img src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" className='footer__logo'/>
+        <Link to='/'>
+          <img src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" className='footer__logo'/>
+        </Link>
         <p>Интернет-магазин вкусных и полезных продуктов для вашего здоровья</p>
         <p>© 2014 - 2023</p>
         <p>Все права защищены</p>

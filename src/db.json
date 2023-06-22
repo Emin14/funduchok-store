@@ -5,7 +5,7 @@
       "password": "$2a$10$SiF2JzBsw9gnCvR/whtjX.MJfzOiHKxXze.d00yA6i1wYNZgZK8JS",
       "name": "Атилла",
       "phone": "12345",
-      "points": 214,
+      "points": 185,
       "orders": [
         {
           "id": 1,
@@ -212,6 +212,148 @@
               "fasovka": 1,
               "totalDiscount": 550,
               "totalPoints": 49.400000000000006,
+              "percentDiscount": 0.1,
+              "count": 10
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "datе": "2023-06-20T06:59:22.101Z",
+          "status": "notProcessed",
+          "orderAmount": 11680,
+          "orderPoints": 117,
+          "city": "Баку",
+          "products": [
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 584,
+              "discountfor1Count": 64,
+              "pointfor1Count": 5.84,
+              "fasovka": 0.5,
+              "totalDiscount": 320,
+              "totalPoints": 116.80000000000004,
+              "percentDiscount": 0.1,
+              "count": 20
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "datе": "2023-06-22T10:50:20.505Z",
+          "status": "notProcessed",
+          "orderAmount": 5828,
+          "orderPoints": 38,
+          "city": "Баку",
+          "products": [
+            {
+              "id": 1,
+              "title": "Арахис очищенный (жареный, соленый)",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 68,
+              "discountfor1Count": 7,
+              "pointfor1Count": 0.68,
+              "fasovka": 0.1,
+              "totalDiscount": 7,
+              "totalPoints": 0.68,
+              "percentDiscount": 0.1,
+              "count": 1
+            },
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 347,
+              "discountfor1Count": 39,
+              "pointfor1Count": 3.47,
+              "fasovka": 0.25,
+              "totalDiscount": 39,
+              "totalPoints": 3.47,
+              "percentDiscount": 0.1,
+              "count": 1
+            },
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 584,
+              "discountfor1Count": 64,
+              "pointfor1Count": 5.84,
+              "fasovka": 0.5,
+              "totalDiscount": 64,
+              "totalPoints": 5.84,
+              "percentDiscount": 0.1,
+              "count": 5
+            },
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 917,
+              "discountfor1Count": 102,
+              "pointfor1Count": 9.17,
+              "fasovka": 0.75,
+              "totalDiscount": 102,
+              "totalPoints": 9.17,
+              "percentDiscount": 0.1,
+              "count": 1
+            },
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 1112,
+              "discountfor1Count": 123,
+              "pointfor1Count": 11.120000000000001,
+              "fasovka": 1,
+              "totalDiscount": 123,
+              "totalPoints": 11.120000000000001,
+              "percentDiscount": 0.1,
+              "count": 1
+            },
+            {
+              "id": 4,
+              "title": "Кешью жареный (Вьетнам)",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 464,
+              "discountfor1Count": 51,
+              "pointfor1Count": 4.64,
+              "fasovka": 0.5,
+              "totalDiscount": 51,
+              "totalPoints": 4.64,
+              "percentDiscount": 0.1,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "datе": "2023-06-22T10:58:40.574Z",
+          "status": "notProcessed",
+          "orderAmount": 5840,
+          "orderPoints": 30,
+          "city": "Баку",
+          "products": [
+            {
+              "id": 2,
+              "title": "Бразильский орех очищенный",
+              "category": 1,
+              "categoryPath": "orehi",
+              "salePrice": 584,
+              "discountfor1Count": 64,
+              "pointfor1Count": 5.84,
+              "fasovka": 0.5,
+              "totalDiscount": 320,
+              "totalPoints": 29.2,
               "percentDiscount": 0.1,
               "count": 10
             }
@@ -959,6 +1101,352 @@
           "totalPoints": 2.28,
           "percentDiscount": 0.1,
           "count": 12
+        }
+      ]
+    },
+    {
+      "name": "j",
+      "phone": "j",
+      "id": 8,
+      "datе": "2023-06-19T18:54:04.379Z",
+      "status": "notProcessed",
+      "orderAmount": 10801,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 2,
+          "title": "Бразильский орех очищенный",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 584,
+          "discountfor1Count": 64,
+          "pointfor1Count": 5.84,
+          "fasovka": 0.5,
+          "totalDiscount": 64,
+          "totalPoints": 5.84,
+          "percentDiscount": 0.1,
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Бразильский орех очищенный",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 917,
+          "discountfor1Count": 102,
+          "pointfor1Count": 9.17,
+          "fasovka": 0.75,
+          "totalDiscount": 102,
+          "totalPoints": 9.17,
+          "percentDiscount": 0.1,
+          "count": 1
+        },
+        {
+          "id": 2,
+          "title": "Бразильский орех очищенный",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 1112,
+          "discountfor1Count": 123,
+          "pointfor1Count": 11.120000000000001,
+          "fasovka": 1,
+          "totalDiscount": 123,
+          "totalPoints": 11.120000000000001,
+          "percentDiscount": 0.1,
+          "count": 1
+        },
+        {
+          "id": 13,
+          "title": "Финики Premium (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 214,
+          "discountfor1Count": 24,
+          "pointfor1Count": 2.14,
+          "fasovka": 0.5,
+          "totalDiscount": 24,
+          "totalPoints": 2.14,
+          "percentDiscount": 0.1,
+          "count": 2
+        },
+        {
+          "id": 13,
+          "title": "Финики Premium (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 336,
+          "discountfor1Count": 38,
+          "pointfor1Count": 3.36,
+          "fasovka": 0.75,
+          "totalDiscount": 38,
+          "totalPoints": 3.36,
+          "percentDiscount": 0.1,
+          "count": 1
+        },
+        {
+          "id": 12,
+          "title": "Финики королевские Medjoul (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 464,
+          "discountfor1Count": 52,
+          "pointfor1Count": 4.64,
+          "fasovka": 0.5,
+          "totalDiscount": 832,
+          "totalPoints": 74.24,
+          "percentDiscount": 0.1,
+          "count": 16
+        }
+      ]
+    },
+    {
+      "name": "u",
+      "phone": "u",
+      "id": 9,
+      "datе": "2023-06-20T06:58:59.727Z",
+      "status": "notProcessed",
+      "orderAmount": 7157,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 3,
+          "title": "Грецкий орех очищенный бабочка (отборный)",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 421,
+          "discountfor1Count": 47,
+          "pointfor1Count": 4.21,
+          "fasovka": 0.5,
+          "totalDiscount": 282,
+          "totalPoints": 71.57,
+          "percentDiscount": 0.1,
+          "count": 17
+        }
+      ]
+    },
+    {
+      "name": "ы",
+      "phone": "ц",
+      "id": 10,
+      "datе": "2023-06-20T12:05:18.045Z",
+      "status": "notProcessed",
+      "orderAmount": 4767,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 2,
+          "title": "Бразильский орех очищенный",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 584,
+          "discountfor1Count": 64,
+          "pointfor1Count": 5.84,
+          "fasovka": 0.5,
+          "totalDiscount": 384,
+          "totalPoints": 35.04,
+          "percentDiscount": 0.1,
+          "count": 6
+        },
+        {
+          "id": 3,
+          "title": "Грецкий орех очищенный бабочка (отборный)",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 421,
+          "discountfor1Count": 47,
+          "pointfor1Count": 4.21,
+          "fasovka": 0.5,
+          "totalDiscount": 141,
+          "totalPoints": 12.629999999999999,
+          "percentDiscount": 0.1,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "rt",
+      "phone": "trtrrt",
+      "id": 11,
+      "datе": "2023-06-22T05:44:53.993Z",
+      "status": "notProcessed",
+      "orderAmount": 4250,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 8,
+          "title": "Клюква сушеная (вяленая)",
+          "category": 3,
+          "categoryPath": "sushennye-jagody",
+          "salePrice": 425,
+          "discountfor1Count": 48,
+          "pointfor1Count": 4.25,
+          "fasovka": 0.5,
+          "totalDiscount": 240,
+          "totalPoints": 42.5,
+          "percentDiscount": 0.1,
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "t",
+      "phone": "t",
+      "id": 12,
+      "datе": "2023-06-22T08:58:36.489Z",
+      "status": "notProcessed",
+      "orderAmount": 3166,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 12,
+          "title": "Финики королевские Medjoul (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 730,
+          "discountfor1Count": 81,
+          "pointfor1Count": 7.3,
+          "fasovka": 0.75,
+          "totalDiscount": 81,
+          "totalPoints": 7.3,
+          "percentDiscount": 0.1,
+          "count": 1
+        },
+        {
+          "id": 13,
+          "title": "Финики Premium (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 336,
+          "discountfor1Count": 38,
+          "pointfor1Count": 3.36,
+          "fasovka": 0.75,
+          "totalDiscount": 76,
+          "totalPoints": 6.72,
+          "percentDiscount": 0.1,
+          "count": 2
+        },
+        {
+          "id": 14,
+          "title": "Инжир сушеный королевский",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 588,
+          "discountfor1Count": 65,
+          "pointfor1Count": 5.88,
+          "fasovka": 0.75,
+          "totalDiscount": 195,
+          "totalPoints": 17.64,
+          "percentDiscount": 0.1,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "эмин ",
+      "phone": "12345",
+      "id": 13,
+      "datе": "2023-06-22T11:05:14.619Z",
+      "status": "notProcessed",
+      "orderAmount": 2550,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 8,
+          "title": "Клюква сушеная (вяленая)",
+          "category": 3,
+          "categoryPath": "sushennye-jagody",
+          "salePrice": 425,
+          "discountfor1Count": 48,
+          "pointfor1Count": 4.25,
+          "fasovka": 0.5,
+          "totalDiscount": 48,
+          "totalPoints": 25.5,
+          "percentDiscount": 0.1,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "эмин",
+      "phone": "12345",
+      "id": 14,
+      "datе": "2023-06-22T11:06:53.388Z",
+      "status": "notProcessed",
+      "orderAmount": 1680,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 1,
+          "title": "Арахис очищенный (жареный, соленый)",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 210,
+          "discountfor1Count": 23,
+          "pointfor1Count": 2.1,
+          "fasovka": 0.5,
+          "totalDiscount": 92,
+          "totalPoints": 16.8,
+          "percentDiscount": 0.1,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "мамед",
+      "phone": "12345",
+      "id": 15,
+      "datе": "2023-06-22T11:14:17.221Z",
+      "status": "notProcessed",
+      "orderAmount": 3504,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 2,
+          "title": "Бразильский орех очищенный",
+          "category": 1,
+          "categoryPath": "orehi",
+          "salePrice": 584,
+          "discountfor1Count": 64,
+          "pointfor1Count": 5.84,
+          "fasovka": 0.5,
+          "totalDiscount": 384,
+          "totalPoints": 35.04,
+          "percentDiscount": 0.1,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "адам",
+      "phone": "+79206546666",
+      "id": 16,
+      "datе": "2023-06-22T12:37:16.353Z",
+      "status": "notProcessed",
+      "orderAmount": 2320,
+      "orderPoints": 0,
+      "city": "Баку",
+      "products": [
+        {
+          "id": 12,
+          "title": "Финики королевские Medjoul (с косточкой)",
+          "category": 2,
+          "categoryPath": "suhofrukty",
+          "salePrice": 464,
+          "discountfor1Count": 52,
+          "pointfor1Count": 4.64,
+          "fasovka": 0.5,
+          "totalDiscount": 52,
+          "totalPoints": 23.2,
+          "percentDiscount": 0.1,
+          "count": 5
         }
       ]
     }

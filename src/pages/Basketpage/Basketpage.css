@@ -63,7 +63,7 @@
     row-gap: 5px;
 }
 
-.basketpage__notLogin input{
+.basketpage__input{
     border: 1px solid #C9C9C9;
     border-radius: 8px;
     display: flex;
@@ -71,11 +71,34 @@
     padding: 3px 7px;
     background: #FFFFFF;
     align-items: center;
+    margin-right: 40px;
 }
 
-.basketpage__notLogin input:hover, .basketpage__notLogin input:focus {
+.basketpage__input:hover, .basketpage__input:focus {
         outline: 0;
         outline-offset: 0;
         border: 1px solid #23a53c;
 }
 
+
+.PhoneInputInput {
+    border: 1px solid #23a53c;
+    border-radius: 8px;
+    height: 30px;
+    padding: 3px 7px;
+    flex: auto 0;
+}
+
+.PhoneInputInput:focus-visible {
+    outline: none;
+}
+
+.PhoneInput {
+    position: relative;
+}
+
+.PhoneInputCountry {
+    position: absolute;
+    left: -35px;
+    bottom: 12px;
+}

@@ -1,41 +1,22 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import './BasketProductItem.css'
 import { Link } from 'react-router-dom';
-import products from '../../db.json'
 
 // Компонент карточки товара в корзине
 // Является дочерним для <Basketpage/>
 export default function BasketProductItem({ item }) {
 
   const [show, setShow] = useState(false)
-
-  const handleShow = () => {
-    setShow(true)
-  }
-
-  const handleNoShow = () => {
-    setShow(false)
-  }
-
-
-  //Не слишком ли часто повторяется эта функция  
-  const category = products.category.find((el => el.id === item.category))
-
   const dispatch = useDispatch();
 
-  const deleteItem = () => {
-    dispatch(deleteProduct(item))
-  }
-
-
   return (
-    <tr className='basketProductItem__tr' onMouseOver={handleShow} onMouseOut={handleNoShow}>
+    <tr className='basketProductItem__tr' onMouseOver={() => setShow(true)} onMouseOut={() => setShow(false)}>
       <td className='basketProductItem__image'><img src={item.image} alt="" /></td>
       <td className='basketProductItem__title'>
-        <Link to={`/${category.pathname}/${item.id}`}>{item.title}</Link>
+        <Link to={`/${item.categoryPath}/${item.id}`}>{item.title}</Link>
       </td>
       <td className='basketProductItem__fasovka'><span>{item.fasovka === 0.025 ? 'пробник' : `${item.fasovka * 1000} гр`}</span></td>
       <td className='basketProductItem__count'>
@@ -57,7 +38,7 @@ export default function BasketProductItem({ item }) {
       {item.salePrice
        ? <span>{+item.salePrice * item.count} ₽</span>
        :  <span>{+item.basePrice * item.count} ₽</span>}
-        {show && <span className='basketProductItem__RiDeleteBin2Line' onClick={deleteItem}><RiDeleteBin2Line /></span> }
+        {show && <span className='basketProductItem__RiDeleteBin2Line' onClick={() => dispatch(deleteProduct(item))}><RiDeleteBin2Line /></span> }
       </td>
     </tr>
   )
