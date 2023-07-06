@@ -5,7 +5,6 @@ import { searchProduct } from '../../Redux/slices/searchSlice'
 import './SearchProduct.css'
 
 // Компонент поиска товаров
-// Является дочерним для <Header/>
 export default function SearchProduct() {
 
   const navigate = useNavigate();

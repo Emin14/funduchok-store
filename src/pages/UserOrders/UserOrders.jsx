@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import {useSelector} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../axios';
 import {MdOutlineArrowDropDownCircle} from 'react-icons/md'
 import './UserOrders.css'
-import { useNavigate } from 'react-router-dom';
 
 export default function UserOrders() {
 const [orders, setOrders] = useState('')

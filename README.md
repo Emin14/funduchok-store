@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+<h1 align="center">Funduchok</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Online store clone created using ReactJS:
 
-In the project directory, you can run:
+https://xn--d1amhfwcd2a.xn--p1ai/.
 
-### `npm start`
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h5>Screenshot 1:</h5>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![preview](https://user-images.githubusercontent.com/122212022/251370870-c0a722a1-31d0-4bf8-9435-bde494e4ba87.jpg)
 
-### `npm test`
+<h5>Screenshot 2:</h5>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![preview](https://user-images.githubusercontent.com/122212022/251370907-165676ba-66fd-4c61-804e-8596ee2de8e6.jpg)
 
-### `npm run build`
+<h5>Screenshot 3:</h5>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![preview](https://user-images.githubusercontent.com/122212022/251370938-c735dc3d-4d21-4a1b-a3de-3aa09b14102a.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h5>Screenshot 4:</h5>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![preview](https://user-images.githubusercontent.com/122212022/251370969-620fc069-25d6-4962-8310-4f284627c268.jpg)
 
-### `npm run eject`
+## Run Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  git clone https://github.com/Emin14/funduchok-store.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Go to the project directory
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  cd funduchok-store
+```
 
-## Learn More
+Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the server
 
-### Code Splitting
+```bash
+  npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Authentication
+- Favorite products
+- Add items to cart
+- Remove items from cart
+- Mini shopping cart on hover
+- The minimum order amount is 1500 rubles
+- Notification when adding a product to cart
+- Product search
+- City selection
+- Points for registered users
+- Show next delivery time
+- Order both with registration and without registration, indicating the phone number and name
 
-### Making a Progressive Web App
+## Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [React](https://reactjs.org)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Router 6.4](https://reactrouter.com/en/main)
+- [React Hook Form](https://react-hook-form.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [json-server](https://www.npmjs.com/package/json-server)
+- [rc-progress](https://www.npmjs.com/package/rc-progress)
+- [react-toastify](https://www.npmjs.com/package/react-toastify)
 
-### Advanced Configuration
+## Licence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under [MIT](LICENSE).
 
-### Deployment
+## Feedback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any feedback, please reach out to me [here](https://www.linkedin.com/in/emin-agjaev/)

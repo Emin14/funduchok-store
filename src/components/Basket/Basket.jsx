@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { SlBasket } from 'react-icons/sl'
-import './Basket.css'
 import BasketHoverProduct from '../BasketHoverProduct/BasketHoverProduct';
 import Progressbar from '../Progressbar/Progressbar';
+import './Basket.css'
 
 
 // Компонент отображения корзины в шапке сайта (Header)

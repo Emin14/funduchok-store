@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './Sidebar.css'
 import { useSelector } from 'react-redux'
+import './Sidebar.css'
 
 // Компонент бокового меню
 // Является дочерним для <Layout/>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { clearCart } from '../../Redux/slices/cartSlice';
 import axios from '../../axios';
-import { Link } from 'react-router-dom';
 import './Checkout.css'
 
 // Компонент для оформления заказа на странице корзины

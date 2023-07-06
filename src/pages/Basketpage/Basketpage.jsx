@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import TotalAmount from '../../components/TotalAmount/TotalAmount';
 import BasketProductItem from '../../components/BasketProductItem/BasketProductItem';
-import 'react-phone-number-input/style.css'
-import './Basketpage.css'
 import Checkout from '../../components/Checkout/Checkout';
 import { clearCart } from '../../Redux/slices/cartSlice';
 import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
+import './Basketpage.css'
 
 
 // Компонент страницы Корзины

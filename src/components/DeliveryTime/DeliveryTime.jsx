@@ -3,9 +3,9 @@ import currentTime from './date'
 import  './DeliveryTime.css'
 
 // Компонент вывода даты и времени ближайшей доставки
-// Является дочерним для Header
-export default function DeliveryTime() {
-
+// Большого смысла не было использовать React.memo(). Сделал чтобы попробовать как это работает. 
+function DeliveryTime() {
+// console.log("component DeliveryTime")
     const [date, setDate] = useState({
         month: '',
         day: '',
@@ -34,3 +34,5 @@ export default function DeliveryTime() {
     </div>
   )
 }
+
+export default React.memo(DeliveryTime)

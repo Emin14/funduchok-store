@@ -4,7 +4,6 @@ import checkWord from './checkWord'
 import './TotalAmount.css'
 
 // Компонент выводит общую сумму заказа и общую сумму баллов в корзине 
-// Является дочерним для Basketpage
 export default function TotalAmount() {
 
     const total  = useSelector((state) => state.cart.total);

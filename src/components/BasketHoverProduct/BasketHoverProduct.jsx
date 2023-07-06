@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
 import { RiDeleteBin2Line } from 'react-icons/ri'
+import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
 import './BasketHoverProduct.css'
 
-// Является дочерним для <Basket/>
 // Компонент выводит товары добавленные в корзину при наведении на корзину 
 export default function BasketHoverProduct({ item }) {
 

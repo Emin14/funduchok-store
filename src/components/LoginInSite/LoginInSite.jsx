@@ -1,10 +1,10 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import axios from '../../axios.js';
-import './LoginInSite.css'
 import { useDispatch } from 'react-redux';
+import axios from '../../axios.js';
 import { registerInSite } from '../../Redux/slices/userSlice.js';
 import { getPoints } from '../../Redux/slices/dataSlice.js';
+import './LoginInSite.css'
 
 export default function LoginInSite ({show, setShow}) {
     const dispatch = useDispatch()

@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link} from 'react-router-dom'
-import './ProductCard.css'
-import Favorit from '../Favorit/Favorit'
 import { toast } from 'react-toastify';
-import  data from '../PriceTable/weightAndkoef.json'
-import { useState, useEffect } from 'react';
-import { calcWeightProperties } from '../PriceTable/calcWeightProperties';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../Redux/slices/cartSlice';
+import Favorit from '../Favorit/Favorit'
+import  data from '../PriceTable/weightAndkoef.json'
+import { calcWeightProperties } from '../PriceTable/calcWeightProperties';
+import './ProductCard.css'
 
 
 // Компонент карточки товара
-// Является дочерним для <Products /> и для <ProductsFound />
+// Является дочерним для <Products /> или для <ProductsFound />
 export default function ProductCard({ item, pathname }) {
 
   const {amountOfDiscount, weightAndkoef} = data

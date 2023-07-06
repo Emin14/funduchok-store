@@ -1,6 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import axios from './axios';
+import { getProducts, getCategory, getPoints } from './Redux/slices/dataSlice';
 import Layout from './components/Layout';
 import Homepage from './pages/Homepage';
 import Sale from './pages/Sale';
@@ -17,13 +19,9 @@ import Basketpage from './pages/Basketpage/Basketpage';
 import CompletedOrder from './pages/CompletedOrder/CompletedOrder';
 import UserOrders from './pages/UserOrders/UserOrders';
 import Favoritspage from './pages/Favoritspage/Favoritspage';
-
-import axios from './axios';
-import { getProducts, getCategory, getPoints } from './Redux/slices/dataSlice';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import NotFound from './pages/NotFound/NotFound';
 import UserData from './pages/UserOrders/UserData/UserData';
+import './App.css';
 
 
 

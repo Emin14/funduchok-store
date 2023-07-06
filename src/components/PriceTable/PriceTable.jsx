@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../Redux/slices/cartSlice';
-import './PriceTable.css';
-import  data from './weightAndkoef.json'
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { addProduct } from '../../Redux/slices/cartSlice';
+import  data from './weightAndkoef.json'
 import { calcWeightProperties, calcDiscountPrice, calcBasicPrice } from './calcWeightProperties';
+import 'react-toastify/dist/ReactToastify.css';
+import './PriceTable.css';
 
 // Компонент для выбора фасовки и количества товара для добавления в корзину (желтый прямоугольник на странице с продуктом)
 export default function PriceTable({product, category}) {

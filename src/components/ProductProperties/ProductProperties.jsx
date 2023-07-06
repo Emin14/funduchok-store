@@ -20,14 +20,14 @@ export default function ProductProperties({product}) {
           <li className={`productProperties__item ${paragraph === "Характеристики" ? 'active' : ''}`}>Характеристики</li>
           <li className={`productProperties__item ${paragraph === "Отзывы" ? 'active' : ''}`}>Отзывы</li>
         </ul>
-          <p>
+
             {
-              paragraph === "Описание" ? product.description:
+              paragraph === "Описание" ? <div>{product.description}</div>:
               paragraph === "Характеристики" ? <Characteristics />:
               paragraph === "Отзывы" ? <Reviews />:
               null  
             }
-          </p>
+
     </div>
   )
 }

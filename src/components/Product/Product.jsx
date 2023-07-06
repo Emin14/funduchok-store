@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
-import './Product.css'
+import axios from '../../axios'
 import Advantages from '../Advantages/Advantages'
 import PriceTable from '../PriceTable/PriceTable'
-import axios from '../../axios'
 import ProductProperties from '../ProductProperties/ProductProperties'
 import Favorit from '../Favorit/Favorit'
+import './Product.css'
 
 
 // Компонент товара

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import ProductCard from '../ProductCard/ProductCard'
 
 // Компонент выводит товары при нажатии на поиск
-// Является дочерним для <Products/>
 export default function ProductsFound() {
 
   const { phrase } = useSelector((state) => state.search.search);

@@ -1,12 +1,10 @@
-import React from 'react'
-import './UserData.css'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../../axios';
 import { changeData } from '../../../Redux/slices/userSlice';
 import { logout } from '../../../Redux/slices/userSlice';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import './UserData.css'
 
 export default function UserData() {
 

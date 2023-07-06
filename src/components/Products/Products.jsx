@@ -1,11 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-// import products from '../../db.json'
-import ProductCard from '../ProductCard/ProductCard'
-import './Products.css'
-
 import { useSelector } from 'react-redux'
+import ProductCard from '../ProductCard/ProductCard'
 import ProductsFound from '../ProductsFound/ProductsFound'
+import './Products.css'
 
 
 // Компонент показывает определенные продукты в зависмости от того какая категория выбрана

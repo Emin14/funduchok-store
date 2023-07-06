@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import Basket from '../../components/Basket/Basket'
-import './Header.css'
-import SearchProduct from '../../components/SearchProduct/SearchProduct'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux';
-import { writingCity } from '../../Redux/slices/dataSlice';
+import { useSelector, useDispatch} from 'react-redux'
+import { ToastContainer } from 'react-toastify';
 import {MdOutlineFavoriteBorder} from 'react-icons/md'
+import { writingCity } from '../../Redux/slices/dataSlice';
+import Basket from '../../components/Basket/Basket'
+import SearchProduct from '../../components/SearchProduct/SearchProduct'
 import DeliveryTime from '../../components/DeliveryTime/DeliveryTime'
 import User from '../../components/User/User'
-import { useEffect } from 'react'
-import { ToastContainer } from 'react-toastify';
+import './Header.css'
 
 
 export default function Header() {

@@ -1,8 +1,6 @@
-import React from 'react'
-import './CompletedOrder.css'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, {useEffect, useState} from 'react'
 import axios from '../../axios'
+import './CompletedOrder.css'
 
 
 // Откуда берется orders.totalAmount

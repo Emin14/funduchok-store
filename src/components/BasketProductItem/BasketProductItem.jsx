@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useDispatch} from 'react-redux';
-import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
-import { RiDeleteBin2Line } from 'react-icons/ri'
-import './BasketProductItem.css'
 import { Link } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
+import { RiDeleteBin2Line } from 'react-icons/ri'
+import { reduceProduct, incrementProduct, deleteProduct } from '../../Redux/slices/cartSlice';
+import './BasketProductItem.css'
+
 
 // Компонент карточки товара в корзине
-// Является дочерним для <Basketpage/>
 export default function BasketProductItem({ item }) {
 
   const [show, setShow] = useState(false)
