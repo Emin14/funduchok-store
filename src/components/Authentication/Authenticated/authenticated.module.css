@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items:flex-start;
+    position: relative;
+}
+
+.button {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.account {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.RiArrowDownSLine {
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info ul {
+    margin-top: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 2px black solid;
+    font-size: 14px;
+}
+
+.info li:not(:last-child) {
+    padding: 4px 0;
+   border-bottom: 1px solid rgb(231, 228, 228); 
+}

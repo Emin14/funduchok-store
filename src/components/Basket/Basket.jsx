@@ -35,7 +35,7 @@ export default function Basket() {
           <table className='basket__info_products'>
             <tbody>
               {productsInOrder.map(item => (
-                <BasketHoverProduct key={`${item.id}-${item.fasovka}`} item={item} />
+                <BasketHoverProduct key={`${item.id}-${item.weight}`} item={item} />
               ))}
             </tbody>
           </table>

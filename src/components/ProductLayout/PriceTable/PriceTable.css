@@ -1,0 +1,134 @@
+.priceTable {
+    width: 350px;
+    height: 500px;
+    background: #ffd944;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.priceTable__label {
+    font-size: 18px;
+
+    border-bottom: 2px solid #ffc702;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0 10px 30px;
+    cursor: pointer; 
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+}
+
+.priceTable__undiscounted {
+    padding-left: 15px;
+    color: #adabab;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.priceTable__weight {
+    color: gray;
+    font-size: 18px;
+}
+
+.priceTable__delivery {
+    margin: 10px 0 15px;
+    line-height: 1.5;
+}
+
+.priceTable__counter {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.priceTable__discount-info {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.priceTable__bonus-note {
+    color: #ee423e;
+    border-bottom: 1px dotted;
+    cursor: pointer;
+}
+
+.priceTable__basket-btn {
+    background: #23a53c;
+
+    border-radius: 5px;
+
+    height: 34px;
+    max-width: 290px;
+    margin: auto;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #23a53c;
+    transition: .3s;
+    color: #fff;
+    cursor: pointer;
+}
+
+.priceTable__count-btn-left {
+    width: 32px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #e7e7e7;
+    z-index: 2;
+    height: 32px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    left: 14px
+}
+
+.priceTable__count-btn-right {
+    width: 32px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #e7e7e7;
+    z-index: 2;
+    height: 32px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    right: 14px;
+}
+
+.priceTable__count-number {
+    width: 75px;
+    background: #f5f5f5;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.priceTable__discount {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.5;
+    padding: 0 30px;
+}
+
+.priceTable__discount_text {
+    color: #23a53c;
+    margin-left: 5px;
+}
+

@@ -1,41 +1,46 @@
 import React, { useState, useEffect } from 'react'
 import { Link} from 'react-router-dom'
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-import { addProduct } from '../../Redux/slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux'
+import { changeCartProducts, calcPoints, calcAmount, calcPieces } from '../../Redux/slices/cartSlice';
 import Favorit from '../Favorit/Favorit'
-import  data from '../PriceTable/weightAndkoef.json'
-import { calcWeightProperties } from '../PriceTable/calcWeightProperties';
+import { calcWeightProperties } from '../ProductLayout/calcWeightProperties';
 import './ProductCard.css'
+import { togleFavorit } from '../../Redux/slices/favoritsSlice'
+import { notify } from '../../utils.js/notify';
+import {amountOfDiscount, weightAndkoef} from '../ProductLayout/constans'
+import {calcPackaging} from '../../utils.js/calcPackaging'
 
 
 // Компонент карточки товара
 // Является дочерним для <Products /> или для <ProductsFound />
-export default function ProductCard({ item, pathname }) {
-
-  const {amountOfDiscount, weightAndkoef} = data
+export default function ProductCard({item}) {
 
   const  [count, setCount ]= useState(1);
+  const [currentPackage, setCurrentPackage] = useState(3);
 
-  const  [packaging, setPackaging]= useState({
-    basePrice: 0,
-    salePrice: 0,
-    discountfor1Count: 0,
-    discountfor1Count: 0,
-    fasovka: '',
-});
+  const [packing, setPacking] = useState(null);
+
+
+  // useEffect(() => {
+  //   setPackaging (calcWeightProperties(weightAndkoef[2].weight, item))
+  // }, [item])
 
   useEffect(() => {
-    setPackaging (calcWeightProperties(weightAndkoef[2].weight, item))
-  }, [item])
+    if (item) {
+        const packagingArray = calcPackaging(weightAndkoef, item, amountOfDiscount)
+        setPacking(packagingArray)
+    }
+}, [item])
+
 
   const dispatch = useDispatch();
 
-  const selectedPackaging = (e) => {
-    console.log(e)
-    setCount(1)
-    setPackaging (calcWeightProperties(e, item))
-  }
+  // const selectedPackaging = (e) => {
+  //   console.log(e)
+  //   setCount(1)
+  //   setPackaging (calcWeightProperties(e, item))
+  // }
 
 
   const incrementCount = (e) => {
@@ -52,52 +57,67 @@ export default function ProductCard({ item, pathname }) {
   }
 
   const handleSubmit = (e) => {
-    const {discountfor1Count, pointfor1Count} = packaging
     e.preventDefault();
-    dispatch(addProduct({...item,
-        categoryPath: pathname, 
-        ...packaging,
-        totalDiscount : discountfor1Count * count,
-        totalPoints : pointfor1Count * count,
-        percentDiscount: amountOfDiscount,
-        count: count,
-    }))
-  const notify = () => toast(`${item.title} ${count} шт по ${packaging.fasovka} добавлено в корзину`, {
-      autoClose: 7000,
-      });
-  notify()
+    const packaging = packing[currentPackage-1]
+    const {packingDiscount, packingPoint, title: weightTitle } = packaging
+    const { id, title } = item
+    dispatch(changeCartProducts(
+      {
+          ...item,
+          ...packaging,
+          id,
+          title,
+          weightTitle,
+          totalDiscount: packingDiscount * count,
+          percentDiscount: amountOfDiscount,
+          count,
+      }));
+    dispatch(calcAmount())
+    dispatch(calcPoints())
+    dispatch(calcPieces())
+  notify(item.title, packaging.title, count)
   }
 
-  const classNameFavorit = {
-    position: 'absolute',
-    top: '6px',
-    right: '8px'
+
+  const favorits = useSelector(state => state.favorits.favorits)
+  const [isFavorite, setIsFavorite] = useState(false) 
+
+  const addFavorit = () => {
+      dispatch(togleFavorit(item))
+    }
+
+    useEffect(() => {
+      localStorage.setItem('favorits', JSON.stringify(favorits))
+      const find = favorits.some(el => el.id === item.id)
+      setIsFavorite(find)
+    }, [favorits])
+
+    const handleClick = (id) => {
+      setCount(1)
+      setCurrentPackage(id)
   }
 
+    if(packing) {
   return (
     <div className='productCard'>
-        <Favorit item={item} classNameFavorit={classNameFavorit}/>
-      <Link to={`/${pathname}/${item.id}`} className='productCard__link' >
+        <div className='favorit'  onClick={addFavorit}>
+          <Favorit item={item} isFavorite={isFavorite}/>
+        </div>
+      <Link to={`/${item.category}/${item.id}`} className='productCard__link' >
         <img src={item.image} alt="" className='productCard__img' />
         <p className='productCard__title'>{item.title}</p>
+        <p className='productCard__price'>
+          {packing[currentPackage-1].packingDiscountPrice && <span>{`${packing[currentPackage-1].packingDiscountPrice} ₽`}</span>}
+          <span className='productCard__oldPrice'>{`${packing[currentPackage-1].packingPrice} ₽`}</span>
+        </p> 
       </Link>
 
-      { packaging.salePrice ?
-      <p className='productCard__price'>
-        <span>{`${packaging.salePrice} ₽`}</span>
-        <span className='productCard__oldPrice'>{`${packaging.basePrice} ₽`}</span>
-      </p> :
-      <p className='productCard__price'>
-      <span>{`${packaging.basePrice} ₽`}</span>
-      </p> }
-
       <ul className='productCard__list'>
-
-            {weightAndkoef.map(item => 
+          {packing.map(item => 
               item.weight !== 0.025 && (
-                  <li key={item.id} data-koef={item.koef} className={`productCard__item ${item.weight === packaging.fasovka ? 'activeWeight' : ''}`} onClick={() => selectedPackaging(item.weight)}>
-                    {item.weight === 0.025 ? 'пробник' : item.weight === 1 ? '1 кг' : `${item.weight * 1000} гр`}
-                  </li>)
+              <li key={item.id} data-koef={item.koef} className={`productCard__item ${item.id === currentPackage ? 'activeWeight' : ''}`} onClick={() => handleClick(item.id)}>
+                {item.title}
+              </li>)
             )}
       </ul>
       <div className='priceTable__count'>
@@ -109,4 +129,5 @@ export default function ProductCard({ item, pathname }) {
 
     </div>
   )
+  }
 }

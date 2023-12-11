@@ -1,0 +1,12 @@
+.wrapper {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}

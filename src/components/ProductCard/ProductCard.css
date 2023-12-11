@@ -5,7 +5,7 @@
     padding: 10px 8px 14px 8px;
     text-align: center;
     cursor: pointer;
-    width: 280px;
+    width: 300px;
     height: 330px;
     box-shadow: 5px black;
     transition: .3s;
@@ -22,6 +22,14 @@
     width: 150px;
     height: 150px;
     margin-bottom: 15px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
 }
 
 /* .productCard__link {
@@ -76,3 +84,9 @@
     vertical-align: middle;
     padding-left: 7px;
 }
+
+.favorit {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+  }

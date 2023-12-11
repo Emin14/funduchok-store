@@ -1,18 +1,18 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { FiCommand } from "react-icons/fi";
 import Category from '../Category/Category'
 import './Categories.css'
+import { categories } from '../ProductLayout/constans';
 
 // Компонент вывода списка категорий на главной
 export default function Categories() {
 
-    const category = useSelector((state) => state.data.category)
-
-    return (
-        <div className='categories__wrapper'>
-            {category.map(item => (
-                <Category key={item.id} title={item.title} img={item.img} path={item.pathname} />
-            ))}
-        </div>
+        return (
+            <div className='categories__wrapper'>
+                {categories.map(item => (
+                    <Category key={item.id} title={item.title} img={item.img} path={item.pathname} />
+                ))}
+            </div>
     )
+
 }

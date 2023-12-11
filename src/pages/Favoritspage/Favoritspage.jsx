@@ -11,7 +11,9 @@ export default function Favorits() {
         <h3>Ваши закладки:</h3>
         <ul className='favorits__list'>
         {favorits.map(item => (
-          <li key={item.id}> <ProductCard item={item} /></li>
+          <li key={item.id}>
+            <ProductCard item={item} />
+          </li>
         ))}
         </ul>
     </div>

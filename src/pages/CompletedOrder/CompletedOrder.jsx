@@ -1,62 +1,12 @@
-import React, {useEffect, useState} from 'react'
-import axios from '../../axios'
+import React from 'react'
 import './CompletedOrder.css'
+import { useLocation } from 'react-router-dom';
 
-
-// Откуда берется orders.totalAmount
-// orders.orderspoints проверить
 export default function CompletedOrder() {
 
-    const noLoginUser = JSON.parse(localStorage.getItem('noLoginUser'))
+    const { state } = useLocation()
 
-    // Получаем текущего юзера из redux
-    const [orders, setOrders] = useState({
-        datе: '',
-        id: '',
-        orderPoints: 0,
-        products: [],
-        orderAmount: 0
-    })
-
-    const [status, setStatus] = useState('notProcessed')
-    const currentUser = JSON.parse(localStorage.getItem('user'))
-
-    const getOrders = async() => {
-        let lastOrders = ''
-        if(currentUser) {
-            const  currentUserServer  = await axios.get(`users/${currentUser.id}`);
-            lastOrders = await currentUserServer.data.orders.at(-1)
-        }
-        else {
-            const  notLoginOrders  = await axios.get(`notLoginOrders`);
-            lastOrders = await notLoginOrders.data.filter(item => item.phone === noLoginUser.phone && item.name.toUpperCase() === noLoginUser.name.toUpperCase()).at(-1)
-        }
-
-        if (lastOrders) {
-            setOrders(lastOrders)
-            switch (lastOrders.status) {
-                case 'notProcessed':
-                    setStatus( 'Заказ еще не обработан' );
-                    break;
-                case 'orderIsCollected':
-                    setStatus( 'Заказ собирают' );
-                    break;
-                case 'orderOnTheWay':
-                    setStatus( 'Заказ в пути' );
-                    break;
-                case 'orderDelivered':
-                    setStatus( 'Заказ доставлен' );
-                    break;
-              }
-        }
-      }
-  
-    useEffect(() => {
-        getOrders()
-    }, [])
-
-
-    if(orders.id) {
+    if(state) {
         return (
             <div>
                 <h3>Ваш заказ оформлен:</h3>
@@ -69,42 +19,38 @@ export default function CompletedOrder() {
                             <th>Цена</th>
                             <th>Сумма</th>
                         </tr>
-                        {orders.products.map(item => (
-                            <tr key={`${item.id}-${item.fasovka}`} className='ada'>
+                        {state.products.map(item => (
+                            <tr key={`${item.id}-${item.weight}`} className='ada'>
                                 <td><span>{item.title} </span></td>
-                                <td><span>{item.fasovka * 1000} гр.</span></td>
+                                <td><span>{item.weightTitle}</span></td>
                                 <td>
                                   <span>{item.count} шт.</span>
                                 </td>
                                 <td> 
-                                    {item.salePrice
-                                    ? <span >{item.salePrice} ₽</span>
-                                    : <span >{item.basePrice} ₽</span>}
+                                    {item.packingDiscountPrice
+                                    ? <span >{item.packingDiscountPrice} ₽</span>
+                                    : <span >{item.packingPrice} ₽</span>}
                                 </td>
                                 <td> 
-                                    {item.salePrice
-                                    ? <span>{+item.salePrice * item.count} ₽</span>
-                                    :  <span>{+item.basePrice * item.count} ₽</span>}
+                                    {item.packingDiscountPrice
+                                    ? <span>{+item.packingDiscountPrice * item.count} ₽</span>
+                                    :  <span>{+item.packingPrice * item.count} ₽</span>}
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                {currentUser && 
                     <div>
-                        <span>Статус вашего заказа: </span><span>{status}</span>
+                        <span>Статус вашего заказа: </span><span>{state.status}</span>
                     </div>
-                }
                 <div>
-                    <span>Общая сумма заказа:</span><span> {orders.orderAmount} рублей</span>
+                    <span>Общая сумма заказа:</span><span> {state.orderAmount} рублей</span>
                 </div>
-                {currentUser && 
                     <div>
-                        <span>Начислено балллов:</span><span> {orders.orderPoints}</span>
+                        <span>Начислено балллов:</span><span> {state.orderPoint}</span>
                     </div>
-                }
                 <div>
-                    <span>Город доставки:</span><span> {orders.city}</span>
+                    <span>Город доставки:</span><span> {state.city}</span>
                 </div>
             </div>
           )
@@ -115,5 +61,4 @@ export default function CompletedOrder() {
         <h3>У вас нету оформленного заказа</h3>
         )
     }
-
 }

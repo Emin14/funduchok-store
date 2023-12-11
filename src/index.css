@@ -39,11 +39,16 @@ p {
   color: #c65449;
 }
 
+/* удалить */
 .yellow-text {
   background: #ffd944;
   color: #333;
   padding: 3px 5px;
   border-radius: 3px;
+}
+
+button {
+  font: inherit;
 }
 
 .button {

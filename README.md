@@ -72,8 +72,6 @@ Start the server
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Router 6.4](https://reactrouter.com/en/main)
 - [React Hook Form](https://react-hook-form.com/)
-- [Axios](https://axios-http.com/docs/intro)
-- [json-server](https://www.npmjs.com/package/json-server)
 - [rc-progress](https://www.npmjs.com/package/rc-progress)
 - [react-toastify](https://www.npmjs.com/package/react-toastify)
 
