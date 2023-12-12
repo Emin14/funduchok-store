@@ -69,19 +69,21 @@ export default function Form({
         <p className={styles.description}>
           Чтобы накапливать баллы, получать промокоды и следить за историей покупок
         </p>
-        <label>
+        <label htmlFor={`email-${title}`}>
           <input
             type="email"
             placeholder="Email"
+            id={`email-${title}`}
             autoComplete="email"
             {...register('email', { pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/, required: true })}
           />
           {errors.email && <p>This is required2</p>}
         </label>
-        <label>
+        <label htmlFor={`password-${title}`}>
           <input
             type="password"
             name="password"
+            id={`password-${title}`}
             placeholder="Password"
             autoComplete="off"
             {...register('password', { required: true })}
