@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    city: 'Москва',
-}
+  city: 'Москва',
+};
 
-const citySlice = createSlice ({
-    name: 'city',
-    initialState,
-    reducers: {
-        writingCity (state, action)  {
-          state.city = action.payload
-        }
-    }
-})
+const citySlice = createSlice({
+  name: 'city',
+  initialState,
+  reducers: {
+    writingCity(state, action) {
+      state.city = action.payload;
+    },
+  },
+});
 
-export const {writingCity} = citySlice.actions;
+export const { writingCity } = citySlice.actions;
 export default citySlice.reducer;
