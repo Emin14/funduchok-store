@@ -98,3 +98,35 @@
 
     font-size: 12px;
 }
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .basket__basket-word {
+        display: none;
+    }
+
+    .basket__money {
+        position: absolute;
+        bottom: -16px;
+        margin-left: 2px;
+    } 
+
+    .SlBasket__wrapper {
+        width: 47px;
+        height: auto;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:0;
+    }
+
+    .SlBasket {
+        color: #0c9241;
+    }
+
+    .basket__count {
+        top: -8px;
+    }
+    
+}

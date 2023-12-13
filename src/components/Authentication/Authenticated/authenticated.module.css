@@ -1,3 +1,7 @@
+.wrapper2 {
+    position: relative;
+}
+
 .wrapper {
     display: flex;
     column-gap: 20px;
@@ -48,4 +52,90 @@
 .info li:not(:last-child) {
     padding: 4px 0;
    border-bottom: 1px solid rgb(231, 228, 228); 
+}
+
+.bonus {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 2px 0;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 150px;
+    background: #23a53c;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.BiPurchaseTagAlt {
+    display: none;
+}
+
+.FaUserLargeSlash {
+    display: none;
+}
+
+.bonusTextMobile {
+    display: none;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+
+    .bonus {
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 2px 0;
+        color: #23a53c;
+        margin: 0;
+        width: auto;
+        background: none;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        bottom: -20px;
+    }
+
+    .bonusText {
+        display: none;
+    }
+
+    .BiPurchaseTagAlt {
+        display: block;
+        font-size: 30px;
+    }
+
+    .account {
+        display: none;
+    }
+
+    .button {
+        display: none;
+    }
+
+    .FaUserLargeSlash {
+        display: block;
+        font-size: 30px;
+    }
+
+    .bonusTextMobile {
+        display: inline-block;
+    }
+
 }

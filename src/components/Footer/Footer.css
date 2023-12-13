@@ -1,15 +1,19 @@
 .footer-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    column-gap: 170px;
-
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
     padding-bottom: 10px;
     text-align: center;
     font-size: 12px;
 }
 
+
 .footer__logo {
+    max-width: 230px;
+}
+
+
+.footer__logo img{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
@@ -19,6 +23,7 @@
     flex-wrap: wrap;
     column-gap: 10px;
     justify-content: center;
+    max-width: 500px;
 }
 
 .footer__list li:hover {
@@ -36,6 +41,17 @@
     
 }
 
+.footer__contacts {
+    max-width: 240px;
+}
+
 .footer__contacts_title {
     margin-bottom: 10px;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .footer__list {
+        width: 400px;;
+    }
 }

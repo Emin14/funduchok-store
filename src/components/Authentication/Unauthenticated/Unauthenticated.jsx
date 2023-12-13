@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { FaRegUser } from 'react-icons/fa';
 import styles from './unauthenticated.module.css';
 import Form from '../Form/Form';
 
@@ -20,13 +21,16 @@ export default function Unauthenticated() {
 
   return (
     <div className={styles.wrapper}>
-      <button type="button" className={styles.button} onClick={() => setShowLoginpage(true)}>
-        Войти
-      </button>
-      <span>|</span>
-      <button type="button" className={styles.button} onClick={() => setShowRegisterpage(true)}>
-        Регистрация
-      </button>
+      <div className={styles.buttons}>
+        <button type="button" className={styles.button} onClick={() => setShowLoginpage(true)}>
+          Войти
+        </button>
+        <span> | </span>
+        <button type="button" className={styles.button} onClick={() => setShowRegisterpage(true)}>
+          Регистрация
+        </button>
+      </div>
+      <FaRegUser className={styles.FaRegUser} onClick={() => setShowLoginpage(true)} />
       <Form
         title="Войти"
         show={showLoginpage}

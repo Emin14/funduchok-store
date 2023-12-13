@@ -54,3 +54,11 @@
 .product__favorit {
     color: #999;
 }
+
+/* // Большие девайсы (большие десктопы, < 1200px) */
+@media (max-width: 1199.98px) {
+    .product img{
+        width: 270px;
+        height: 270px;
+    }
+}

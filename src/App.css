@@ -73,3 +73,9 @@ li {
   grid-area: footer;
 }
 
+/* // Большие девайсы (большие десктопы, < 1200px) */
+@media (max-width: 991.98px) {
+  .wrapper {
+    column-gap: 16px;
+  }
+}

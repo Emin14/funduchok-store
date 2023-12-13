@@ -43,7 +43,7 @@ export const weightAndkoef = [
   },
   {
     id: 5,
-    title: '1000 гр',
+    title: '1 кг',
     weight: 1,
     koef: 1,
   },

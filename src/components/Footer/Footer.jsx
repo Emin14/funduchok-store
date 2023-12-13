@@ -5,9 +5,9 @@ import { navbar } from '../ProductLayout/constans';
 export default function Footer() {
   return (
     <footer className="container footer-area footer-wrapper">
-      <div>
+      <div className="footer__logo">
         <Link to="/">
-          <img src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" className="footer__logo" />
+          <img src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
         </Link>
         <p>Интернет-магазин вкусных и полезных продуктов для вашего здоровья</p>
         <p>© 2014 - 2023</p>
@@ -27,7 +27,7 @@ export default function Footer() {
         <li><Link href="/#">Правила использования промокодов</Link></li>
         <li><Link href="/#">Гарантия лучшей цены</Link></li>
       </ul>
-      <div>
+      <div className="footer__contacts">
         <h3 className="footer__contacts_title">Наши контакты</h3>
         <div>
           <a href="tel:88005002218" className="footer__tel">8 800 500-22-18</a>

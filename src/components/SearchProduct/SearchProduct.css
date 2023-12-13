@@ -1,18 +1,18 @@
-.searchProduct {
-    position: relative;
-}
-
 .searchProduct_btn {
     color: #30353e;
+    background-color: #ffd944;
     padding: 9px 22px;
     border-radius: 8px;
-    cursor: pointer; 
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 14px;
 }
 
 .searchProduct__input {
     height: 35px;
     border-radius: 8px;
-    width: 400px;
+    /* width: 400px; */
+    width: 100%;
 
     border: 1px solid #d3d6db;
     padding-left: 10px;
@@ -47,3 +47,16 @@
     background-color: #eef1f2;
     color: #23a53c
 }
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .searchProduct__input {
+        width: 120px;;
+    }
+
+    .searchProduct_btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+

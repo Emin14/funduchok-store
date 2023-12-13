@@ -6,8 +6,8 @@ import Footer from './Footer/Footer';
 export default function Layout() {
   return (
     <div className="container wrapper">
-      <Header className="container " />
-      <Sidebar className="container " />
+      <Header />
+      <Sidebar />
       <main className="main-area">
         <Outlet />
       </main>

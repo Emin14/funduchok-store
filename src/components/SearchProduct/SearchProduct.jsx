@@ -38,9 +38,9 @@ export default function SearchProduct() {
   };
 
   return (
-    <div className="searchProduct">
+    <>
       <input type="text" className="searchProduct__input" value={phrase} onChange={(e) => setPhrase(e.target.value)} />
-      <button type="button" className="button yellow-text searchProduct_btn" onClick={handleClick}>Поиск</button>
+      <button type="button" className="searchProduct_btn" onClick={handleClick}>Поиск</button>
 
       {phrase
         && (
@@ -52,6 +52,6 @@ export default function SearchProduct() {
           ))}
         </ul>
         )}
-    </div>
+    </>
   );
 }

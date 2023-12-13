@@ -1,21 +1,19 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { SlBasket } from 'react-icons/sl';
 import BasketHoverProduct from '../BasketHoverProduct/BasketHoverProduct';
 import Progressbar from '../Progressbar/Progressbar';
 import './Basket.css';
 
 // Компонент отображения корзины в шапке сайта (Header)
-export default function Basket() {
-  const totalAmount = useSelector((state) => state.cart.total);
+export default function Basket({
+  totalAmount, productsInOrder, totalCount, nav,
+}) {
   const [show, setShow] = useState(false);
-  const productsInOrder = useSelector((state) => state.cart.cart);
-  const totalCount = useSelector((state) => state.cart.totalCount);
   const location = useLocation();
 
   return (
-    <div className="basket__wrapper">
+    <div className={nav ? ['basket__wrapper', 'active'].join(' ') : 'basket__wrapper'}>
       <Link to="cart" className="basket" onMouseOver={() => setShow(true)} onMouseOut={() => setShow(false)}>
         <div className="SlBasket__wrapper">
           <SlBasket className="SlBasket" />

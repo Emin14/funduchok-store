@@ -10,3 +10,22 @@
     border: none;
     background: none;
 }
+
+.FaRegUser {
+    display: none;
+    font-size: 30px;
+    background-color: #23a53c;
+    color: white;
+    border-radius: 10px;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .buttons {
+        display: none;
+    }
+
+    .FaRegUser {
+        display: block;
+    }
+}
