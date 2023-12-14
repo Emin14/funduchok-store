@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import Authenticated from './Authenticated/Authenticated';
 import Unauthenticated from './Unauthenticated/Unauthenticated';
 
-export default function Authentication({ points }) {
+export default function Authentication({ points, active }) {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,14 @@ export default function Authentication({ points }) {
 
   let outTag = null;
   if (currentUser) {
-    outTag = <Authenticated email={currentUser.email} setUser={setCurrentUser} points={points} />;
+    outTag = (
+      <Authenticated
+        email={currentUser.email}
+        setUser={setCurrentUser}
+        points={points}
+        active={active}
+      />
+    );
   } else {
     outTag = <Unauthenticated />;
   }

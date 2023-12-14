@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { IoIosSearch } from 'react-icons/io';
 import { Link, useNavigate } from 'react-router-dom';
 import './SearchProduct.css';
 
 // Компонент поиска товаров
-export default function SearchProduct() {
+export default function SearchProduct({ active, setActive }) {
   const navigate = useNavigate();
 
   const [phrase, setPhrase] = useState('');
@@ -37,21 +38,35 @@ export default function SearchProduct() {
     setPhrase('');
   };
 
+  const handleClick2 = () => {
+    if (phrase) {
+      navigate('/search', { state: find });
+      setPhrase('');
+    }
+    setActive((prev) => !prev);
+  };
+
+  const handleClick3 = () => {
+    setPhrase('');
+    setActive(false);
+  };
+
   return (
-    <>
+    <div className={active ? ['header__search', 'active'].join(' ') : 'header__search'}>
       <input type="text" className="searchProduct__input" value={phrase} onChange={(e) => setPhrase(e.target.value)} />
       <button type="button" className="searchProduct_btn" onClick={handleClick}>Поиск</button>
+      <IoIosSearch className="IoIosSearch" onClick={handleClick2} />
 
       {phrase
         && (
         <ul className="searchProduct__list">
           {find.map((item) => (
             <li key={item.id} className="searchProduct__list_item">
-              <Link to={`${item.category}/${item.id}`} onClick={() => setPhrase('')}>{item.title}</Link>
+              <Link to={`${item.category}/${item.id}`} onClick={handleClick3}>{item.title}</Link>
             </li>
           ))}
         </ul>
         )}
-    </>
+    </div>
   );
 }

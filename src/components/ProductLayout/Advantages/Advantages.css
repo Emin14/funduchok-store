@@ -25,3 +25,12 @@
     margin-top: 14px;
     text-align: center; 
 }
+
+  /* // Малые девайсы («ландшафтные», < 768px) */
+  @media (max-width: 767.98px) {
+    .advantages {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+  }
+  }

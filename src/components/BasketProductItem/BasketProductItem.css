@@ -122,6 +122,10 @@
     font: 500 12px/16px Roboto,sans-serif;
 }
 
+.basketProductItem__RiDeleteBin2Line2 {
+    display: none;
+}
+
 /* // Большие девайсы (большие десктопы, < 1200px) */
 @media (max-width: 1199.98px) {
     .basketProductItem__tr {
@@ -142,3 +146,29 @@
     }
 }
 
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+    .basketProductItem__tr {
+       font-size: 14px;
+       grid-template-columns: 70px 140px 50px 100px 56px 52px 52px 30px;
+       margin-bottom: 10px;
+    }
+
+    .basketProductItem__RiDeleteBin2Line {
+        display: none;
+    }
+
+    .basketProductItem__RiDeleteBin2Line2 {
+        display: block;
+        text-align: center;
+    }
+
+    .basketProductItem__RiDeleteBin2Line2 span {
+        color: rgb(208, 65, 65);
+    }
+
+    .basketProductItem__RiDeleteBin2Line2 svg {
+        font-size: 24px;
+    }
+}

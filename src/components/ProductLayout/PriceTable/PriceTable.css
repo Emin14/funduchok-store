@@ -157,4 +157,50 @@
     .priceTable__basket-btn {
         padding: 4px 5px;
     }
+
+    .priceTable__label {
+        font-size: 16px;
+        padding: 8px 0 8px 8px;
+    }
+
+    .priceTable {
+        width: 264px;
+        height: 510px;
+        padding: 10px 12px;
+    }
+
+    .priceTable__discount {
+        padding: 0 12px;
+    }
+
+    .priceTable__basket-btn {
+        padding: 6px 2px;
+    }
+    
+    .priceTable__delivery {
+        font-size: 14px;
+    }
+    
+}
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+    .priceTable {
+        width: 80%;
+        height: 400px;
+        padding: 4px 12px;
+    }
+
+    .priceTable__delivery {
+        margin: 2px 0 15px;
+        line-height: 1;
+    }
+
+    .priceTable__discount  {
+        margin-top: 0;
+    }
+
+    .priceTable__counter {
+        margin-bottom: 8px;
+    }
 }

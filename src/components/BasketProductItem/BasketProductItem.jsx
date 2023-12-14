@@ -12,18 +12,22 @@ export default function BasketProductItem({ item }) {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
-  const decrement = () => {
+  const decrement = (e) => {
     dispatch(changeCartProducts({ ...item, count: -1 }));
     dispatch(calcAmount());
     dispatch(calcPoints());
     dispatch(calcPieces());
+
+    e.preventDefault();
   };
 
-  const increment = () => {
+  const increment = (e) => {
     dispatch(changeCartProducts({ ...item, count: 1 }));
     dispatch(calcAmount());
     dispatch(calcPoints());
     dispatch(calcPieces());
+
+    e.preventDefault();
   };
 
   const deleteProduct = () => {
@@ -47,13 +51,13 @@ export default function BasketProductItem({ item }) {
       </td>
       <td className="basketProductItem__fasovka"><span>{item.weightTitle}</span></td>
       <td className="basketProductItem__count">
-        <button type="button" className="basketProductItem__count-btn-right" onClick={decrement}>-</button>
+        <button type="button" className="basketProductItem__count-btn-right" onMouseUp={decrement} onTouchEnd={decrement}>-</button>
         <span className="basketProductItem__counter">
           {item.count}
           {' '}
           шт.
         </span>
-        <button type="button" className="basketProductItem__count-btn-left" onClick={increment}>+</button>
+        <button type="button" className="basketProductItem__count-btn-left" onMouseUp={increment} onTouchEnd={increment}>+</button>
       </td>
       <td className="basketProductItem__baseprice">
         <span className="basketProductItem__baseprice_count">
@@ -103,6 +107,11 @@ export default function BasketProductItem({ item }) {
           <RiDeleteBin2Line />
         </span>
         )}
+      </td>
+      <td className="basketProductItem__RiDeleteBin2Line2">
+        <span className="chern3" onClick={deleteProduct} onKeyDown={deleteProduct} role="presentation">
+          <RiDeleteBin2Line />
+        </span>
       </td>
     </tr>
   );

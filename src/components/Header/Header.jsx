@@ -11,6 +11,7 @@ import SearchProduct from '../SearchProduct/SearchProduct';
 import DeliveryTime from '../DeliveryTime/DeliveryTime';
 import './Header.css';
 import { navbar } from '../ProductLayout/constans';
+import Sidebar from '../Sidebar/Sidebar';
 
 import Authentication from '../Authentication/Authentication';
 import getUserOrders from '../../utils.js/getUserOrders';
@@ -50,17 +51,26 @@ export default function Header() {
   const productsInOrder = useSelector((state) => state.cart.cart);
   const totalCount = useSelector((state) => state.cart.totalCount);
 
+  const [active, setActive] = useState(false);
+
   return (
     <header className={nav ? ['header-area', 'active'].join(' ') : 'header-area'}>
-      <div className="hamburger" onClick={handleClick} onKeyDown={handleClick} role="presentation">
-        {nav ? <AiOutlineClose size={35} /> : <AiOutlineMenu size={35} />}
-      </div>
       <div className="header__top">
+        <div className="hamburger hamburger2" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+          {nav ? <AiOutlineClose size={35} /> : ''}
+        </div>
+        <div className="header__aside">
+          <p className="header__aside-catalog">Каталог:</p>
+          <Sidebar setNav={setNav} />
+        </div>
         {navbar.map((item) => (
-          <NavLink key={item.id} to={item.link}>{item.title}</NavLink>
+          <NavLink className="header__aside_link" key={item.id} to={item.link} onClick={() => setNav(false)}>{item.title}</NavLink>
         ))}
       </div>
-      <div className="header__bottom">
+      <div className={active ? ['header__bottom', 'active2'].join(' ') : 'header__bottom'}>
+        <div className="hamburger" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+          {!nav ? <AiOutlineMenu size={35} /> : ''}
+        </div>
         <Link to="/">
           <img className="header__logo" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
         </Link>
@@ -81,12 +91,10 @@ export default function Header() {
               <p className="header__working-hours_desc">суббота с 10:00 до 14:00</p>
             </div>
           </div>
-          <div className="header__search">
-            <SearchProduct />
-          </div>
+          <SearchProduct active={active} setActive={setActive} />
         </div>
         <div>
-          <Authentication points={points} />
+          <Authentication points={points} active={active} />
         </div>
         <Basket
           totalAmount={totalAmount}

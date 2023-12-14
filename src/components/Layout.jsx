@@ -7,7 +7,9 @@ export default function Layout() {
   return (
     <div className="container wrapper">
       <Header />
-      <Sidebar />
+      <div className="sidebar2">
+        <Sidebar />
+      </div>
       <main className="main-area">
         <Outlet />
       </main>

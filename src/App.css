@@ -79,3 +79,17 @@ li {
     column-gap: 16px;
   }
 }
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+  .sidebar2 {
+      display: none;
+  }
+  .wrapper {
+    grid-template-areas: 
+    'header header'
+    'main main'
+    'footer footer';
+  }
+
+}

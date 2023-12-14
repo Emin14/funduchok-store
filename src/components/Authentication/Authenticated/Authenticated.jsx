@@ -6,7 +6,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import styles from './authenticated.module.css';
 
-export default function Authenticated({ email, setUser, points }) {
+export default function Authenticated({
+  email, setUser, points, active,
+}) {
   const [show, setShow] = useState(false);
 
   // Функция для выхода из аккаунта.
@@ -23,7 +25,7 @@ export default function Authenticated({ email, setUser, points }) {
   };
 
   return (
-    <div className={styles.wrapper2}>
+    <div className={active ? [styles.wrapper2, styles.active].join(' ') : styles.wrapper2}>
       <div className={styles.wrapper}>
         <div
           className={styles.account}

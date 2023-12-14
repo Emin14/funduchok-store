@@ -3,3 +3,10 @@
     flex-wrap: wrap;
     gap: 2px;
 }
+
+@media (max-width: 767.98px) {
+    .products {
+        justify-content: center;
+    }
+  
+  }

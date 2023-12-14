@@ -8,7 +8,6 @@ export default function TotalAmount({ total, points }) {
     outTag = (
       <p className="total-amount__points">
         <span>
-          {' '}
           Этот заказ принесет вам
           {points}
         </span>
