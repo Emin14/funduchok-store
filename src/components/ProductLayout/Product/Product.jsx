@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Advantages from '../Advantages/Advantages';
 import PriceTable from '../PriceTable/PriceTable';
 import ProductProperties from '../ProductProperties/ProductProperties';
 import Favorit from '../../Favorit/Favorit';
@@ -28,13 +27,17 @@ export default function Product({
         </ul>
         <h1 className="product__title">{product.title}</h1>
         <div className="product-wrapper">
-          <div className="product__advantages-wrapper">
-            <Advantages data={advantages} />
-            <div className="product__favorit" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+          <ul className="advantages">
+            {advantages.map(({ title, icon }) => (
+              <li key={title} className="advantages__list_item">
+                {icon}
+                <p className="advantages__text">{title}</p>
+              </li>
+            ))}
+            <li className="advantages__favorit" onClick={handleClick} onKeyDown={handleClick} role="presentation">
               <Favorit item={product} isFavorite={isFavorite} text />
-            </div>
-
-          </div>
+            </li>
+          </ul>
           <div className="product">
             {/* Можно было бы реализовать не стал заморачиваться
           <p className='product__statistics'>

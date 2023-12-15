@@ -1,6 +1,6 @@
 .priceTable {
     width: 350px;
-    height: 500px;
+    height: 510px;
     background: #ffd944;
     display: flex;
     flex-direction: column;
@@ -164,7 +164,7 @@
     }
 
     .priceTable {
-        width: 264px;
+        width: 250px;
         height: 510px;
         padding: 10px 12px;
     }
@@ -202,5 +202,16 @@
 
     .priceTable__counter {
         margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .priceTable {
+        font-size: 14px;
+    }
+
+    .priceTable__delivery {
+        font-size: 12px;
+        margin: 2px 0 10px;
     }
 }

@@ -55,7 +55,7 @@ export default function BasketProductItem({ item }) {
         <span className="basketProductItem__counter">
           {item.count}
           {' '}
-          шт.
+          шт
         </span>
         <button type="button" className="basketProductItem__count-btn-left" onMouseUp={increment} onTouchEnd={increment}>+</button>
       </td>
@@ -68,7 +68,7 @@ export default function BasketProductItem({ item }) {
         {item.percentDiscount
           && <span className="basketProductItem__baseprice_discountPercentage">{`-${item.percentDiscount * 100} %`}</span>}
       </td>
-      <td>
+      <td className="basketProductItem__saleprice">
         {item.packingDiscountPrice
           ? (
             <span>

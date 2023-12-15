@@ -1,10 +1,10 @@
 .product-wrapper {
     display: flex;
-    column-gap: 10px;
+    justify-content: space-between;
 }
 
 .product {
-    width: 400px;
+    width: 320px;
     padding: 5px;
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -55,11 +55,41 @@
     color: #999;
 }
 
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 170px;
+}
+
+.advantages__list_item {
+    color: #23a53c;
+    font-size: 30px;
+    text-align: center;
+}
+
+.advantages__list_item p {
+    color: #ffc702;
+    font-size: 14px;
+}
+
+.advantages__favorit {
+    font-size: 30px;
+    text-align: center; 
+}
+
+.advantages__favorit p {
+    font-size: 14px;
+}
+
+
 /* // Большие девайсы (большие десктопы, < 1200px) */
 @media (max-width: 1199.98px) {
 
     .product {
-        width: 340px;
+        width: 290px;
     }
 
 
@@ -67,18 +97,18 @@
         width: 270px;
         height: 270px;
     }
+
+    .advantages {
+        width: 110px;
+    }
 }
 
 
 /* // Средние девайсы («таблетки», < 992px)  */
 @media (max-width: 991.98px) {
 
-    .product-wrapper {
-        column-gap: 6px;
-    }
-
     .product {
-        width: 240px;
+        width: 220px;
     }
 
     .product img{
@@ -92,7 +122,7 @@
     .product-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 4px;
         margin-bottom: 10px;
     }
 
@@ -102,8 +132,44 @@
         gap: 80px;
     }
 
+    .product {
+        width: 240px;
+    }
+
     .product img{
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
+    }
+
+    .product__favorit {
+        text-align: center;
+    }
+
+    .product__favorit svg{
+        font-size: 30px;
+    }
+
+    .product__favorit p{
+        font-size: 14px;
+    }
+
+    .advantages {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .product__title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .advantages__favorit p {
+        font-size: 12px;
+    }
+
+    .advantages__list_item p {
+        font-size: 12px;
     }
 }

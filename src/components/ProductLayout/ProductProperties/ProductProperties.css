@@ -2,6 +2,8 @@
     display: flex;
     border-bottom: 1px solid #dee2e6;
     cursor: pointer;
+    margin-bottom: 4px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .productProperties__item {
@@ -18,4 +20,10 @@
     color: #23a53c;
     border: 1px solid #23a53c;
     border-bottom: none;
+}
+
+@media (max-width: 575.98px) {
+    productProperties__description {
+        font-size: 14px;
+    }
 }

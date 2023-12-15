@@ -103,7 +103,9 @@ export default function ProductLayout() {
     dispatch(calcAmount());
     dispatch(calcPoints());
     dispatch(calcPieces());
-    notify(product.title, packaging.title, count);
+    if (window.screen.width > 767.98) {
+      notify(product.title, packaging.title, count);
+    }
   };
 
   const selectBlock = (e) => {

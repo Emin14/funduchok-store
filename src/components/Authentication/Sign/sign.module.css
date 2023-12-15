@@ -93,3 +93,30 @@
     line-height: 1.375rem;
     color: #898989;
 }
+
+.noAccount {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.noAccount button{
+    color: blue;
+}
+
+
+@media (max-width: 767.98px) {
+    .form {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .form input{
+        height: 50px;
+    }
+
+    .button {
+        min-height: 3rem;
+    }
+  }

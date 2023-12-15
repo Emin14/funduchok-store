@@ -8,11 +8,6 @@
 }
 
 
-.footer__logo {
-    max-width: 230px;
-}
-
-
 .footer__logo img{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
@@ -41,17 +36,44 @@
     
 }
 
-.footer__contacts {
-    max-width: 240px;
-}
-
 .footer__contacts_title {
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__logo {
+        max-width: 230px;
+    }
+
+    .footer__contacts {
+        max-width: 240px;
+    }
+    
 }
 
 /* // Средние девайсы («таблетки», < 992px)  */
 @media (max-width: 991.98px) {
     .footer__list {
         width: 400px;;
+    }
+}
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer__list {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* .footer__logo {
+        order: 1;
+    } */
+    .footer__contacts_title {
+        margin-bottom: 0;
     }
 }

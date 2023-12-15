@@ -44,7 +44,7 @@ export default function BasketHoverProduct({ item }) {
         <span className="basketHoverProduct__counter">
           {item.count}
           {' '}
-          шт.
+          шт
         </span>
         <button type="button" className="basketHoverProduct__count-btn-left" onClick={increment}>+</button>
       </td>

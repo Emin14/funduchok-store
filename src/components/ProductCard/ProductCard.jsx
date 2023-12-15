@@ -71,7 +71,9 @@ export default function ProductCard({ item }) {
     dispatch(calcAmount());
     dispatch(calcPoints());
     dispatch(calcPieces());
-    notify(item.title, packaging.title, count);
+    if (window.screen.width > 767.98) {
+      notify(item.title, packaging.title, count);
+    }
   };
 
   const favorits = useSelector((state) => state.favorits.favorits);

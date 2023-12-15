@@ -30,7 +30,7 @@ export default function CompletedOrder() {
                   <span>
                     {item.count}
                     {' '}
-                    шт.
+                    шт
                   </span>
                 </td>
                 <td>

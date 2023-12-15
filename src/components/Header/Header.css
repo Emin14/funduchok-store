@@ -9,12 +9,6 @@
     font-size: 14px;
 }
 
-
-.header__top a:hover {
-    text-decoration: underline;
-}
-
-
 .header__bottom {
     display: flex;
     justify-content: space-between;
@@ -118,12 +112,24 @@
         color:#ffd944;
     }
 
-    .header__top a:first-child,  .header__top a:last-child {
+    .header__aside_link:first-of-type {
         background: #ffd944;
         color: #333;
         padding: 3px 5px;
         border-radius: 3px;
     }
+
+    .header__aside_link:last-of-type {
+        background: #ffd944;
+        color: #333;
+        padding: 3px 5px;
+        border-radius: 3px;
+    }
+
+    .header__top a:hover {
+        text-decoration: underline;
+    }
+    
 }
 
 /* // Большие девайсы (большие десктопы, < 1200px) */
@@ -250,12 +256,9 @@
 }
 
 @media (max-width: 575.98px) {
-    .traveller {
-        width: 200px;
-        top: 220px;
-        left: -150px;
+    .header__contacts  {
+        display: none;
     }
-
 }
 
 

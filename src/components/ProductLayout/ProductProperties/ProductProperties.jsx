@@ -7,7 +7,7 @@ export default function ProductProperties({
 }) {
   let outTag = null;
   if (block.description) {
-    outTag = <div>{description}</div>;
+    outTag = description;
   } else if (block.characteristics) {
     outTag = <Characteristics />;
   } else if (block.reviews) {
@@ -26,7 +26,9 @@ export default function ProductProperties({
             </li>
           ))}
         </ul>
-        {outTag}
+        <div className="productProperties__description">
+          {outTag}
+        </div>
       </div>
     );
   }

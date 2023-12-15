@@ -21,11 +21,16 @@ export default function Basket({
         </div>
         <div className="basket__money">
           <p className="basket__basket-word">Корзина</p>
+          {
+          totalAmount > 0
+          && (
           <p className="basket__total">
             {totalAmount}
             {' '}
             ₽
           </p>
+          )
+          }
         </div>
       </Link>
       {(show && productsInOrder.length && location.pathname !== '/cart')

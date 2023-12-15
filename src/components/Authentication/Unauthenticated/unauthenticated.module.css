@@ -2,13 +2,13 @@
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-    text-decoration: underline;
 }
 
 .button {
     cursor: pointer;
     border: none;
     background: none;
+    text-decoration: underline;
 }
 
 .FaRegUser {
@@ -18,6 +18,24 @@
     color: white;
     border-radius: 10px;
 }
+
+.loginpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #04050766;
+    transform: scale(0);
+}
+
+.loginpage.active {
+    transform: scale(1);
+    z-index: 3;
+} 
 
 /* // Средние девайсы («таблетки», < 992px)  */
 @media (max-width: 991.98px) {

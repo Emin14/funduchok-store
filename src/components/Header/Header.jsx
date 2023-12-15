@@ -35,11 +35,8 @@ export default function Header() {
   const dispatch = useDispatch();
 
   // const points = useSelector((state) => state.data.points)
-  const [city, setCity] = useState('Баку');
 
-  useEffect(() => {
-    dispatch(writingCity(city));
-  }, [city, dispatch]);
+  const city = useSelector((state) => state.city.city);
 
   const [nav, setNav] = useState(false);
 
@@ -76,7 +73,7 @@ export default function Header() {
         </Link>
         <div className="header__location">
           <p className="header__location-text">Ваш город</p>
-          <select name="" id="" className="yellow-text" value={city} onChange={(e) => setCity(e.target.value)}>
+          <select name="" id="" className="yellow-text" value={city} onChange={(e) => dispatch(writingCity(e.target.value))}>
             <option value="Москва">Москва</option>
             <option value="Казань">Казань</option>
           </select>

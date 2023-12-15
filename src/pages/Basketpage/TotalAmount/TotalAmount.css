@@ -16,12 +16,12 @@
 }
 
 .total-amount__points {
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     background: #ffd944;
-    border-radius: 3px;
-    width: 230px;
+    border-radius: 8px;
+    width: 220px;
     margin: 0 -20px 10px auto;
 }
 
@@ -36,4 +36,17 @@
     border-radius: 3px;
     width: 220px;
     margin: 0 -20px 10px auto;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .total-amount {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .total-amount__points {
+        width: max-content;
+        margin: 8px auto;
+    }
 }

@@ -67,8 +67,10 @@ export default function Basketpage() {
         <div className="basketpage">
           <div>
             <h3 className="basketpage__title">Корзина</h3>
-            <span>Ваш город для доставки заказа: </span>
-            <span className="basketpage__city">{city}</span>
+            <div className="basketpage__city-wrapper">
+              <span>Ваш город для доставки заказа: </span>
+              <span className="basketpage__city">{city}</span>
+            </div>
             <table>
               <tbody>
                 {cart.map((item) => (
@@ -82,16 +84,6 @@ export default function Basketpage() {
               <span onClick={() => dispatch(clearCart())} onKeyDown={() => dispatch(clearCart())} role="presentation">Очистить корзину</span>
             </div>
           </div>
-          {!currentUser
-          && (
-          <div className="basketpage__notLogin">
-            <p>Войдите или зарегистрируйтесь и получите преимущества:</p>
-            <ul>
-              <li>Накопление баллов</li>
-              <li>Индивидуальные акции</li>
-            </ul>
-          </div>
-          )}
         </div>
       )
       : <p>Ваша корзина пуста</p>

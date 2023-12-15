@@ -1,5 +1,4 @@
 .favorit__MdOutlineFavoriteBorder {
-    font-size: 24px;
     color: rgba(0, 0, 0, 0.689);
     transition: 0.2s;
     cursor: pointer;
@@ -12,7 +11,6 @@
 }
 
 .favorit__MdFavorite {
-    font-size: 24px;
     color: #f20707;
     transition: 0.2s;
     cursor: pointer;

@@ -9,6 +9,7 @@ export default function TotalAmount({ total, points }) {
       <p className="total-amount__points">
         <span>
           Этот заказ принесет вам
+          {' '}
           {points}
         </span>
         <span>{checkWord(points)}</span>

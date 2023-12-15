@@ -60,11 +60,14 @@ export default function PriceTable({
         </div>
         <p className="priceTable__discount-info">
           Эта покупка принесет вам до
+          {' '}
+          {' '}
           <span className="priceTable__bonus-note">
             {Math.ceil(packing[currentPackage].packingPoint * count)}
             {' '}
             руб. на бонусный счёт
           </span>
+          {' '}
           {' '}
           при заказе от 3000 руб.
         </p>
