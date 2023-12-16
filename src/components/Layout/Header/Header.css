@@ -71,7 +71,7 @@
 .header-favorits {
     display: flex;
     column-gap: 6px;
-    
+    position: relative;
 }
 
 .header-favorits:hover .header-favorits-text {
@@ -105,7 +105,6 @@
 .header__aside ul {
     display: flex;
     flex-direction: column;
-    gap: 2px;
     width: 100%;
 }
 
@@ -126,6 +125,30 @@
 .header__nav  {
     width: 100%;;
 }
+
+.header-mobile {
+    display: none;
+}
+
+.header__favorits-count {
+    position: absolute;
+    top: -12px;
+    left: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 90px;
+    color: #fff;
+    background: #ee423e;
+    font-size: 12px;
+}
+
+.header__aside_link.active {
+    color: rgb(207, 25, 25);
+}
+
 
 @media screen and (min-width: 768px) {
     .header-favorits:hover .header__MdOutlineFavoriteBorder {
@@ -198,6 +221,12 @@
     .header__contacts_tel {
         font-size: 16px;
     }
+
+    .header__favorits-count {
+        top: -6px;
+        left: -6px;
+    }
+    
 }
 
 /* // Малые девайсы («ландшафтные», < 768px) */
@@ -261,16 +290,13 @@
         font-size: 20px;
     }
 
-    .hamburger2 {
-        margin-left: 20px;
-        align-self: flex-start;
-    }
 
     .header__aside_link {
         margin-bottom: 2px;
         padding: 4px 0;
         background-color: #fff3b9;
     }
+
 
     .header__nav {
         display: none;
@@ -295,7 +321,17 @@
     .active .header__nav {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+    }
+
+    .active .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 20px;
+    }
+
+    .header__logo-mobile {
+        width: 54px;
     }
     
 }

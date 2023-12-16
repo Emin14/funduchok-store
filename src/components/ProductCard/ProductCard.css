@@ -123,3 +123,14 @@
     }
 
 }
+
+@media (max-width: 575.98px) {
+    .productCard {
+        width: 304px;
+        height: 354px;
+    }
+
+    .productCard__item {
+        padding: 8px 8px;
+    }
+}

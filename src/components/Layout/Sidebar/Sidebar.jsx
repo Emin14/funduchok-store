@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { categories } from '../../ProductLayout/constans';
-import './Sidebar.css';
+import styles from './sidebar.module.css';
 
 // Компонент бокового меню
 // Является дочерним для <Layout/>
@@ -14,7 +14,13 @@ export default function Sidebar({ setNav }) {
     <ul>
       {categories.map((item) => (
         <li key={item.id}>
-          <NavLink to={item.pathname} onClick={handleClick}>{item.title}</NavLink>
+          <NavLink
+            to={item.pathname}
+            onClick={handleClick}
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            {item.title}
+          </NavLink>
         </li>
       ))}
     </ul>

@@ -12,26 +12,25 @@
     /* justify-content: space-between; */
   }
 
-  .main {
+.main {
     flex-grow: 1;
-  }
+}
 
 .sidebar ul{
     width: 150px;
     top: 20px;
-  }
+}
 
-  .sidebar ul {
+.sidebar ul {
     display: flex;
     flex-direction: column;
     font-size: 16px;
     gap: 10px;
-  }
+}
 
-  .sidebar ul a:hover {
+.sidebar ul a:hover {
     background-color: rgb(241, 239, 239);
 }
-  
 
   /* // Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {

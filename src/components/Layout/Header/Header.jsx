@@ -47,6 +47,7 @@ export default function Header() {
   const totalAmount = useSelector((state) => state.cart.total);
   const productsInOrder = useSelector((state) => state.cart.cart);
   const totalCount = useSelector((state) => state.cart.totalCount);
+  const favorits = useSelector((state) => state.favorits.favorits);
 
   const location = useLocation();
   const [active, setActive] = useState(false);
@@ -58,8 +59,13 @@ export default function Header() {
   return (
     <header className={nav ? ['header-area', 'active'].join(' ') : 'header-area'}>
       <div className="header__top">
-        <div className="hamburger hamburger2" onClick={handleClick} onKeyDown={handleClick} role="presentation">
-          {nav ? <AiOutlineClose size={35} /> : ''}
+        <div className="header-mobile">
+          <div className="hamburger hamburger2" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+            {nav ? <AiOutlineClose size={35} /> : ''}
+          </div>
+          <Link to="/" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+            <img className="header__logo-mobile" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
+          </Link>
         </div>
         <div className="header__aside">
           <p className="header__aside-catalog">Каталог:</p>
@@ -101,7 +107,7 @@ export default function Header() {
           </div>
           <SearchProduct active={active} setActive={setActive} />
         </div>
-        <div>
+        <div className="header__authentication">
           <Authentication points={points} active={active} />
         </div>
         <Basket
@@ -112,6 +118,10 @@ export default function Header() {
         />
         <div>
           <Link to="favorits" className="header-favorits">
+            {
+              favorits.length > 0
+              && <div className="header__favorits-count">{favorits.length}</div>
+            }
             <MdOutlineFavoriteBorder className="header__MdOutlineFavoriteBorder" />
             <span className="header-favorits-text">Избранное</span>
           </Link>

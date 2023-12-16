@@ -44,7 +44,7 @@
 /* // Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {
     .productProperties__description {
-        font-size: 12px;
+        font-size: 13px;
         min-height: 140px;
     }
 
