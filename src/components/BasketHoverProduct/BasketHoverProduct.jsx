@@ -40,13 +40,13 @@ export default function BasketHoverProduct({ item }) {
       </td>
       <td className="basketHoverProduct__fasovka"><span>{item.weightTitle}</span></td>
       <td className="basketHoverProduct__count">
-        <button type="button" className="basketHoverProduct__count-btn-right" onClick={decrement}>-</button>
+        <button type="button" className=" basketHoverProduct__count-btn-left" onClick={decrement}>-</button>
         <span className="basketHoverProduct__counter">
           {item.count}
           {' '}
           шт
         </span>
-        <button type="button" className="basketHoverProduct__count-btn-left" onClick={increment}>+</button>
+        <button type="button" className="basketHoverProduct__count-btn-right" onClick={increment}>+</button>
       </td>
       <td className="basketHoverProduct__total">
         {item.packingDiscountPrice

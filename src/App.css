@@ -46,7 +46,7 @@ li {
   list-style: none;
 }
 
-.wrapper {
+/* .wrapper {
   display: grid;
   row-gap: 10px;
   column-gap: 30px;
@@ -55,9 +55,9 @@ li {
     'sidebar main'
     'footer footer';
     grid-template-columns: 150px 1fr;
-}
+} */
 
-.header-area {
+/* .header-area {
   grid-area: header;
 }
 
@@ -71,25 +71,23 @@ li {
 
 .footer-area{
   grid-area: footer;
-}
+} */
 
 /* // Большие девайсы (большие десктопы, < 1200px) */
 @media (max-width: 991.98px) {
-  .wrapper {
-    column-gap: 16px;
-  }
+
 }
 
 /* // Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {
-  .sidebar2 {
+  /* .sidebar2 {
       display: none;
-  }
-  .wrapper {
+  } */
+  /* .wrapper {
     grid-template-areas: 
     'header header'
     'main main'
     'footer footer';
-  }
+  } */
 
 }

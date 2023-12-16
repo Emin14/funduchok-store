@@ -14,6 +14,7 @@ export default function PriceTable({
               <input
                 type="radio"
                 id={index}
+                className="priceTable__input"
                 name="options[packaging]"
                 value={item.weight}
                 data-koef={item.koef}

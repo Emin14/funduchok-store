@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import PriceTable from '../PriceTable/PriceTable';
 import ProductProperties from '../ProductProperties/ProductProperties';
 import Favorit from '../../Favorit/Favorit';
+import Loader from '../../Loader/Loader';
 
 import './Product.css';
 
@@ -67,4 +68,8 @@ export default function Product({
       </>
     );
   }
+
+  return (
+    <Loader />
+  );
 }

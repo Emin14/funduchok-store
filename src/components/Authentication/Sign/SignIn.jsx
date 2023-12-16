@@ -45,7 +45,7 @@ export default function SignIn({ setShow }) {
       <p className={styles.description}>
         Чтобы накапливать баллы, получать промокоды и следить за историей покупок
       </p>
-      <label htmlFor="email">
+      <label htmlFor="email" className={styles.label}>
         <input
           type="email"
           placeholder="Email"
@@ -53,9 +53,9 @@ export default function SignIn({ setShow }) {
           autoComplete="email"
           {...register('email', { pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/, required: true })}
         />
-        {errors.email && <p>This is required2</p>}
+        {errors.email && <p className={styles.error}>Это поле обязательно</p>}
       </label>
-      <label htmlFor="password">
+      <label htmlFor="password" className={styles.label}>
         <input
           type="password"
           name="password"
@@ -64,8 +64,8 @@ export default function SignIn({ setShow }) {
           autoComplete="off"
           {...register('password', { required: true })}
         />
+        {errors.password && <p className={styles.error}>Это поле обязательно</p>}
       </label>
-      {errors.password && <p>This is required</p>}
       <button type="submit" className={styles.button}>Войти</button>
       <div className={styles.noAccount}>
         <p>У вас еще нету аккаунта?</p>

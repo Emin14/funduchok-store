@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { categories } from '../ProductLayout/constans';
+import { categories } from '../../ProductLayout/constans';
 import './Sidebar.css';
 
 // Компонент бокового меню
@@ -11,14 +11,12 @@ export default function Sidebar({ setNav }) {
     }
   };
   return (
-    <aside>
-      <ul className="sidebar sidebar-area">
-        {categories.map((item) => (
-          <li key={item.id}>
-            <NavLink to={item.pathname} onClick={handleClick}>{item.title}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <ul>
+      {categories.map((item) => (
+        <li key={item.id}>
+          <NavLink to={item.pathname} onClick={handleClick}>{item.title}</NavLink>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -19,53 +19,22 @@ export default function CompletedOrder() {
             </tr>
             {state.products.map((item) => (
               <tr key={`${item.id}-${item.weight}`} className="ada">
+                <td>{item.title}</td>
+                <td>{item.weightTitle}</td>
                 <td>
-                  <span>
-                    {item.title}
-                    {' '}
-                  </span>
-                </td>
-                <td><span>{item.weightTitle}</span></td>
-                <td>
-                  <span>
-                    {item.count}
-                    {' '}
-                    шт
-                  </span>
+                  {item.count}
+                  {' '}
+                  шт
                 </td>
                 <td>
                   {item.packingDiscountPrice
-                    ? (
-                      <span>
-                        {item.packingDiscountPrice}
-                        {' '}
-                        ₽
-                      </span>
-                    )
-                    : (
-                      <span>
-                        {item.packingPrice}
-                        {' '}
-                        ₽
-                      </span>
-                    )}
+                    ? `${item.packingDiscountPrice} ₽`
+                    : `${item.packingPrice} ₽`}
                 </td>
                 <td>
                   {item.packingDiscountPrice
-                    ? (
-                      <span>
-                        {+item.packingDiscountPrice * item.count}
-                        {' '}
-                        ₽
-                      </span>
-                    )
-                    : (
-                      <span>
-                        {+item.packingPrice * item.count}
-                        {' '}
-                        ₽
-                      </span>
-                    )}
+                    ? `${+item.packingDiscountPrice * item.count} ₽`
+                    : `${+item.packingPrice * item.count} ₽`}
                 </td>
               </tr>
             ))}
@@ -76,27 +45,20 @@ export default function CompletedOrder() {
           <span>{state.status}</span>
         </div>
         <div>
-          <span>Общая сумма заказа:</span>
+          <span>Общая сумма заказа: </span>
           <span>
-            {' '}
             {state.orderAmount}
             {' '}
             рублей
           </span>
         </div>
         <div>
-          <span>Начислено балллов:</span>
-          <span>
-            {' '}
-            {state.orderPoint}
-          </span>
+          <span>Начислено балллов: </span>
+          <span>{state.orderPoint}</span>
         </div>
         <div>
-          <span>Город доставки:</span>
-          <span>
-            {' '}
-            {state.city}
-          </span>
+          <span>Город доставки: </span>
+          <span>{state.city}</span>
         </div>
       </div>
     );

@@ -29,6 +29,10 @@
                                     not supported by any browser */
 }
 
+.priceTable__input {
+    margin: 0 4px;
+}
+
 .priceTable__undiscounted {
     padding-left: 15px;
     color: #adabab;
@@ -51,6 +55,7 @@
     justify-content: space-between;
     position: relative;
     margin-bottom: 12px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .priceTable__discount-info {
@@ -66,7 +71,7 @@
 }
 
 .priceTable__basket-btn {
-    background: #23a53c;
+    background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
     border-radius: 5px;
     max-width: 290px;
     margin: auto;
@@ -83,13 +88,19 @@
     padding: 8px 12px;
 }
 
+  .priceTable__basket-btn:active {
+    background-color: #03cf2c;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
 .priceTable__count-btn-left {
-    width: 32px;
+    width: 40px;
     border: 1px solid #ccc;
     border-radius: 50%;
     background: #e7e7e7;
     z-index: 2;
-    height: 32px;
+    height: 40px;
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -97,12 +108,12 @@
 }
 
 .priceTable__count-btn-right {
-    width: 32px;
+    width: 40px;
     border: 1px solid #ccc;
     border-radius: 50%;
     background: #e7e7e7;
     z-index: 2;
-    height: 32px;
+    height: 40px;
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -112,7 +123,7 @@
 .priceTable__count-number {
     width: 75px;
     background: #f5f5f5;
-    height: 30px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +159,7 @@
     
 
     .priceTable__basket-btn {
-        padding: 5px 10px;
+        padding: 8px 10px;
     }
 }
 
@@ -174,7 +185,7 @@
     }
 
     .priceTable__basket-btn {
-        padding: 6px 2px;
+        padding: 8px 4px;
     }
     
     .priceTable__delivery {
@@ -208,6 +219,7 @@
 @media (max-width: 575.98px) {
     .priceTable {
         font-size: 14px;
+        height: 404px;
     }
 
     .priceTable__delivery {

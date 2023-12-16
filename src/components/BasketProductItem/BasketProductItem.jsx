@@ -109,9 +109,9 @@ export default function BasketProductItem({ item }) {
         )}
       </td>
       <td className="basketProductItem__RiDeleteBin2Line2">
-        <span className="chern3" onClick={deleteProduct} onKeyDown={deleteProduct} role="presentation">
+        <div className="chern3" onClick={deleteProduct} onKeyDown={deleteProduct} role="presentation">
           <RiDeleteBin2Line />
-        </span>
+        </div>
       </td>
     </tr>
   );

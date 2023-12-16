@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-import Layout from './components/Layout';
+import Layout from './components/Layout/Layout';
 // import Homepage from './pages/Homepage';
 import Sale from './pages/Sale';
 import Promotion from './pages/Promotion';

@@ -12,9 +12,19 @@ export default function Basket({
   const [show, setShow] = useState(false);
   const location = useLocation();
 
+  const handleMouseOver = () => {
+    if (window.screen.width > 767.98 && productsInOrder.length) {
+      setShow(true);
+    }
+  };
+
+  const handleMouseOut = () => {
+    setShow(false);
+  };
+
   return (
     <div className={nav ? ['basket__wrapper', 'active'].join(' ') : 'basket__wrapper'}>
-      <Link to="cart" className="basket" onMouseOver={() => setShow(true)} onMouseOut={() => setShow(false)}>
+      <Link to="cart" className="basket" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <div className="SlBasket__wrapper">
           <SlBasket className="SlBasket" />
           <span className="basket__count">{totalCount}</span>
@@ -33,9 +43,9 @@ export default function Basket({
           }
         </div>
       </Link>
-      {(show && productsInOrder.length && location.pathname !== '/cart')
+      {show && location.pathname !== '/cart'
         ? (
-          <div className="basket__info" onMouseOver={() => setShow(true)} onFocus={() => setShow(true)} onMouseOut={() => setShow(false)} onBlur={() => setShow(false)}>
+          <div className="basket__info" onMouseOver={handleMouseOver} onFocus={handleMouseOver} onMouseOut={handleMouseOut} onBlur={handleMouseOut}>
             <table className="basket__info_products">
               <tbody>
                 {productsInOrder.map((item) => (
@@ -48,15 +58,15 @@ export default function Basket({
             <>
               <div className="basket__minimum-text">
                 Еще
+                {' '}
                 {1500 - totalAmount}
                 {' '}
                 ₽ до суммы минимального заказа
-                {' '}
               </div>
               <Progressbar totalAmount={totalAmount} maxAmount={1500} />
             </>
             )}
-            <Link to="cart" className="basket__info_button" onClick={() => setShow(false)}>Перейти в корзину</Link>
+            <Link to="cart" className="basket__info_button" onClick={handleMouseOut}>Перейти в корзину</Link>
           </div>
         )
         : ''}

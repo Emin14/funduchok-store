@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { writingCity } from '../../Redux/slices/citySlice';
-import Basket from '../Basket/Basket';
-import SearchProduct from '../SearchProduct/SearchProduct';
-import DeliveryTime from '../DeliveryTime/DeliveryTime';
+import { writingCity } from '../../../Redux/slices/citySlice';
+import Basket from '../../Basket/Basket';
+import SearchProduct from '../../SearchProduct/SearchProduct';
+import DeliveryTime from '../../DeliveryTime/DeliveryTime';
 import './Header.css';
-import { navbar } from '../ProductLayout/constans';
+import { navbar } from '../../ProductLayout/constans';
 import Sidebar from '../Sidebar/Sidebar';
 
-import Authentication from '../Authentication/Authentication';
-import getUserOrders from '../../utils.js/getUserOrders';
+import Authentication from '../../Authentication/Authentication';
+import getUserOrders from '../../../utils.js/getUserOrders';
 
 export default function Header() {
   const [points, setPoints] = useState(0);
@@ -48,7 +48,12 @@ export default function Header() {
   const productsInOrder = useSelector((state) => state.cart.cart);
   const totalCount = useSelector((state) => state.cart.totalCount);
 
+  const location = useLocation();
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(false);
+  }, [location.key]);
 
   return (
     <header className={nav ? ['header-area', 'active'].join(' ') : 'header-area'}>
@@ -60,9 +65,15 @@ export default function Header() {
           <p className="header__aside-catalog">Каталог:</p>
           <Sidebar setNav={setNav} />
         </div>
-        {navbar.map((item) => (
-          <NavLink className="header__aside_link" key={item.id} to={item.link} onClick={() => setNav(false)}>{item.title}</NavLink>
-        ))}
+        <ul className="header__nav">
+          {navbar.map((item) => (
+            <li key={item.id}>
+              <NavLink className="header__aside_link" to={item.link} onClick={() => setNav(false)}>
+                {item.title}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={active ? ['header__bottom', 'active2'].join(' ') : 'header__bottom'}>
         <div className="hamburger" onClick={handleClick} onKeyDown={handleClick} role="presentation">

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import { navbar } from '../ProductLayout/constans';
+import { navbar } from '../../ProductLayout/constans';
 
 export default function Footer() {
   return (
-    <footer className="container footer-area footer-wrapper">
+    <footer className="footer">
       <div className="footer__logo">
         <Link to="/">
           <img src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />

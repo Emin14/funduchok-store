@@ -48,7 +48,6 @@ export default function SearchProduct({ active, setActive }) {
 
   const handleClick3 = () => {
     setPhrase('');
-    setActive(false);
   };
 
   return (

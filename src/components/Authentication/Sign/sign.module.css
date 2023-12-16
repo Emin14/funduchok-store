@@ -105,6 +105,18 @@
     color: blue;
 }
 
+.label {
+    position: relative;
+}
+
+.error {
+    color: red;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 @media (max-width: 767.98px) {
     .form {

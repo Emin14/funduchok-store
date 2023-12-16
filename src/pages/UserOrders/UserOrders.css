@@ -1,5 +1,5 @@
 .user-orders__wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .user-orders_title {
@@ -46,4 +46,10 @@
 
 .user-orders__totalAmount {
     color: #23a53c;
+}
+
+.user-orders__list {
+    display: grid;
+    grid-template-columns: 0.2fr 3.2fr 1fr 0.4fr 0.2fr 1fr;
+    max-width: 540px;
 }

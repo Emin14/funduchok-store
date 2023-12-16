@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
+import Loader from '../Loader/Loader';
 import getProducts from '../../utils.js/getProducts';
 import './Products.css';
 
@@ -24,4 +25,8 @@ export default function Products() {
       </div>
     );
   }
+
+  return (
+    <Loader />
+  );
 }

@@ -48,7 +48,7 @@ table {
     font-weight: 700;
     text-align: center;
     color: #fff;
-    background-color: #0db14b;
+    background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
     position: relative;
 
     border-radius: 0 4px 4px 0;
@@ -56,13 +56,13 @@ table {
     min-width: 22px;
     cursor: pointer;
 
-    border-radius: 16px;
+    border-radius: 20px;
     min-height: auto;
     min-width: auto;
 
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ table {
     font-weight: 700;
     text-align: center;
     color: #fff;
-    background-color: #0db14b;
+    background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
     position: relative;
 
     border-radius: 4px 0 0 4px;
@@ -84,18 +84,24 @@ table {
     min-width: 22px;
     cursor: pointer;
 
-    border-radius: 16px;
+    border-radius: 20px;
     min-height: auto;
     min-width: auto;
 
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.basketProductItem__count-btn-left:active, .basketProductItem__count-btn-right:active {
+    background-color: #03cf2c;
+    background-size: 100%;
+    transition: background 0s;
+  }
 
 .basketProductItem__counter {
     font-size: .875rem;
@@ -169,7 +175,7 @@ table {
 @media (max-width: 991.98px) {
     .basketProductItem__tr {
         grid-template-columns: 70px 140px 50px 120px 60px 60px 60px 0;
-        grid-template-columns: 1.1fr 2fr 1fr 1.8fr 1fr 1fr 1.1fr 0.2fr;
+        grid-template-columns: 1.1fr 2fr 1fr 2fr 1fr 1fr 1.1fr 0.2fr;
         margin-bottom: 10px;
         gap: 4px;
     }
@@ -182,7 +188,7 @@ table {
     .basketProductItem__tr {
        font-size: 14px;
        grid-template-columns: 54px 140px 50px 110px 56px 52px 53px 30px;
-       grid-template-columns: 1.1fr 2.1fr 1fr 1.9fr 1fr 1fr 1.1fr 0.2fr;
+       grid-template-columns: 1.1fr 2.1fr 1fr 2.1fr 1fr 1fr 1.1fr 0.2fr;
        margin-bottom: 10px;
        gap: 2px;
     }
@@ -201,19 +207,21 @@ table {
         text-align: center;
     }
 
-    .basketProductItem__RiDeleteBin2Line2 span {
+    .basketProductItem__RiDeleteBin2Line2 {
         color: rgb(208, 65, 65);
+        width: 24px;
     }
 
     .basketProductItem__RiDeleteBin2Line2 svg {
-        font-size: 24px;
+        width: 22px;
+        font-size: 22px;
     }
 }
 
 @media (max-width: 575.98px) {
 
     .basketProductItem__tr {
-        grid-template-columns: 2.1fr 1fr 1.8fr 1.1fr 0.2fr;
+        grid-template-columns: 2.1fr 1fr 2.6fr 1.1fr 0.2fr;
      }
 
      .basketProductItem__baseprice, .basketProductItem__saleprice, .basketProductItem__image {

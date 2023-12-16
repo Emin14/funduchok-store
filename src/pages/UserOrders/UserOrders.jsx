@@ -62,30 +62,24 @@ export default function UserOrders() {
             <div style={{ display: show === index ? 'block' : 'none' }}>
               {item.products.map((el, ind) => (
                 <ul key={`${el.id}-${el.weight}`}>
-                  <li>
-                    <span>
+                  <li className="user-orders__list">
+                    <div>
                       {ind + 1}
-                      {' '}
-                    </span>
-                    {' '}
-                    <span>{el.title}</span>
-                    <span>
-                      {' '}
-                      {el.weightTitle}
-                      ,
-                      {' '}
-                    </span>
-                    <span>
+                      .
+                    </div>
+                    <div>{el.title}</div>
+                    <div>{el.weightTitle}</div>
+                    <div>
                       {el.count}
                       {' '}
-                      шт *
-                      {' '}
-                    </span>
-                    <span>
+                      шт
+                    </div>
+                    <div> * </div>
+                    <div>
                       {el.basePrice}
                       {' '}
                       рублей
-                    </span>
+                    </div>
                   </li>
                 </ul>
               ))}
