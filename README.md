@@ -2,9 +2,7 @@
 
 ## Description
 
-Online store clone created using ReactJS:
-
-https://xn--d1amhfwcd2a.xn--p1ai/.
+Online store selling dried fruits
 
 ## Preview
 
@@ -22,7 +20,7 @@ https://xn--d1amhfwcd2a.xn--p1ai/.
 
 <h5>Screenshot 4:</h5>
 
-![preview](https://user-images.githubusercontent.com/122212022/251370969-620fc069-25d6-4962-8310-4f284627c268.jpg)
+![preview](https://github.com/Emin14/funduchok-store/assets/122212022/686f2b0d-c247-4ecf-9c56-760bb8b93c63)
 
 ## Run Locally
 
@@ -44,10 +42,16 @@ Install dependencies
   npm install
 ```
 
+Register with firebase and write your details to firebase.js
+
+```bash
+  https://firebase.google.com/
+```
+
 Start the server
 
 ```bash
-  npm run dev
+  npm start
 ```
 
 
@@ -64,7 +68,6 @@ Start the server
 - City selection
 - Points for registered users
 - Show next delivery time
-- Order both with registration and without registration, indicating the phone number and name
 
 ## Tools
 
@@ -72,6 +75,7 @@ Start the server
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Router 6.4](https://reactrouter.com/en/main)
 - [React Hook Form](https://react-hook-form.com/)
+- [Firebase](https://firebase.google.com/)
 - [rc-progress](https://www.npmjs.com/package/rc-progress)
 - [react-toastify](https://www.npmjs.com/package/react-toastify)
 
