@@ -27,7 +27,7 @@ export default function Basket({
       <Link to="cart" className="basket" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <div className="SlBasket__wrapper">
           <SlBasket className="SlBasket" />
-          <span className="basket__count">{totalCount}</span>
+          {totalCount > 0 && <span className="basket__count">{totalCount}</span>}
         </div>
         <div className="basket__money">
           <p className="basket__basket-word">Корзина</p>

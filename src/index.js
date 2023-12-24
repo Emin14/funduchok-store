@@ -2,18 +2,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store';
-// import {store} from './Redux/store2';
 import './firebase';
-// import './firebase2'
 
+const persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
     <Provider store={store}>
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </HashRouter>,
 );

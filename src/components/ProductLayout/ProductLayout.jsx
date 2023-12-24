@@ -34,7 +34,6 @@ export default function ProductLayout() {
   }, [category]);
 
   const favorits = useSelector((state) => state.favorits.favorits);
-  const cart = useSelector((state) => state.cart.cart);
 
   const [isFavorite, setIsFavorite] = useState(false);
   const [count, setCount] = useState(1);
@@ -43,14 +42,9 @@ export default function ProductLayout() {
   const [block, setBlock] = useState({ title: 'Описание', description: true });
 
   useEffect(() => {
-    localStorage.setItem('favorits', JSON.stringify(favorits));
     const find = favorits.some((el) => el.id === product?.id);
     setIsFavorite(find);
   }, [favorits, product]);
-
-  useEffect(() => {
-    localStorage.setItem('products', JSON.stringify(cart));
-  }, [cart]);
 
   useEffect(() => {
     if (product) {

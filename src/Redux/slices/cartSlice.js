@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  cart: JSON.parse(localStorage.getItem('products')) || [],
-  totalCount: JSON.parse(localStorage.getItem('totalCount')) || 0,
-  total: JSON.parse(localStorage.getItem('total')) || 0,
+  cart: [],
+  totalCount: 0,
+  total: 0,
   points: 0,
 };
 
@@ -25,7 +25,6 @@ const cartSlice = createSlice({
       if (!find) {
         state.cart.push(action.payload);
       }
-      localStorage.setItem('products', JSON.stringify(state.cart));
     },
 
     // Удаляет продукт на странице Basketpage
@@ -34,7 +33,6 @@ const cartSlice = createSlice({
         item.id === action.payload.id && item.weight === action.payload.weight
       ));
       state.cart.splice(index, 1);
-      localStorage.setItem('products', JSON.stringify(state.cart));
     },
     //  Очистить корзину
     clearCart(state) {
@@ -42,11 +40,6 @@ const cartSlice = createSlice({
       state.total = 0;
       state.points = 0;
       state.totalCount = 0;
-
-      localStorage.removeItem('products');
-      localStorage.removeItem('total');
-      localStorage.removeItem('points');
-      localStorage.removeItem('totalCount');
     },
 
     // Подсчет суммы корзины
@@ -61,7 +54,6 @@ const cartSlice = createSlice({
         result += (product.count * product.packingPrice);
         return result;
       }, 0);
-      localStorage.setItem('total', JSON.stringify(state.total));
     },
     // Подсчет суммы баллов в корзине
     calcPoints(state) {
@@ -70,7 +62,6 @@ const cartSlice = createSlice({
         result += Math.ceil(product.packingPoint * product.count);
         return result;
       }, 0);
-      localStorage.setItem('points', JSON.stringify(state.points));
     },
 
     // Подсчет количества штук товаров в корзине
@@ -80,7 +71,6 @@ const cartSlice = createSlice({
         result += Math.ceil(product.count);
         return result;
       }, 0);
-      localStorage.setItem('totalCount', JSON.stringify(state.totalCount));
     },
   },
 });

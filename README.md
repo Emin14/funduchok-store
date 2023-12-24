@@ -39,7 +39,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
+  npm install redux-thunk --legacy-peer-deps
 ```
 
 Register with firebase and write your details to firebase.js
@@ -73,6 +73,7 @@ Start the server
 
 - [React](https://reactjs.org)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Persist](https://github.com/rt2zz/redux-persist#readme)
 - [React Router 6.4](https://reactrouter.com/en/main)
 - [React Hook Form](https://react-hook-form.com/)
 - [Firebase](https://firebase.google.com/)

@@ -84,7 +84,6 @@ export default function ProductCard({ item }) {
   };
 
   useEffect(() => {
-    localStorage.setItem('favorits', JSON.stringify(favorits));
     const find = favorits.some((el) => el.id === item.id);
     setIsFavorite(find);
   }, [favorits, item.id]);

@@ -45,21 +45,21 @@ export default function SignIn({ setShow }) {
       <p className={styles.description}>
         Чтобы накапливать баллы, получать промокоды и следить за историей покупок
       </p>
-      <label htmlFor="email" className={styles.label}>
+      <label htmlFor="singInEmail" className={styles.label}>
         <input
           type="email"
           placeholder="Email"
-          id="email"
+          id="singInEmail"
           autoComplete="email"
           {...register('email', { pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/, required: true })}
         />
         {errors.email && <p className={styles.error}>Это поле обязательно</p>}
       </label>
-      <label htmlFor="password" className={styles.label}>
+      <label htmlFor="singInPassword" className={styles.label}>
         <input
           type="password"
           name="password"
-          id="password"
+          id="singInPassword"
           placeholder="Password"
           autoComplete="off"
           {...register('password', { required: true })}
