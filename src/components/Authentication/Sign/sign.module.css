@@ -1,0 +1,136 @@
+.loginpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #04050766;
+    transform: scale(0);
+}
+
+.loginpage.active {
+    transform: scale(1);
+    z-index: 3;
+} 
+
+
+.form {
+    border: none;
+    border-radius: 8px;
+    padding: 40px;
+    min-height: 200px;
+    min-width: 200px;
+    color: #040507;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 10px;
+
+    transform: translateY(-50%);
+}
+
+
+
+.button {
+    min-height: 3.75rem;
+    padding: 18px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    display: flex;
+    transition: .2s;
+    margin: 0;
+    box-shadow: none;
+    border: 1px solid #0DB14B;
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background-color: #0db14b;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.form input{
+    width: 100%;
+    box-shadow: none;
+    border-color: #d5d9d9;
+
+    font-size: 1rem;
+    line-height: 1rem;
+    border: 1px solid #C9C9C9;
+    border-radius: 8px;
+    height: 40px;
+    display: flex;
+    height: 64px;
+    padding: 0 10px;
+    background: #FFFFFF;
+    align-items: center;
+    outline: none;
+}
+
+
+.form input:focus{
+    border-color: #0db14b;
+}
+
+.title {
+    font-weight: 700;
+    color: #040507;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+.description {
+    font-weight: 500;
+    color: #040507;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    color: #898989;
+}
+
+.noAccount {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.noAccount button{
+    color: blue;
+}
+
+.label {
+    position: relative;
+}
+
+.error {
+    color: red;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@media (max-width: 767.98px) {
+    .form {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .form input{
+        height: 50px;
+    }
+
+    .button {
+        min-height: 3rem;
+    }
+  }

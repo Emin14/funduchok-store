@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+    /* max-width: 1360px; */
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column; /* делаем вертикальное расположение */
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  
+
+.wrapper {
+    display: flex;
+    margin-top: 10px;
+    gap: 30px;
+    /* justify-content: space-between; */
+    flex: 1;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+.main {
+    flex-grow: 1;
+    width: 1130px;
+}
+
+.sidebar{
+  width: 200px;
+}
+
+
+
+
+@media (max-width: 1399.98px) {
+  .wrapper {
+    gap: 20px;
+  }
+
+  .main {
+    width: 940px;
+  }
+
+  .sidebar{
+    width: 200px;
+  }
+}
+
+/* @media (max-width: 1199.98px) { */
+
+  /* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+
+    .wrapper {
+      display: block
+    }
+}

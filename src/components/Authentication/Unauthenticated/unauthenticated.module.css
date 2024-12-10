@@ -1,0 +1,59 @@
+.wrapper {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.FaRegUser {
+    display: none;
+    font-size: 30px;
+    background-color: #23a53c;
+    color: white;
+    border-radius: 10px;
+}
+
+.loginpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #04050766;
+    transform: scale(0);
+}
+
+.loginpage.active {
+    transform: scale(1);
+    z-index: 3;
+} 
+
+.AiOutlineUser {
+    font-size: 36px;
+    color: #6f6e6e;
+}
+
+.login span {
+    font-size: 14px;
+}
+
+.login:hover .AiOutlineUser {
+    color: #23a53c;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .FaRegUser {
+        display: block;
+    }
+}

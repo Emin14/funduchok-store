@@ -1,0 +1,159 @@
+.wrapper2 {
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items:flex-start;
+    position: relative;
+}
+
+.button {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.account {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.RiArrowDownSLine {
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info ul {
+    margin-top: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 2px black solid;
+    font-size: 14px;
+}
+
+.info li:not(:last-child) {
+    padding: 4px 0;
+   border-bottom: 1px solid rgb(231, 228, 228); 
+}
+
+.bonus {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 2px 0;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 150px;
+    background: #23a53c;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 6px;
+}
+
+.BiPurchaseTagAlt {
+    display: none;
+}
+
+.FaUserLargeSlash {
+    display: none;
+}
+
+.bonusTextMobile {
+    display: none;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+
+    .bonus {
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 2px 0;
+        color: #23a53c;
+        margin: 0;
+        width: auto;
+        background: none;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        bottom: -20px;
+    }
+
+    .bonusText {
+        display: none;
+    }
+
+    .BiPurchaseTagAlt {
+        display: block;
+        font-size: 30px;
+        color: #23a53c;
+    }
+
+    .account {
+        display: none;
+    }
+
+    .button {
+        display: none;
+    }
+
+    .FaUserLargeSlash {
+        display: block;
+        font-size: 30px;
+        color: rgb(223, 50, 50);
+    }
+
+    .bonusTextMobile {
+        display: inline-block;
+    }
+
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .bonus {
+        width: 70px;
+    }
+}
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+    .active.wrapper2 {
+        display: none
+    }
+
+}

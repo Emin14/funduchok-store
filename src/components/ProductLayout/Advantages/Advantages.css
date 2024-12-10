@@ -1,0 +1,36 @@
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 30%;
+}
+
+.advantages__list_item {
+    text-align: center;
+}
+
+.advantages__list_item * {
+    color: #23a53c;
+    font-size: 30px;
+}
+
+.advantages__list_item p {
+    color: #999;
+    font-size: 14px;
+}
+
+.advantages__favorit {
+    margin-top: 14px;
+    text-align: center; 
+}
+
+  /* // Малые девайсы («ландшафтные», < 768px) */
+  @media (max-width: 767.98px) {
+    .advantages {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+  }
+  }

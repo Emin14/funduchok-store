@@ -1,0 +1,173 @@
+.user-orders {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-orders__heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .user-orders__wrapper {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .user-orders__title {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .user-orders__info {
+    padding: 10px;
+    line-height: 1.6;
+    background: #f5f5f5;
+  }
+  
+  .user-orders__products-header {
+    padding: 10px;
+    background: #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-orders__dropdown-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .user-orders__dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .user-orders__products {
+    overflow: hidden;
+    max-height: 0;
+    background: #fff;
+  }
+  
+  .user-orders__product-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .user-orders__product-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .user-orders__empty {
+    text-align: center;
+    color: #777;
+  }
+
+
+
+  .user-orders {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-orders__heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .user-orders__wrapper {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .user-orders__title {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .user-orders__info {
+    padding: 10px;
+    line-height: 1.6;
+    background: #f5f5f5;
+  }
+  
+  .user-orders__products-header {
+    padding: 10px;
+    background: #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-orders__dropdown-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .user-orders__dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+  
+  .user-orders__products {
+    overflow: hidden;
+    max-height: 0;
+    background: #fff;
+    padding: 10px;
+  }
+  
+  .user-orders__product {
+    margin-bottom: 15px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+  }
+  
+  .user-orders__product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .user-orders__product-name,
+  .user-orders__product-weight,
+  .user-orders__product-count,
+  .user-orders__product-price {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .user-orders__product-name {
+    font-weight: bold;
+  }
+  
+  .user-orders__empty {
+    text-align: center;
+    color: #777;
+  }
+  
+  

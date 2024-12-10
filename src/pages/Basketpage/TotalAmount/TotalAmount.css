@@ -1,0 +1,51 @@
+.total-amount {
+    text-align: end;
+    margin-right: 250px;
+}
+
+.total-amount_count {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.total-amount_text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.total-amount__points {
+    font-size: 12px;
+    text-align: center;
+    padding: 6px;
+    background: #ffd944;
+    border-radius: 8px;
+    width: 240px;
+    margin: 10px -20px 10px auto;
+}
+
+.total-amount__points span:first-child {
+    margin-right: 5px;
+}
+
+.total-amount__points2 {
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    width: 220px;
+    margin: 0 -20px 10px auto;
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .total-amount {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .total-amount__points {
+        width: max-content;
+        margin: 8px auto;
+    }
+}

@@ -1,0 +1,34 @@
+.categories__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.loading-icon {
+    color: teal;
+    font-size: 2rem;
+    animation: animate 2s infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+  
+  /* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+  .categories__wrapper {
+    justify-content: center;
+}
+}

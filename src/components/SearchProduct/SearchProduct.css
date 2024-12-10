@@ -1,0 +1,111 @@
+.searchProduct_btn {
+    color: #30353e;
+    background-color: #ffd944;
+    padding: 9px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 14px;
+}
+
+.searchProduct__input {
+    height: 35px;
+    border-radius: 8px;
+    /* width: 400px; */
+    width: 100%;
+
+    border: 1px solid #d3d6db;
+    padding-left: 10px;
+    transition: .5s;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,.2);
+    margin-right: 5px;
+}
+
+.searchProduct__input:focus {
+    outline: 0;
+    border-color: #23a53c;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+
+.searchProduct__list {
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    padding: 8px 0 13px 0;
+    overflow: auto;
+    max-height: 210px;
+    position: absolute;
+    top: 40px;
+    z-index: 3;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.searchProduct__list_item {
+    padding: 6px 10px;
+    border-radius: 0;
+}
+
+.searchProduct__list_item:hover {
+    background-color: #eef1f2;
+    color: #23a53c
+}
+
+.IoIosSearch {
+    display: none;
+    font-size: 30px;
+    color: #000;
+    background-color: #ffd944;
+    border-radius: 20px;
+}
+
+.header__search {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+    .searchProduct__input {
+        width: 120px;;
+    }
+
+    .searchProduct_btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .header__search {
+        width: auto;;
+    }
+}
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+    .IoIosSearch {
+        display: block;
+    }
+
+    .searchProduct_btn {
+        display: none;
+    }
+
+    .searchProduct__input {
+        display: none;
+    }
+
+    .active .searchProduct__input {
+        display: block;
+        width: 180px;
+    }
+
+}
+
