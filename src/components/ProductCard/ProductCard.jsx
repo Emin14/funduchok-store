@@ -13,16 +13,11 @@ import { amountOfDiscount, weightAndkoef } from '../ProductLayout/constans';
 import calcPackaging from '../../utils.js/calcPackaging';
 
 // Компонент карточки товара
-// Является дочерним для <Products /> или для <ProductsFound />
 export default function ProductCard({ item }) {
   const [count, setCount] = useState(1);
   const [currentPackage, setCurrentPackage] = useState(3);
 
   const [packing, setPacking] = useState(null);
-
-  // useEffect(() => {
-  //   setPackaging (calcWeightProperties(weightAndkoef[2].weight, item))
-  // }, [item])
 
   useEffect(() => {
     if (item) {
@@ -32,12 +27,6 @@ export default function ProductCard({ item }) {
   }, [item]);
 
   const dispatch = useDispatch();
-
-  // const selectedPackaging = (e) => {
-  //   console.log(e)
-  //   setCount(1)
-  //   setPackaging (calcWeightProperties(e, item))
-  // }
 
   const incrementCount = (e) => {
     e.preventDefault();

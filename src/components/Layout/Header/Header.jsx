@@ -68,21 +68,28 @@ export default function Header() {
         <Link to="/">
           <img className="header__logo" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
         </Link>
+        <div className="LocationSelect__wrapper">
           <LocationSelect/>
-          <DeliveryTime />
+          </div>
+          <div className="DeliveryTime__wrapper">
+            <DeliveryTime />
+          </div>
+
         <div className="header__bottom_center">
           <SearchProduct active={active} setActive={setActive} />
         </div>
         <div className="header__authentication">
           <Authentication points={points} active={active} />
         </div>
+        <div className="Basket__wrapper">
         <Basket
           totalAmount={totalAmount}
           productsInOrder={productsInOrder}
           totalCount={totalCount}
           nav={nav}
         />
-        <div>
+        </div>
+        <div className="header-favorits__wrapper">
           <Link to="favorits" className="header-favorits">
             {
               favorits.length > 0

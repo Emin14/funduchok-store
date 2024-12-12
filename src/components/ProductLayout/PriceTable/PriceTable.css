@@ -174,18 +174,13 @@
 
 /* // Средние девайсы («таблетки», < 992px)  */
 @media (max-width: 991.98px) {
-    .priceTable__basket-btn {
-        padding: 4px 5px;
-    }
-
     .priceTable__label {
         font-size: 16px;
-        padding: 8px 0 8px 8px;
+        padding: 8px 0 8px 0;
     }
 
     .priceTable {
-        width: 250px;
-        height: 510px;
+        width: 254px;
         padding: 10px 12px;
     }
 
@@ -194,7 +189,7 @@
     }
 
     .priceTable__basket-btn {
-        padding: 8px 4px;
+        padding: 8px;
     }
     
     .priceTable__delivery {
@@ -206,9 +201,24 @@
 /* // Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {
     .priceTable {
-        width: 80%;
-        height: 400px;
+        width: 90%;
+        height: 236px;
         padding: 4px 12px;
+        display: flex;
+        flex-direction: row;
+        /* gap: 40px; */
+        justify-content: space-between;
+    }
+
+    #product {
+        width: 50%;
+    }
+
+    .ada {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-between;
     }
 
     .priceTable__delivery {
@@ -221,18 +231,51 @@
     }
 
     .priceTable__counter {
-        margin-bottom: 8px;
+        /* margin-bottom: 8px; */
+        margin: 0;
+        order: 4;
+    }
+
+    .priceTable__delivery {
+        margin: 0;
     }
 }
 
 @media (max-width: 575.98px) {
     .priceTable {
         font-size: 14px;
-        height: 404px;
+        height: 400px;
+        flex-direction: column;
+    }
+
+    #product {
+        width: 100%;
+    }
+
+    .ada {
+        width: 100%;
+        gap: 6px;
+    }
+
+
+    .priceTable__count {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .priceTable__basket-btn {
+        margin: 0;
     }
 
     .priceTable__delivery {
         font-size: 12px;
-        margin: 2px 0 10px;
+        /* margin: 2px 0 10px; */
+    }
+}
+
+
+@media (max-width: 359.98px) {
+    .priceTable {
+        height: 420px;
     }
 }

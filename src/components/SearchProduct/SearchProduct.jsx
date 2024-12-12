@@ -1,75 +1,81 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { IoIosSearch } from 'react-icons/io';
-// import { Link, useNavigate } from 'react-router-dom';
 import { Link, useNavigate } from "react-router"
-import './SearchProduct.css';
 import { useGetProductsQuery } from '../../Redux/services/productsApi';
+import styles from './searchProduct.module.css';
 
 // Компонент поиска товаров
 export default function SearchProduct({ active, setActive }) {
   const navigate = useNavigate();
 
   const [phrase, setPhrase] = useState('');
-
-  // const {data} = useProductsSearchQuery(phrase);
-
-  // const allProducts = useSelector((state) => state.products.products);
-  const { data: allProducts=[], error, isLoading, isError } = useGetProductsQuery();
   const [find, setFind] = useState(null);
+
+  const { data: allProducts=[] } = useGetProductsQuery();
+
 
   useEffect(() => {
     const findProducts = allProducts.filter((item) => (
       item.title.toLowerCase().includes(phrase.toLowerCase())
-    ));
+    ))
+
     setFind(findProducts);
-    // }, []);
   }, [phrase]);
 
-  // useEffect(() => {
-  //   dispatch(searchProduct({
-  //     phrase,
-  //     begin: true
-  //   }))
-  // }, [phrase])
 
-  // dispatch(searchProduct(phrase))
-
-  const handleClick = () => {
-    // dispatch(searchButton(true))
-    // dispatch(searchProduct(phrase))
-    navigate('/search', { state: find });
-    setPhrase('');
-  };
-
-  const handleClick2 = () => {
+  const navigateToSearchResults  = () => {
+    const width = window.screen.width
     if (phrase) {
       navigate('/search', { state: find });
       setPhrase('');
     }
-    setActive((prev) => !prev);
+    if(width < 767.98) {
+      setActive((prev) => !prev);
+    }
   };
 
-  const handleClick3 = () => {
+  const clearSearchPhrase  = () => {
     setPhrase('');
   };
 
+  
   return (
-    <div className={active ? ['header__search', 'active'].join(' ') : 'header__search'}>
-      <input type="text" className="searchProduct__input" value={phrase} onChange={(e) => setPhrase(e.target.value)} />
-      <button type="button" className="searchProduct_btn" onClick={handleClick}>Поиск</button>
-      <IoIosSearch className="IoIosSearch" onClick={handleClick2} />
+<div
+  className={
+    active
+      ? `${styles.searchContainer} ${styles.active}`
+      : styles.searchContainer
+  }
+>
+  <input
+    type="text"
+    className={styles.searchInput}
+    value={phrase}
+    onChange={(e) => setPhrase(e.target.value)}
+  />
+  <button
+    type="button"
+    className={styles.searchButton}
+    onClick={navigateToSearchResults}
+  >
+    Поиск
+  </button>
+  <IoIosSearch
+    className={styles.searchIcon}
+    onClick={navigateToSearchResults}
+  />
 
-      {phrase
-        && (
-        <ul className="searchProduct__list">
-          {find.map((item) => (
-            <li key={item.id} className="searchProduct__list_item">
-              <Link to={`${item.category}/${item.id}`} onClick={handleClick3}>{item.title}</Link>
-            </li>
-          ))}
-        </ul>
-        )}
-    </div>
+  {phrase && (
+    <ul className={styles.resultsList}>
+      {find.map((item) => (
+        <li key={item.id} className={styles.resultsListItem}>
+          <Link to={`${item.category}/${item.id}`} onClick={clearSearchPhrase}>
+            {item.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
   );
 }

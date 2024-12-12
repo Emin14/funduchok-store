@@ -15,24 +15,19 @@ export default function Basket({
   const timeoutRef = useRef(null);  // Реф для хранения таймера
 
   const handleMouseEnter = () => {
-    console.log('Мышь вошла в корзину');
     if (window.screen.width > 767.98 && productsInOrder.length) {
-      // Если был таймер, очищаем его
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
         timeoutRef.current = null;
       }
-      setShow(true);  // Показываем корзину
+      setShow(true);
     }
   };
 
   const handleMouseLeave = () => {
-    console.log('Мышь покинула корзину');
-
-    // Устанавливаем таймер на 300мс для скрытия окна
     timeoutRef.current = setTimeout(() => {
-      setShow(false);  // Скрываем корзину после задержки
-    }, 300);  // Задержка перед закрытием
+      setShow(false);
+    }, 300);  
   };
 
   return (

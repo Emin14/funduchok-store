@@ -50,3 +50,15 @@
     }
 
 }
+
+@media (max-width: 575.98px) {
+    .productProperties__item {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 359.98px) {
+    .productProperties__item {
+        padding: 8px 6px;
+    }
+}

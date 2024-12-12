@@ -25,7 +25,7 @@
 .footer__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
-    gap: 10px;
+    gap: 8px;
     max-width: 500px; 
   }
   
@@ -62,14 +62,19 @@
     .footer__contacts {
         max-width: 240px;
     }
-    
 }
 
 /* // Средние девайсы («таблетки», < 992px)  */
 @media (max-width: 991.98px) {
     .footer__list {
-        width: 400px;;
+        width: 320px;
     }
+
+    /* .footer__list a {
+        overflow: hidden;
+    } */
+
+    
 }
 
 /* // Малые девайсы («ландшафтные», < 768px) */
@@ -77,11 +82,13 @@
     .footer {
         flex-direction: column;
         gap: 12px;
+        margin-top: 40px;
     }
 
     .footer__list {
         width: 100%;
         max-width: 100%;
+        gap: 4px;
     }
 
     /* .footer__logo {

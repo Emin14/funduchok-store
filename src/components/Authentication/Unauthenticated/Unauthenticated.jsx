@@ -25,7 +25,6 @@ export default function Unauthenticated() {
         <AiOutlineUser className={styles.AiOutlineUser}/>
         <span>Войти</span>
       </div>
-      <FaRegUser className={styles.FaRegUser} onClick={() => setShow('singin')} />
       <div
         className={show === 'singin' ? [styles.loginpage, styles.active].join(' ') : styles.loginpage}
         onClick={() => setShow('')}

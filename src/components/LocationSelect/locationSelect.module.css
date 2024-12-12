@@ -4,12 +4,11 @@
    gap: 4px;
    align-items: center;
    justify-content: center;
-   padding: 8px;
+   /* padding: 8px 20px; */
    cursor: pointer;
    position: relative;
    transition: .3s;
    border-radius: 30px;
-   min-width: 120px;
    transition: 0.3s;
  }
  
@@ -66,12 +65,11 @@
  .dropdown {
    position: absolute;
    top: 100%;
-   left: 0;
-   right: 0;
+   left: -20px;
    background-color: #fff;
    border-radius: 8px;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-   width: 100%;
+   width: 80px;
    max-height: 180px;
    overflow-y: auto;
    margin-top: 4px;
@@ -106,4 +104,18 @@
    visibility: visible;
    transition: opacity 0.3s ease;
  }
- 
+
+ @media (max-width: 1199.98px) {
+  /* .citySelector {
+    padding: 8px 0;
+  } */
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+  .selectedCity {
+    display: none;
+  }
+}
+
+/* Малые устройства («мобильные», < 576px) */

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import currentTime from './date';
-import './DeliveryTime.css';
+import styles from './deliveryTime.module.css';
 
 export default function DeliveryTime() {
   const [date, setDate] = useState(null);
@@ -30,9 +30,9 @@ export default function DeliveryTime() {
 
 
   return (
-    <div className="deliveryTime">
-      <span>Ближайшая доставка: </span>
-      <span>{deliveryDate}</span>
-    </div>
+    <>
+      <span className={styles.text}>Ближайшая доставка: </span>
+      <span className={styles.date}>{deliveryDate}</span>
+    </>
   );
 }

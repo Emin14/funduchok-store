@@ -32,4 +32,10 @@ li .active {
   .list {
       display: none;
   }
+
+  .list a {
+    text-align: center;
+    font-size: 20px;
+
+  }
 }

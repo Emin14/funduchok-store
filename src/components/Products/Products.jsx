@@ -4,7 +4,7 @@ import { useParams } from "react-router"
 import ProductCard from '../ProductCard/ProductCard';
 import Loader from '../Loader/Loader';
 import getProducts from '../../utils.js/getProducts';
-import './Products.css';
+import styles from  './products.module.css';
 
 // Компонент показывает определенные продукты в зависмости от того какая категория выбрана
 export default function Products() {
@@ -19,11 +19,13 @@ export default function Products() {
 
   if (productsOfCategory) {
     return (
-      <div className="products">
+      <ul className={styles.cards}>
         {productsOfCategory.map((item) => (
-          <ProductCard key={item.id} item={item} />
+          <li className={styles.cardWrapper}>
+            <ProductCard key={item.id} item={item} />
+          </li>
         ))}
-      </div>
+      </ul>
     );
   }
 

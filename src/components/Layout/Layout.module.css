@@ -11,7 +11,6 @@
   }
 
   
-
 .wrapper {
     display: flex;
     margin-top: 10px;
@@ -21,6 +20,7 @@
     max-width: 1360px;
     margin: 0 auto;
     padding: 20px 0;
+    width: 100%;
   }
 
 .main {
@@ -34,14 +34,13 @@
 
 
 
-
 @media (max-width: 1399.98px) {
   .wrapper {
     gap: 20px;
   }
 
   .main {
-    width: 940px;
+    width: 100%;
   }
 
   .sidebar{
@@ -49,12 +48,26 @@
   }
 }
 
-/* @media (max-width: 1199.98px) { */
+@media (max-width: 1199.98px) {
+  .wrapper {
+    gap: 10px;
+  }
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+
+  .container {
+    padding: 0 10px;
+  }
+}
 
   /* // Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {
 
     .wrapper {
-      display: block
+      display: block;
+      margin-top: 100px;
+      padding: 0;
     }
 }

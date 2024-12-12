@@ -38,6 +38,7 @@ export default function PriceTable({
             </label>
           ))}
         </form>
+        <div className="ada">
         <div className="priceTable__discount">
           <p>
             <span>Скидка:</span>
@@ -71,6 +72,7 @@ export default function PriceTable({
           {' '}
           при заказе от 3000 руб.
         </p>
+        </div>
       </div>
     );
   }

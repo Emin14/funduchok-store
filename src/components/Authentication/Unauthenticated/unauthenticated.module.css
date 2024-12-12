@@ -56,4 +56,8 @@
     .FaRegUser {
         display: block;
     }
+
+    .login span {
+        font-size: 12px;
+    }
 }

@@ -1,0 +1,113 @@
+.searchContainer {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.searchInput {
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #d3d6db;
+    transition: 0.5s;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 5px;
+    padding: 0 10px;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #23a53c;
+    transition: 0.5s;
+    box-shadow: unset;
+}
+
+.searchButton {
+    color: #30353e;
+    background-color: #ffd944;
+    padding: 9px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 14px;
+}
+
+.searchIcon {
+    display: none;
+    font-size: 30px;
+    color: #6f6e6e;
+}
+
+.resultsList {
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 8px 0 13px 0;
+    overflow: auto;
+    max-height: 210px;
+    position: absolute;
+    top: 40px;
+    z-index: 3;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.resultsListItem {
+    padding: 6px 10px;
+    border-radius: 0;
+}
+
+.resultsListItem:hover {
+    background-color: #eef1f2;
+    color: #23a53c;
+}
+
+@media (max-width: 1199.98px) {
+    .searchInput {
+        width: 180px;
+    }
+  }
+
+/* Средние устройства («планшеты», < 992px) */
+@media (max-width: 991.98px) {
+
+    .searchContainer {
+        width: auto;
+    }
+}
+
+/* Малые устройства («мобильные», < 768px) */
+@media (max-width: 767.98px) {
+    .searchIcon {
+        display: block;
+    }
+
+    .searchButton {
+        display: none;
+    }
+
+    /* .searchInput {
+        display: none;
+    } */
+
+    .active .searchInput {
+        /* display: block; */
+        width: 180px;
+    }
+}
+
+
+/* Малые устройства («мобильные», < 576px) */
+@media (max-width: 575.98px) {
+    .searchInput {
+        display: none;
+    }
+
+    .active .searchInput {
+        display: block;
+        width: 64vw;
+    }
+
+
+}
