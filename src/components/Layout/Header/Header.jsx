@@ -17,6 +17,18 @@ import Sidebar from '../Sidebar/Sidebar';
 import Authentication from '../../Authentication/Authentication';
 import getUserOrders from '../../../utils.js/getUserOrders';
 import LocationSelect from '../../LocationSelect/LocationSelect';
+import { IoMdHeartEmpty } from "react-icons/io";
+
+import { FiHeart } from "react-icons/fi";
+
+
+
+
+
+
+
+
+
 
 export default function Header() {
   const [points, setPoints] = useState(0);
@@ -65,7 +77,7 @@ export default function Header() {
         <div className="hamburger" onClick={handleClick} onKeyDown={handleClick} role="presentation">
           {!nav ? <AiOutlineMenu size={35} /> : ''}
         </div>
-        <Link to="/">
+        <Link to="/" className="header__logo_wrapper">
           <img className="header__logo" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
         </Link>
         <div className="LocationSelect__wrapper">
@@ -92,10 +104,11 @@ export default function Header() {
         <div className="header-favorits__wrapper">
           <Link to="favorits" className="header-favorits">
             {
-              favorits.length > 0
+              !!favorits.length
               && <div className="header__favorits-count">{favorits.length}</div>
             }
-            <MdOutlineFavoriteBorder className="header__MdOutlineFavoriteBorder" />
+            {/* <MdOutlineFavoriteBorder className="header__MdOutlineFavoriteBorder" /> */}
+            <FiHeart   className="header__MdOutlineFavoriteBorder" />
             <span className="header-favorits-text">Избранное</span>
           </Link>
         </div>

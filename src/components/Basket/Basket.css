@@ -1,28 +1,27 @@
 .basket__wrapper {
     position: relative;
-    width: 55px;
 }
 
 .basket {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 46px;
     align-items: center;
-    gap: 4px;
+    position: relative;
 }
 
 .SlBasket__wrapper {
-    width: 36px;
-    height: 36px;
-    background: #23a53c;
-    display: flex;
+    /* width: 36px;
+    height: 36px; */
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 20px;
+    align-items: center; */
+    /* border-radius: 20px; */
 }
 
 .SlBasket {
-    font-size: 28px;
-    color: #fff;
+    font-size: 26px;
 }
 
 .basket__money {
@@ -36,9 +35,11 @@
 }
 
 .basket__total {
-    font-size: 12px;
+    font-size: 14px;
     width: 100%;
     color: #23a53c;
+    font-weight: 500;
+    white-space: nowrap; 
 }
 
 .basket__info {
@@ -95,7 +96,7 @@
 .basket__count {
     position: absolute;
     top: -10px;
-    right: -10px;
+    right: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,12 +117,14 @@
     }
 
     .basket__money {
-        position: absolute;
+        /* position: absolute;
         bottom: -16px;
-        margin-left: 2px;
+        margin-left: 2px; */
+        font-size: 12px;
+        display: none;
     } 
 
-    .SlBasket__wrapper {
+    /* .SlBasket__wrapper {
         width: 47px;
         height: auto;
         background-color: white;
@@ -129,7 +132,7 @@
         justify-content: center;
         align-items: center;
         border-radius:0;
-    }
+    } */
 
     .SlBasket {
         color: #0c9241;
@@ -137,7 +140,11 @@
 
     .basket__count {
         top: -10px;
-        right: 4px;
+        right: -10px;
+    }
+
+    .basket {
+        height: auto;
     }
     
 }

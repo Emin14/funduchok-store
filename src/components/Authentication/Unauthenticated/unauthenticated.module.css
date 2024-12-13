@@ -8,8 +8,9 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-
+    justify-content: space-between;
+    align-items: center;
+    height: 46px;
 }
 
 .FaRegUser {
@@ -39,7 +40,7 @@
 } 
 
 .AiOutlineUser {
-    font-size: 36px;
+    font-size: 26px;
     color: #6f6e6e;
 }
 
@@ -57,7 +58,15 @@
         display: block;
     }
 
-    .login span {
+    /* .login span {
         font-size: 12px;
+    } */
+
+    .text {
+        display: none;
+    }
+
+    .login {
+        height: auto;
     }
 }

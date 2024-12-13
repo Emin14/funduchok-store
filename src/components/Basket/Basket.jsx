@@ -5,6 +5,8 @@ import { SlBasket } from 'react-icons/sl';
 import BasketHoverProduct from '../BasketHoverProduct/BasketHoverProduct';
 import Progressbar from '../Progressbar/Progressbar';
 import './Basket.css';
+import { BsBasket3 } from "react-icons/bs";
+
 
 // Компонент отображения корзины в шапке сайта (Header)
 export default function Basket({
@@ -34,10 +36,11 @@ export default function Basket({
     <div className={nav ? ['basket__wrapper', 'active'].join(' ') : 'basket__wrapper'}       onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}>
       <Link to="cart" className="basket">
-        <div className="SlBasket__wrapper">
-          <SlBasket className="SlBasket" />
+        {/* <div className="SlBasket__wrapper"> */}
+          {/* <SlBasket className="SlBasket" /> */}
+          <BsBasket3  className="SlBasket" />
           {totalCount > 0 && <span className="basket__count">{totalCount}</span>}
-        </div>
+        {/* </div> */}
         <div className="basket__money">
           { totalAmount > 0
           ? (

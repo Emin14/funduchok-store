@@ -76,16 +76,16 @@
 .header-favorits {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
+    height: 46px;
     position: relative;
 }
 
 
 .header__MdOutlineFavoriteBorder {
-    font-size: 30px;
+    font-size: 26px;
     color: #6f6e6e;
-    width: 30px;
 }
 
 
@@ -134,7 +134,7 @@
 .header__favorits-count {
     position: absolute;
     top: -10px;
-    right: 10px;
+    right: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,8 +219,12 @@
     }
 
     .header__favorits-count {
-        top: -10px;
-        right: -6px;
+        /* top: -10px; */
+        right: -10px;
+    }
+
+    .header-favorits {
+        height: auto;
     }
     
 }
@@ -238,17 +242,17 @@
     .active2 .header__contacts {
         display: none;
     }
-    
-    .header__logo {
+
+    .header__logo_wrapper {
         display: none;
     }
-
+    
     .header__bottom {
         background-color: white;
         top: 0;
         left: 0;
         width: 100%;
-        padding: 12px 14px 16px 12px;
+        padding: 12px 16px 16px 12px;
         z-index: 10;
         position: fixed;
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
@@ -341,7 +345,7 @@
     }
 
     .header__logo-mobile {
-        width: 60px;
+        width: 64px;
     }
 
     
@@ -379,6 +383,7 @@
         height: 85px;
     }
 }
+
 
 
 
