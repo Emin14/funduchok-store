@@ -18,14 +18,13 @@ export default function Footer() {
         {navbar.map((item) => (
           <Link key={item.id} to={item.link}>{item.title}</Link>
         ))}
-        <li><Link href="/#">Политика конфиденциальности</Link></li>
+        <li><Link href="/#">Конфид-ность</Link></li>
         <li><Link href="/#">Корзина</Link></li>
         <li><Link href="/#">Оформление заказа</Link></li>
         <li><Link href="/#">Личный кабинет</Link></li>
-        <li><Link href="/#">Пользовательское соглашение</Link></li>
+        <li><Link href="/#">Пользов-ское соглашение</Link></li>
         <li><Link href="/#">Договор оферты</Link></li>
         <li><Link href="/#">Бонусная программа</Link></li>
-        <li><Link href="/#">Правила использования промокодов</Link></li>
         <li><Link href="/#">Гарантия лучшей цены</Link></li>
       </ul>
       <div className="footer__contacts">
