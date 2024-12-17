@@ -53,10 +53,12 @@ export default function PriceTable({
           Доставка по Москве в течении 1 дня.
           Бесплатная доставка при заказе от 4000 руб. по Москве в пределах МКАД.
         </p>
-        <div className="priceTable__counter">
-          <button type="button" className="priceTable__count-btn-left" onClick={incrementCount}>-</button>
-          <span className="priceTable__count-number">{count}</span>
-          <button type="button" className="priceTable__count-btn-right" onClick={decrementCount}>+</button>
+        <div className="priceTable__counter_wrapper">
+          <div className="priceTable__counter">
+            <button type="button" className="priceTable__count-btn-left" onClick={incrementCount}>-</button>
+            <span className="priceTable__count-number">{count}</span>
+            <button type="button" className="priceTable__count-btn-right" onClick={decrementCount}>+</button>
+          </div>
           <button form="product" type="submit" className="priceTable__basket-btn">В корзину</button>
         </div>
         <p className="priceTable__discount-info">

@@ -52,12 +52,16 @@
     font-weight: 300;
 }
 
-.priceTable__counter {
+.priceTable__counter_wrapper {
     display: flex;
     justify-content: space-between;
     position: relative;
     margin-bottom: 12px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.priceTable__counter {
+    display: flex;
 }
 
 .priceTable__discount-info {
@@ -230,7 +234,7 @@
         margin-top: 0;
     }
 
-    .priceTable__counter {
+    .priceTable__counter_wrapper {
         /* margin-bottom: 8px; */
         margin: 0;
         order: 4;
@@ -276,6 +280,6 @@
 
 @media (max-width: 359.98px) {
     .priceTable {
-        height: 420px;
+        height: 430px;
     }
 }
