@@ -148,4 +148,9 @@
     .form {
         transform: translate(0)
     }
+
+    .noAccount {
+       flex-direction: column;
+       gap: 4px;
+    }
 }
