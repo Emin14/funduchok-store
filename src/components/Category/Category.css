@@ -17,14 +17,22 @@
 
     flex-basis: calc(15%);
     max-width: calc(15%);
-    white-space: nowrap;
+    /* white-space: nowrap;
+    line-height: 1.5; */
+    gap: 10px;
+}
+
+.category p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
 }
 
 .category:hover {
     box-shadow: rgba(0, 0, 0, 0.13) 0px 6px 15px;
     transition: .3s;
 }
-
 
 /* @media (max-width: 1399.98px) {
     .category {
