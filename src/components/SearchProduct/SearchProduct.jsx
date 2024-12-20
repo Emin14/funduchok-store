@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { Link, useNavigate } from "react-router"
 import { useGetProductsQuery } from '../../Redux/services/productsApi';
+import { getCategoryProductRoute} from '../../routes';
 import styles from './searchProduct.module.css';
 
 // Компонент поиска товаров
@@ -69,7 +70,7 @@ export default function SearchProduct({ active, setActive }) {
     <ul className={styles.resultsList}>
       {find.map((item) => (
         <li key={item.id} className={styles.resultsListItem}>
-          <Link to={`${item.category}/${item.id}`} onClick={clearSearchPhrase}>
+          <Link to={getCategoryProductRoute(item.category, item.id)} onClick={clearSearchPhrase}>
             {item.title}
           </Link>
         </li>

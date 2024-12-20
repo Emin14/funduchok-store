@@ -1,0 +1,107 @@
+.basketWrapper {
+    position: relative;
+  }
+  
+  .basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 46px;
+  }
+  
+  .basketIcon {
+    font-size: 26px;
+    color: #0c9241;
+  }
+  
+  .basketMoney {
+    text-align: center;
+    font-size: 14px;
+    color: #23a53c;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  
+  .basketLabel {
+    font-size: 14px;
+  }
+  
+  .basketInfo {
+    position: absolute;
+    top: 40px;
+    left: -200px;
+    padding: 10px;
+    z-index: 3;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .basketProducts {
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .basketButton {
+    display: block;
+    padding: 10px;
+    background-color: #23a53c;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px auto;
+    transition: background-color 0.3s ease;
+  }
+  
+  .basketButton:hover {
+    background-color: #0c9241;
+  }
+  
+  .minimumText {
+    font-size: 14px;
+    margin: 5px 14px;
+  }
+  
+  .basketCount {
+    position: absolute;
+    top: -10px;
+    right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ee423e;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  @media (max-width: 991.98px) {
+    .basketLabel {
+      display: none;
+    }
+  
+    .basketMoney {
+      display: none;
+    }
+  
+    .basketCount {
+      top: -10px;
+      right: -10px;
+    }
+  
+    .basket {
+      height: auto;
+    }
+  }
+  

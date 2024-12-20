@@ -1,15 +1,12 @@
-// import { Link } from 'react-router-dom';
-import { Link } from "react-router"
+import { Link } from "react-router";
 import PriceTable from '../PriceTable/PriceTable';
 import ProductProperties from '../ProductProperties/ProductProperties';
 import Favorit from '../../Favorit/Favorit';
 import Loader from '../../Loader/Loader';
-
-import './Product.css';
-
 import { advantages } from '../constans';
+import { getCategoryProductRoute } from '../../../routes';
+import styles from './Product.module.css';
 
-// Компонент товара
 export default function Product({
   product, categoryObj, isFavorite, handleClick, packing, handleChange, handleSubmit,
   currentPackage, count, incrementCount, decrementCount, blocks, block, selectBlock,
@@ -17,37 +14,45 @@ export default function Product({
   if (product) {
     return (
       <>
-        <ul className="product__bread-crumbs">
-          <li><Link to="/">Главная  </Link></li>
+        <ul className={styles.breadCrumbs}>
+          <li><Link to="/">Главная</Link></li>
           <li>
-            <Link to={`/${categoryObj.pathname}`}>
+            <Link to={getCategoryProductRoute(categoryObj.pathname)}>
               {categoryObj.title}
-              {' '}
             </Link>
           </li>
           <li><span>{product.title}</span></li>
         </ul>
-        <h1 className="product__title">{product.title}</h1>
-        <div className="product-wrapper">
-          <ul className="advantages">
+
+
+        <h1 className={styles.productTitle}>{product.title}</h1>
+
+
+        <div className={styles.productWrapper}>
+
+          <ul className={styles.advantages}>
             {advantages.map(({ title, icon }) => (
-              <li key={title} className="advantages__list_item">
+              <li key={title} className={styles.advantagesItem}>
                 {icon}
-                <p className="advantages__text">{title}</p>
+                <p className={styles.advantagesText}>{title}</p>
               </li>
             ))}
           </ul>
-          <div className="product">
-            {/* Можно было бы реализовать не стал заморачиваться
-          <p className='product__statistics'>
-            <span>10 отзывов</span>
-            <span>купили 15095 раз</span>
-          </p> */}
-            <div className="advantages__favorit" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+
+
+          <div className={styles.product}>
+            <div
+              className={styles.favoritButton}
+              onClick={handleClick}
+              onKeyDown={handleClick}
+              role="presentation"
+            >
               <Favorit item={product} isFavorite={isFavorite} text />
             </div>
-            <img src={product.image} alt="" />
+            <img src={product.image} alt={product.title} className={styles.productImage} />
           </div>
+
+          {/* Таблица цен */}
           <PriceTable
             product={product}
             category={categoryObj}
@@ -60,6 +65,8 @@ export default function Product({
             decrementCount={decrementCount}
           />
         </div>
+
+        {/* Свойства продукта */}
         <ProductProperties
           description={product.description}
           block={block}
@@ -70,6 +77,7 @@ export default function Product({
     );
   }
 
+  // Лоадер, если продукт не загружен
   return (
     <Loader />
   );

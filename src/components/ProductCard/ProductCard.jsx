@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import { Link } from "react-router"
 import { useDispatch, useSelector } from 'react-redux';
 import {
   changeCartProducts, calcPoints, calcAmount, calcPieces,
 } from '../../Redux/slices/cartSlice';
 import Favorit from '../Favorit/Favorit';
-import './ProductCard.css';
+import styles from './productCard.module.css';
 import { togleFavorit } from '../../Redux/slices/favoritsSlice';
 import notify from '../../utils.js/notify';
 import { amountOfDiscount, weightAndkoef } from '../ProductLayout/constans';
 import calcPackaging from '../../utils.js/calcPackaging';
+import { getCategoryProductRoute } from '../../routes';
 
 // Компонент карточки товара
 export default function ProductCard({ item }) {
@@ -85,31 +85,32 @@ export default function ProductCard({ item }) {
 
   if (packing) {
     return (
-      <div className="productCard">
-        <div className="favorit" onClick={addFavorit} onKeyDown={addFavorit} role="presentation">
+      <div className={styles.productCard}>
+        <div className={styles.favorit} onClick={addFavorit} onKeyDown={addFavorit} role="presentation">
           <Favorit item={item} isFavorite={isFavorite} />
         </div>
-        <Link to={`/${item.category}/${item.id}`} className="productCard__link">
-          <img src={item.image} alt="" className="productCard__img" />
-          <p className="productCard__title">{item.title}</p>
-          <p className="productCard__price">
+        {/* <Link to={`/category/${item.category}/${item.id}`} className={styles.link}> */}
+        <Link to={getCategoryProductRoute(item.category, item.id)} className={styles.link}>
+          <img src={item.image} alt="" className={styles.img} />
+          <p className={styles.title}>{item.title}</p>
+          <p className={styles.price}>
             {packing[currentPackage - 1].packingDiscountPrice && <span>{`${packing[currentPackage - 1].packingDiscountPrice} ₽`}</span>}
-            <span className="productCard__oldPrice">{`${packing[currentPackage - 1].packingPrice} ₽`}</span>
+            <span className={styles.oldPrice}>{`${packing[currentPackage - 1].packingPrice} ₽`}</span>
           </p>
         </Link>
 
-        <ul className="productCard__list">
+        <ul className={styles.list}>
           {packing.map((pack) => pack.weight !== 0.025 && (
-          <li key={pack.id} data-koef={pack.koef} className={`productCard__item ${pack.id === currentPackage ? 'activeWeight' : ''}`} onClick={() => handleClick(pack.id)} onKeyDown={() => handleClick(pack.id)} role="presentation">
+          <li key={pack.id} data-koef={pack.koef} className={`${styles.item} ${pack.id === currentPackage ? styles.activeWeight : ''}`} onClick={() => handleClick(pack.id)} onKeyDown={() => handleClick(pack.id)} role="presentation">
             {pack.title}
           </li>
           ))}
         </ul>
-        <div className="priceTable__count">
-          <button type="button" className="priceTable__count-btn-left" onClick={incrementCount}>-</button>
-          <span className="priceTable__count-number">{count}</span>
-          <button type="button" className="priceTable__count-btn-right" onClick={decrementCount}>+</button>
-          <button form="product" type="button" className="priceTable__basket-btn" onClick={handleSubmit}>В корзину</button>
+        <div className={styles.counter}>
+          <button type="button" className={styles.countButtonLeft} onClick={incrementCount}>-</button>
+          <span className={styles.countNumber}>{count}</span>
+          <button type="button" className={styles.countButtonRight} onClick={decrementCount}>+</button>
+          <button form="product" type="button" className={styles.addToBasketButton} onClick={handleSubmit}>В корзину</button>
         </div>
 
       </div>

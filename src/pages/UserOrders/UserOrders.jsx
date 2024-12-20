@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MdOutlineArrowDropDownCircle } from 'react-icons/md';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import getUserOrders from '../../utils.js/getUserOrders';
-import './UserOrders.css';
+import styles from './userOrders.module.css';
 
 const OrderItem = ({ item, index, show, handleClick }) => 
   
@@ -11,12 +11,12 @@ const OrderItem = ({ item, index, show, handleClick }) =>
 
     
     return (
-  <div className="user-orders__wrapper" key={item.id}>
-    <div className="user-orders__title">
-      <span className="user-orders__text">Заказ #{item.id}</span>
-      <span className="user-orders__date">от {orderDate}</span>
+  <div className={styles.wrapper} key={item.id}>
+    <div className={styles.title}>
+      <span className={styles.text}>Заказ #{item.id}</span>
+      <span className={styles.date}>от {orderDate}</span>
     </div>
-    <div className="user-orders__info">
+    <div className={styles.info}>
       <div><strong>Город доставки:</strong> {item.city}</div>
       <div><strong>Статус заказа:</strong> {item.status}</div>
       <div><strong>Сумма заказа:</strong> {item.orderAmount} руб.</div>
@@ -24,7 +24,7 @@ const OrderItem = ({ item, index, show, handleClick }) =>
     </div>
     
     <div
-      className="user-orders__products-header"
+      className={styles.productsWrapper}
       onClick={() => handleClick(index)}
       role="button"
       tabIndex="0"
@@ -32,21 +32,21 @@ const OrderItem = ({ item, index, show, handleClick }) =>
     >
       <span>Продукты в заказе</span>
       <MdOutlineArrowDropDownCircle
-        className={`user-orders__dropdown-icon ${show === index ? 'open' : ''}`}
+        className={`icon ${show === index ? 'open' : ''}`}
       />
     </div>
     
     <div
-      className="user-orders__products"
+      className={styles.products}
       style={{ maxHeight: show === index ? '500px' : '0', transition: 'max-height 0.3s ease' }}
     >
       {item.products.map((el, ind) => (
-        <div key={`${el.id}-${el.weight}`} className="user-orders__product">
-          <div className="user-orders__product-details">
-            <div className="user-orders__product-name">{el.title}</div>
-            <div className="user-orders__product-weight">{el.weightTitle}</div>
-            <div className="user-orders__product-count">{el.count} шт</div>
-            <div className="user-orders__product-price">{el.basePrice} руб.</div>
+        <div key={`${el.id}-${el.weight}`} className={styles.product}>
+          <div className={styles.details}>
+            <div className={styles.name}>{el.title}</div>
+            <div className={styles.weight}>{el.weightTitle}</div>
+            <div className={styles.count}>{el.count} шт</div>
+            <div className={styles.price}>{el.basePrice} руб.</div>
           </div>
         </div>
       ))}
@@ -76,8 +76,8 @@ export default function UserOrders() {
   };
 
   return (
-    <div className="user-orders">
-      <h3 className="user-orders__heading">Ваши заказы</h3>
+    <div className={styles.orders}>
+      <h3 className={styles.heading}>Ваши заказы</h3>
       {orders.length ? (
         orders.map((item, index) => (
           <OrderItem
@@ -89,7 +89,7 @@ export default function UserOrders() {
           />
         ))
       ) : (
-        <p className="user-orders__empty">У вас еще нет оформленных заказов</p>
+        <p className={styles.empty}>У вас еще нет оформленных заказов</p>
       )}
     </div>
   );

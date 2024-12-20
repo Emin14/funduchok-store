@@ -1,0 +1,149 @@
+/* Обертка для всего контента продукта */
+.productWrapper {
+   display: flex;
+   justify-content: space-between;
+}
+
+/* Основной блок с продуктом */
+.product {
+   width: 320px;
+   padding: 5px;
+   user-select: none;
+}
+
+/* Стили для изображения продукта */
+.productImage {
+   width: 300px;
+   height: 300px;
+}
+
+/* Заголовок продукта */
+.productTitle {
+   font-size: 22px;
+   font-weight: 500;
+   margin-bottom: 15px;
+   margin-right: 200px;
+}
+
+/* Стили для хлебных крошек */
+.breadCrumbs {
+   display: flex;
+   font-size: 12px;
+   margin-bottom: 14px;
+}
+
+
+.breadCrumbs a:hover {
+   text-decoration:underline  ;
+   color: #23a53c; 
+}
+
+.breadCrumbs li:not(:last-child)::after {
+   content: '>';
+   margin: 0 5px;
+}
+
+
+/* Стили для списка преимуществ */
+.advantages {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
+   width: 170px;
+}
+
+/* Элемент списка преимуществ */
+.advantagesItem {
+   color: #23a53c;
+   font-size: 30px;
+   text-align: center;
+}
+
+/* Текст в элементах списка преимуществ */
+.advantagesText {
+   color: #999;
+   font-size: 14px;
+}
+
+/* Кнопка избранного */
+.favoritButton {
+   font-size: 34px;
+   text-align: center;
+   -webkit-tap-highlight-color: transparent;
+   text-align: end;
+}
+
+/* Адаптивные стили */
+
+/* Для больших устройств (< 1200px) */
+@media (max-width: 1199.98px) {
+   .product {
+       width: 290px;
+   }
+
+   .productImage {
+       width: 270px;
+       height: 270px;
+   }
+
+   .advantages {
+       width: 110px;
+   }
+}
+
+/* Для средних устройств (< 992px) */
+@media (max-width: 991.98px) {
+   .product {
+       width: 220px;
+   }
+
+   .productImage {
+       width: 200px;
+       height: 200px;
+   }
+}
+
+/* Для малых устройств (< 768px) */
+@media (max-width: 767.98px) {
+   .productWrapper {
+       flex-direction: column;
+       align-items: center;
+       gap: 4px;
+       margin-bottom: 10px;
+   }
+
+   .product {
+       width: 240px;
+   }
+
+   .productImage {
+       width: 240px;
+       height: 240px;
+   }
+
+   /* .favoritButton {
+       text-align: center;
+   } */
+
+   .advantages {
+       flex-direction: row;
+       width: 100%;
+       justify-content: space-between;
+   }
+
+   .productTitle {
+       margin-right: 0;
+   }
+}
+
+/* Для очень малых устройств (< 576px) */
+@media (max-width: 575.98px) {
+   .advantagesText {
+       font-size: 12px;
+   }
+
+   .breadCrumbs li:last-child {
+       display: none;
+   }
+}

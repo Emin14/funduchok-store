@@ -1,37 +1,29 @@
 import { useState, useEffect } from 'react';
-// import { NavLink, Link, useLocation } from 'react-router-dom';
 import { NavLink, Link, useLocation } from "react-router"
 import { useSelector, useDispatch } from 'react-redux';
-
-import { MdOutlineFavoriteBorder } from 'react-icons/md';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { FiHeart } from "react-icons/fi";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { writingCity } from '../../../Redux/slices/citySlice';
 import Basket from '../../Basket/Basket';
 import SearchProduct from '../../SearchProduct/SearchProduct';
 import DeliveryTime from '../../DeliveryTime/DeliveryTime';
-import './Header.css';
 import { navbar } from '../../ProductLayout/constans';
 import Sidebar from '../Sidebar/Sidebar';
-
 import Authentication from '../../Authentication/Authentication';
 import getUserOrders from '../../../utils.js/getUserOrders';
 import LocationSelect from '../../LocationSelect/LocationSelect';
-import { IoMdHeartEmpty } from "react-icons/io";
-
-import { FiHeart } from "react-icons/fi";
-
-
-
-
-
-
-
-
+import styles from './header.module.css'
 
 
 export default function Header() {
   const [points, setPoints] = useState(0);
+  const [nav, setNav] = useState(false);
+  const [active, setActive] = useState(false);
+  const totalAmount = useSelector((state) => state.cart.total);
+  const productsInOrder = useSelector((state) => state.cart.cart);
+  const totalCount = useSelector((state) => state.cart.totalCount);
+  const favorits = useSelector((state) => state.favorits.favorits);
+  const location = useLocation();
 
   useEffect(() => {
     const auth = getAuth();
@@ -39,61 +31,44 @@ export default function Header() {
       if (user) {
         getUserOrders(user.uid)
           .then((data) => setPoints(data.points));
-      } else {
-        // User is signed out
-        // ...
-      }
+      } 
     });
   }, []);
-
-  const dispatch = useDispatch();
-
-  // const points = useSelector((state) => state.data.points)
-
-  const city = useSelector((state) => state.city.city);
-
-  const [nav, setNav] = useState(false);
-
-  const handleClick = () => {
-    setNav((prev) => !prev);
-  };
-
-  const totalAmount = useSelector((state) => state.cart.total);
-  const productsInOrder = useSelector((state) => state.cart.cart);
-  const totalCount = useSelector((state) => state.cart.totalCount);
-  const favorits = useSelector((state) => state.favorits.favorits);
-
-  const location = useLocation();
-  const [active, setActive] = useState(false);
 
   useEffect(() => {
     setActive(false);
   }, [location.key]);
 
-  return (
-    <header className={nav ? ['header-area', 'active'].join(' ') : 'header-area'}>
 
-      <div className={active ? ['header__bottom', 'active2'].join(' ') : 'header__bottom'}>
-        <div className="hamburger" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+  const handleClick = () => {
+    setNav((prev) => !prev);
+  };
+
+
+  return (
+    <header className={nav ? [styles.header, styles.active].join(' ') : styles.header}>
+
+      <div className={active ? [styles.top, styles.active2].join(' ') : styles.top}>
+        <div className={styles.hamburger} onClick={handleClick} onKeyDown={handleClick} role="presentation">
           {!nav ? <AiOutlineMenu size={35} /> : ''}
         </div>
-        <Link to="/" className="header__logo_wrapper">
-          <img className="header__logo" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
+        <Link to="/" className={styles.logoWrapper}>
+          <img className={styles.logo} src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
         </Link>
-        <div className="LocationSelect__wrapper">
+        <div className={styles.LocationSelectWrapper}>
           <LocationSelect/>
           </div>
-          <div className="DeliveryTime__wrapper">
+          <div className={styles.DeliveryTimeWrapper}>
             <DeliveryTime />
           </div>
 
-        <div className="header__bottom_center">
+        <div className={styles.searchContainer}>
           <SearchProduct active={active} setActive={setActive} />
         </div>
-        <div className="header__authentication">
+        <div className={styles.authentication}>
           <Authentication points={points} active={active} />
         </div>
-        <div className="Basket__wrapper">
+        <div className={styles.BasketWrapper}>
         <Basket
           totalAmount={totalAmount}
           productsInOrder={productsInOrder}
@@ -101,35 +76,35 @@ export default function Header() {
           nav={nav}
         />
         </div>
-        <div className="header-favorits__wrapper">
-          <Link to="favorits" className="header-favorits">
+        <div className={styles.favoritsWrapper}>
+          <Link to="favorits" className={styles.favorits}>
             {
               !!favorits.length
-              && <div className="header__favorits-count">{favorits.length}</div>
+              && <div className={styles.favoritsCount}>{favorits.length}</div>
             }
-            {/* <MdOutlineFavoriteBorder className="header__MdOutlineFavoriteBorder" /> */}
-            <FiHeart   className="header__MdOutlineFavoriteBorder" />
-            <span className="header-favorits-text">Избранное</span>
+            {/* <MdOutlineFavoriteBorder className="headerMdOutlineFavoriteBorder" /> */}
+            <FiHeart   className={styles.MdOutlineFavoriteBorder} />
+            <span className={styles.favoritsText}>Избранное</span>
           </Link>
         </div>
       </div>
-      <div className="header__top">
-        <div className="header-mobile">
-          <div className="hamburger hamburger2" onClick={handleClick} onKeyDown={handleClick} role="presentation">
+      <div className={styles.bottom}>
+        <div className={styles.mobile}>
+          <div className={styles.hamburger} onClick={handleClick} onKeyDown={handleClick} role="presentation">
             {nav ? <AiOutlineClose size={35} /> : ''}
           </div>
           <Link to="/" onClick={handleClick} onKeyDown={handleClick} role="presentation">
-            <img className="header__logo-mobile" src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
+            <img className={styles.logoMobile} src="https://фундучок.рф/assets/template/images/logo.jpg" alt="" />
           </Link>
         </div>
-        <div className="header__aside">
-          <p className="header__aside-catalog">Каталог:</p>
+        <div className={styles.aside}>
+          <p className={styles.asideCatalog}>Каталог:</p>
           <Sidebar setNav={setNav} />
         </div>
-        <ul className="header__nav">
+        <ul className={styles.nav}>
           {navbar.map((item) => (
             <li key={item.id}>
-              <NavLink className="header__aside_link" to={item.link} onClick={() => setNav(false)}>
+              <NavLink className={styles.asideLink} to={item.link} onClick={() => setNav(false)}>
                 {item.title}
               </NavLink>
             </li>

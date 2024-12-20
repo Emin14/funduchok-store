@@ -1,0 +1,259 @@
+.priceTable {
+   width: 320px;
+   height: 500px;
+   background: #ffd944;
+   display: flex;
+   flex-direction: column;
+   padding: 10px 15px;
+   border-radius: 8px;
+}
+
+.priceLabel {
+   font-size: 18px;
+   border-bottom: 2px solid #ffc702;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 10px 0 10px 20px;
+   cursor: pointer;
+   user-select: none;
+}
+
+.priceInput {
+   margin: 0 4px;
+}
+
+.undiscountedPrice {
+   padding-left: 15px;
+   color: #adabab;
+   font-size: 15px;
+   text-decoration: line-through;
+}
+
+.productWeight {
+   color: gray;
+   font-size: 18px;
+}
+
+.deliveryInfo {
+   margin: 10px 0 15px;
+   line-height: 1.2;
+   font-size: 14px;
+   font-weight: 300;
+}
+
+.counterWrapper {
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   margin-bottom: 12px;
+   -webkit-tap-highlight-color: transparent;
+}
+
+.counter {
+   display: flex;
+}
+
+.discountInfo {
+   font-size: 14px;
+   line-height: 1.5;
+   text-align: center;
+   font-weight: 300;
+}
+
+.bonusNote {
+   color: #950300;
+   border-bottom: 1px dotted;
+   cursor: pointer;
+   font-weight: 500;
+}
+
+.addToBasketButton {
+   background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
+   border-radius: 5px;
+   max-width: 290px;
+   margin: auto;
+   font-size: 14px;
+   position: relative;
+   z-index: 2;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   border: 1px solid #23a53c;
+   transition: .3s;
+   color: #fff;
+   cursor: pointer;
+   padding: 8px 12px;
+}
+
+.addToBasketButton:active {
+   background-color: #03cf2c;
+   background-size: 100%;
+   transition: background 0s;
+}
+
+.countButtonLeft,
+.countButtonRight {
+   width: 40px;
+   border: 1px solid #ccc;
+   border-radius: 50%;
+   background: #e7e7e7;
+   z-index: 2;
+   height: 40px;
+   font-weight: 600;
+   cursor: pointer;
+   position: relative;
+}
+
+.countButtonLeft {
+   left: 14px;
+}
+
+.countButtonRight {
+   right: 14px;
+}
+
+.countButtonLeft:active,
+.countButtonRight:active {
+   transform: scale(1.1);
+}
+
+.countNumber {
+   width: 75px;
+   background: #f5f5f5;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.discountText {
+   font-size: 16px;
+   margin-top: 10px;
+   line-height: 1.5;
+   padding: 0 30px;
+}
+
+.discountTextGreen {
+   color: #23a53c;
+   margin-left: 5px;
+}
+
+/* Media Queries */
+
+@media (max-width: 1199.98px) {
+   .priceTable {
+       width: 300px;
+       height: 510px;
+   }
+
+   .priceLabel {
+       font-size: 16px;
+       padding: 8px 0 8px 30px;
+   }
+
+   .productWeight {
+       font-size: 16px;
+   }
+
+   .addToBasketButton {
+       padding: 8px 10px;
+   }
+}
+
+@media (max-width: 991.98px) {
+   .priceLabel {
+       font-size: 16px;
+       padding: 8px 0 8px 0;
+   }
+
+   .priceTable {
+       width: 254px;
+       padding: 10px 12px;
+   }
+
+   .discountText {
+       padding: 0 12px;
+   }
+
+   .addToBasketButton {
+       padding: 8px;
+   }
+
+   .deliveryInfo {
+       font-size: 14px;
+   }
+}
+
+@media (max-width: 767.98px) {
+   .priceTable {
+       width: 90%;
+       height: 236px;
+       padding: 4px 12px;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+   }
+
+   #product {
+       width: 50%;
+   }
+
+   .information {
+       display: flex;
+       flex-direction: column;
+       width: 50%;
+       justify-content: space-between;
+   }
+
+   .deliveryInfo {
+       margin: 2px 0 15px;
+       line-height: 1;
+   }
+
+   .discountText {
+       margin-top: 0;
+   }
+
+   .counterWrapper {
+       margin: 0;
+       order: 4;
+   }
+
+   .deliveryInfo {
+       margin: 0;
+   }
+}
+
+@media (max-width: 575.98px) {
+   .priceTable {
+       font-size: 14px;
+       height: 400px;
+       flex-direction: column;
+   }
+
+   #product {
+       width: 100%;
+   }
+
+   .information {
+       width: 100%;
+       gap: 6px;
+   }
+
+   .addToBasketButton {
+       margin: 0;
+   }
+
+   .deliveryInfo {
+       font-size: 12px;
+   }
+}
+
+@media (max-width: 359.98px) {
+   .priceTable {
+       height: 430px;
+   }
+}
+

@@ -1,12 +1,12 @@
 import checkWord from './checkWord';
-import './TotalAmount.css';
+import styles from './totalAmount.module.css';
 
 // Компонент выводит общую сумму заказа и общую сумму баллов в корзине
 export default function TotalAmount({ total, points }) {
   let outTag = null;
   if (total >= 3000) {
     outTag = (
-      <p className="total-amount__points">
+      <p className={styles.points}>
         <span>
           Этот заказ принесет вам
           {' '}
@@ -16,13 +16,13 @@ export default function TotalAmount({ total, points }) {
       </p>
     );
   } else {
-    outTag = <p className="total-amount__points2">При заказе от 3000 р. получите бонусные баллы</p>;
+    outTag = <p className={styles.points2}>При заказе от 3000 р. получите бонусные баллы</p>;
   }
 
   return (
-    <div className="total-amount">
-      <span className="total-amount_text">Итого:</span>
-      <span className="total-amount_count">
+    <div className={styles.totalAmount}>
+      <span className={styles.text}>Итого:</span>
+      <span className={styles.count}>
         {total}
         {' '}
         ₽

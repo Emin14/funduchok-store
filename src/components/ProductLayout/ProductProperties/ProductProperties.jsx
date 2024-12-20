@@ -1,6 +1,6 @@
 // import Characteristics from '../Characteristics/Characteristics';
 import Reviews from '../Reviews/Reviews';
-import './ProductProperties.css';
+import styles from './productProperties.module.css';
 
 export default function ProductProperties({
   description, blocks, block, selectBlock,
@@ -19,14 +19,14 @@ export default function ProductProperties({
   if (blocks) {
     return (
       <div>
-        <ul className="productProperties__list" onClick={selectBlock} onKeyDown={selectBlock} role="presentation">
+        <ul className={styles.list} onClick={selectBlock} onKeyDown={selectBlock} role="presentation">
           {blocks.map((item) => (
-            <li key={item.title} data-columns={item.dataset} className={`productProperties__item ${block[item.dataset] ? 'active' : ''}`}>
+            <li key={item.title} data-columns={item.dataset} className={`${styles.item} ${block[item.dataset] ? styles.active : ''}`}>
               {item.title}
             </li>
           ))}
         </ul>
-        <div className="productProperties__description">
+        <div className={styles.description}>
           {outTag}
         </div>
       </div>

@@ -1,6 +1,6 @@
-import './CompletedOrder.css';
-// import { useLocation } from 'react-router-dom';
 import { useLocation } from "react-router"
+import styles from './completedOrder.module.css';
+
 
 export default function CompletedOrder() {
   const { state } = useLocation();
@@ -9,7 +9,7 @@ export default function CompletedOrder() {
     return (
       <div>
         <h3>Ваш заказ оформлен:</h3>
-        <table className="completedOrder__table">
+        <table className={styles.completedOrder}>
           <tbody>
             <tr>
               <th>Название</th>
@@ -19,7 +19,7 @@ export default function CompletedOrder() {
               <th>Сумма</th>
             </tr>
             {state.products.map((item) => (
-              <tr key={`${item.id}-${item.weight}`} className="ada">
+              <tr key={`${item.id}-${item.weight}`} className={styles.dataRows}>
                 <td>{item.title}</td>
                 <td>{item.weightTitle}</td>
                 <td>

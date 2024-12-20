@@ -1,39 +1,57 @@
-// import { Link } from 'react-router-dom';
-import { Link } from "react-router"
-import './Footer.css';
-import { navbar } from '../../ProductLayout/constans';
+import { Link } from "react-router";
+import styles from "./footer.module.css";
+import { navbar } from "../../ProductLayout/constans";
+
+const footerLinks = [
+  { id: 1, title: "Конфид-ность", link: "/#" },
+  { id: 2, title: "Корзина", link: "/#" },
+  { id: 3, title: "Оформление заказа", link: "/#" },
+  { id: 4, title: "Личный кабинет", link: "/#" },
+  { id: 5, title: "Пользов-ское соглашение", link: "/#" },
+  { id: 6, title: "Договор оферты", link: "/#" },
+  { id: 7, title: "Бонусная программа", link: "/#" },
+  { id: 8, title: "Гарантия лучшей цены", link: "/#" },
+];
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__logo">
+    <footer className={styles.footer}>
+      <div className={styles.logoSection}>
         <Link to="/">
-          <img src="https://фундучок.рф/assets/template/images/logo_footer.jpg" alt="" />
+          <img
+            src="https://фундучок.рф/assets/template/images/logo_footer.jpg"
+            alt="Логотип"
+          />
         </Link>
         <p>Интернет-магазин вкусных и полезных продуктов для вашего здоровья</p>
         <p>© 2014 - 2023</p>
         <p>Все права защищены</p>
       </div>
-      <ul className="footer__list">
+      <ul className={styles.list}>
+        {/* Рендеринг навигационных ссылок */}
         {navbar.map((item) => (
-          <Link key={item.id} to={item.link}>{item.title}</Link>
+          <li key={item.id}>
+            <Link to={item.link}>{item.title}</Link>
+          </li>
         ))}
-        <li><Link href="/#">Конфид-ность</Link></li>
-        <li><Link href="/#">Корзина</Link></li>
-        <li><Link href="/#">Оформление заказа</Link></li>
-        <li><Link href="/#">Личный кабинет</Link></li>
-        <li><Link href="/#">Пользов-ское соглашение</Link></li>
-        <li><Link href="/#">Договор оферты</Link></li>
-        <li><Link href="/#">Бонусная программа</Link></li>
-        <li><Link href="/#">Гарантия лучшей цены</Link></li>
+        {/* Рендеринг дополнительных ссылок */}
+        {footerLinks.map((item) => (
+          <li key={item.id}>
+            <Link to={item.link}>{item.title}</Link>
+          </li>
+        ))}
       </ul>
-      <div className="footer__contacts">
-        <h3 className="footer__contacts_title">Наши контакты</h3>
+      <div className={styles.contacts}>
+        <h3 className={styles.contactsTitle}>Наши контакты</h3>
         <div>
-          <a href="tel:88005002218" className="footer__tel">8 800 500-22-18</a>
+          <a href="tel:88005002218" className={styles.tel}>
+            8 800 500-22-18
+          </a>
         </div>
         <div>
-          <a href="tel:84995044397" className="footer__tel">8 499 504-43-97</a>
+          <a href="tel:84995044397" className={styles.tel}>
+            8 499 504-43-97
+          </a>
         </div>
         <p>Время работы отдела продаж:</p>
         <p>Пн – Пт: 10:00-19:00</p>

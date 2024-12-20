@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
-// import { Routes, Route } from 'react-router-dom';
 import { Routes, Route } from "react-router";
-import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import Layout from './components/Layout/Layout';
-// import Homepage from './pages/Homepage';
 import Sale from './pages/Sale';
 import Promotion from './pages/Promotion';
 import Delivery from './pages/Delivery';
@@ -20,33 +16,20 @@ import CompletedOrder from './pages/CompletedOrder/CompletedOrder';
 import UserOrders from './pages/UserOrders/UserOrders';
 import Favoritspage from './pages/Favoritspage/Favoritspage';
 import NotFound from './pages/NotFound/NotFound';
-import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import getProductsAll from './utils.js/getProductsAll';
-// import { writeProducts } from './Redux/slices/products';
 import Searchpage from './pages/Searchpage/Searchpage';
 import Categories from './components/Categories/Categories';
-import { useGetProductsQuery } from './Redux/services/productsApi';
+import './App.css';
 
 function App() {
-  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   getProductsAll()
-  //     .then((data) => dispatch((writeProducts(data))));
-  // }, [dispatch]);
-
-
-  const { data: products, error, isLoading, isError } = useGetProductsQuery();
-
-  console.log(products)
 
   return (
     <>
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Categories />} />
+          <Route path="/" element={<Categories />} />
           <Route path="skidki" element={<Sale />} />
           <Route path="akcii" element={<Promotion />} />
           <Route path="oplata-i-dostavka" element={<Delivery />} />
@@ -55,15 +38,17 @@ function App() {
           <Route path="sneki-v-ofis" element={<Snacks />} />
           <Route path="kontakty" element={<Contacts />} />
           <Route path="otzyvy-o-nas" element={<Reviews />} />
-          <Route path=":category" element={<Products />} />
-          <Route path=":category/:idProduct" element={<ProductLayout />} />
+
           <Route path="cart" element={<Basketpage />} />
           <Route path="completed-order" element={<CompletedOrder />} />
           <Route path=":user/orders" element={<UserOrders />} />
-          {/* <Route path=':user/data' element={<UserData />} /> */}
           <Route path="favorits" element={<Favoritspage />} />
           <Route path="search" element={<Searchpage />} />
-          <Route path="*" element={NotFound} />
+
+          <Route path="category/:category" element={<Products />} />
+          <Route path="category/:category/:idProduct" element={<ProductLayout />} />
+          
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

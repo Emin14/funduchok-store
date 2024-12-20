@@ -10,7 +10,7 @@ import TotalAmount from './TotalAmount/TotalAmount';
 import BasketProductItem from '../../components/BasketProductItem/BasketProductItem';
 import Checkout from './Checkout/Checkout';
 import { clearCart } from '../../Redux/slices/cartSlice';
-import './Basketpage.css';
+import styles from './basketpage.module.css';
 import db from '../../firebase';
 
 // Компонент страницы Корзины
@@ -65,12 +65,12 @@ export default function Basketpage() {
   return (
     total
       ? (
-        <div className="basketpage">
+        <div className={styles.basketpage}>
           <div>
-            <h3 className="basketpage__title">Корзина</h3>
-            <div className="basketpage__city-wrapper">
+            <h3 className={styles.title}>Корзина</h3>
+            <div className={styles.cityWrapper}>
               <span>Ваш город для доставки заказа: </span>
-              <span className="basketpage__city">{city}</span>
+              <span className={styles.city}>{city}</span>
             </div>
             <table>
               <tbody>
@@ -81,7 +81,7 @@ export default function Basketpage() {
             </table>
             <TotalAmount total={total} points={points} />
             <Checkout currentUser={currentUser} orderAmount={total} placeOrder={placeOrder} />
-            <div className="basketpage__clear">
+            <div className={styles.clear}>
               <span onClick={() => dispatch(clearCart())} onKeyDown={() => dispatch(clearCart())} role="presentation">Очистить корзину</span>
             </div>
           </div>

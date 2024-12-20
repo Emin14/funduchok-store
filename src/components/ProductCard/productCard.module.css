@@ -10,47 +10,33 @@
     max-width: calc(32%); */
     width: 100%;
     height: 350px;
-    box-shadow: 5px black;
     transition: .3s;
     position: relative;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
     border: solid 1px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
 }
 
-.productCard__img {
+.img {
     width: 150px;
     height: 150px;
     margin-bottom: 15px;
-
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Chrome/Safari/Opera */
-    -khtml-user-select: none;
-    /* Konqueror */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                    not supported by any browser */
 }
 
-/* .productCard__link {
+/* .link {
     display: flex;
     flex-direction: column;
     height: 100%;
     align-items: center;
 } */
 
-.productCard__title {
+.title {
     color: #007bff;
     height: 40px;
 }
 
-.productCard__list {
+.list {
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -61,24 +47,24 @@
     display: flex;
 }
 
-.productCard__item {
+.item {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 5px 7px;
 }
 
-.productCard__item.activeWeight {
+.item.activeWeight {
     border: 1px solid #ffd944;
     background-color: #ffd944;
 user-select: none;
 
 }
 
-.productCard__price {
+.price {
     font-size: 20px;
 }
 
-.productCard__oldPrice {
+.oldPrice {
     font-size: 12px;
     color: #ccc;
     text-decoration: line-through;
@@ -93,6 +79,75 @@ user-select: none;
     font-size: 28px;
 }
 
+.counter {
+    display: flex;
+ }
+
+
+ .addToBasketButton {
+    background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
+    border-radius: 5px;
+    max-width: 290px;
+    margin: auto;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #23a53c;
+    transition: .3s;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
+ }
+ 
+ .addToBasketButton:active {
+    background-color: #03cf2c;
+    background-size: 100%;
+    transition: background 0s;
+ }
+
+ 
+ .countButtonLeft,
+ .countButtonRight {
+    width: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #e7e7e7;
+    z-index: 2;
+    height: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+ } 
+ 
+ .countButtonLeft {
+    left: 14px;
+ }
+ 
+ .countButtonRight {
+    right: 14px;
+ }
+ 
+ .countButtonLeft:active,
+ .countButtonRight:active {
+    transform: scale(1.1);
+ }
+ 
+ .countNumber {
+    width: 75px;
+    background: #f5f5f5;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ } 
+
+
+
+
+
 @media screen and (min-width: 768px) {
     /* .productCard:hover {
         box-shadow: 0 0 20px 2px #f2e6819b;
@@ -100,11 +155,11 @@ user-select: none;
         transition: .3s;
     } */
 
-    .productCard__img {
+    .img {
         transition: .3s;
     }
 
-    .productCard:hover .productCard__img {
+    .productCard:hover .img {
         transform: scale(1.1);
         transition: .3s;
     }
@@ -113,11 +168,11 @@ user-select: none;
     background-color: #53be7a;
     }
 
-    .productCard__title:hover {
+    .title:hover {
         text-decoration: underline;
     }
 
-    .productCard__item:hover {
+    .item:hover {
         border: 1px solid #ffd944;
         ;
     }
@@ -131,11 +186,11 @@ user-select: none;
         height: 340px;
     }
 
-    .productCard__item {
+    .item {
         padding: 8px 10px;
     } */
 
-    /* .productCard__list {
+    /* .list {
         column-gap: 6px;
     } */
 
@@ -155,7 +210,12 @@ user-select: none;
         max-width: calc(99%);
     } */
 
-    .productCard__item {
+    .item {
         padding: 8px 8px;
     }
+
+    .counter {
+        justify-content: center;
+        gap: 10px;
+     }
 }

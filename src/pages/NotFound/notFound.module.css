@@ -1,0 +1,33 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   width: max-content;
+   margin: 0 auto;
+   gap: 40px;
+   align-items: center;
+}
+
+.code {
+   font-weight: 500;
+   font-size: 60px;
+   width: 160px;
+   height: 160px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #ee423e;
+   border-radius: 100px;
+   color: white;
+}
+
+.link {
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 8px 16px;
+      background-color: #ffd944;
+      color: #30353e;
+      font-weight: 500;
+      font-size: 18px;
+
+}
+

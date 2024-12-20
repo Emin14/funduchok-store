@@ -1,0 +1,388 @@
+.header {
+  position: relative;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.bottom {
+  font-size: 14px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 8px 0; */
+  padding-bottom: 6px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 6px 0;
+}
+
+.searchContainer {
+  max-width: 550px;
+}
+
+.location {
+  font-size: 16px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.contactsTel {
+  font-size: 22px;
+  font-weight: 300;
+  position: relative;
+}
+
+.contactsTel::before {
+  content: 'бесплатно по России';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 300;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.contactsMail {
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+.workingHours {
+  font-size: 13px;
+}
+
+.workingHoursDesc {
+  font-size: 11px;
+}
+
+
+.favorits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 46px;
+  position: relative;
+}
+
+
+.MdOutlineFavoriteBorder {
+  font-size: 26px;
+  color: #6f6e6e;
+}
+
+
+.favorits-text {
+  font-size: 14px;
+}
+
+/* .header-favorits-text:hover {
+  text-decoration: underline;
+} */
+
+
+.hamburger {
+  display: none;
+}
+
+.aside ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.aside {
+  display: none;
+}
+
+.aside a{
+  display: block;
+}
+
+.aside-catalog {
+  margin-top: 14px;
+  font-weight: 600;
+  /* background-color: #fff3b9; */
+}
+
+
+.nav  {
+  width: 100%;;
+}
+
+.mobile {
+  display: none;
+}
+
+.favoritsCount {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 90px;
+  color: #fff;
+  background: #ee423e;
+  font-size: 12px;
+}
+
+.asideLink.active {
+  color: #23a53c;
+}
+
+
+.DeliveryTimeWrapper {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .favorits:hover .MdOutlineFavoriteBorder {
+      color: #23a53c;;
+  }
+
+  .bottom a:hover {
+      color: #9c9c9c;
+  }
+}
+
+/* // Большие девайсы (большие десктопы, < 1200px) */
+@media (max-width: 1199.98px) {
+  .contactsTel {
+      font-size: 18px;
+  }
+
+  .contactsMail {
+      display: none;
+  }
+}
+
+/* // Средние девайсы («таблетки», < 992px)  */
+@media (max-width: 991.98px) {
+  .bottom {
+      font-size: 12px;
+  }
+
+  .top {
+      padding-bottom: 4px;
+  }
+
+  .searchContainer {
+      display: flex;
+      gap: 6px;
+  }
+
+  .workingHours {
+      display: none;
+  }
+
+
+  .favoritsText {
+      display: none;
+  }
+
+
+  .locationText {
+      display: none;
+  }
+
+  .logo {
+      width: 74%;
+  }
+
+  .contacts_tel {
+      font-size: 16px;
+  }
+
+  .favoritsCount {
+      /* top: -10px; */
+      right: -10px;
+  }
+
+  .favorits {
+      height: auto;
+  }
+  
+}
+
+/* // Малые девайсы («ландшафтные», < 768px) */
+@media (max-width: 767.98px) {
+  .hamburger {
+      display: block;
+  }
+
+  .active2 .location {
+      display: none;
+  }
+
+  .active2 .contacts {
+      display: none;
+  }
+
+  .logoWrapper {
+      display: none;
+  }
+  
+  .top {
+      background-color: white;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 16px 16px 12px;
+      z-index: 10;
+      position: fixed;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+
+  }
+
+  /* .top::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  } */
+
+
+
+  .header {
+      height: 70px;
+  }
+
+  .active .aside {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .active .bottom {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      z-index: 10;
+      text-align: center;
+      overflow: scroll;
+  }
+
+  .active .top {
+      display: none;
+  }
+
+  .bottom {
+      color: #333;
+      font-size: 20px;
+  }
+
+
+  .asideLink {
+      margin-top: 2px;
+      padding: 4px 0;
+      /* background-color: #fff3b9; */
+  }
+
+
+  .nav {
+      display: none;
+  }
+
+  .bottom li {
+      /* border-top: solid 1px black; */
+  }
+  
+  .bottom a {
+      padding: 6px 0;
+  }
+
+  .nav li {
+      width: 100%;;
+  }
+
+  .nav a {
+      display: block;
+  }
+
+  .active .nav {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .active .mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 20px;
+  }
+
+  .logoMobile {
+      width: 64px;
+  }
+
+  
+  .DeliveryTimeWrapper {
+      display: none;
+  }
+
+  .header {
+      height: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contacts  {
+      display: none;
+  }
+
+  .active2 .LocationSelectWrapper {
+      display: none;
+  }
+
+  .active2 .authentication {
+      display: none;
+  }
+
+  .active2 .BasketWrapper {
+      display: none;
+  }
+
+  .active2 .favoritsWrapper {
+      display: none;
+  }
+
+  .top {
+      height: 85px;
+  }
+}
+
+
+/* все правильно */

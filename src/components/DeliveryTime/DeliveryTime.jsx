@@ -11,28 +11,27 @@ export default function DeliveryTime() {
   }, []);
 
   useEffect(() => {
-    if(!date) {
-      return
+    if (!date) return;
+
+    const { dayofWeek, hours, day, monthString, deliveryHours } = date;
+
+    let calculatedDeliveryDate;
+
+    if (dayofWeek === 0) {
+      calculatedDeliveryDate = 'В понедельник';
+    } else if (hours > 15) {
+      calculatedDeliveryDate = `${day + 1} ${monthString} в 10.00 - 11.00`;
+    } else {
+      calculatedDeliveryDate = `${day} ${monthString} в ${deliveryHours}.00 - ${deliveryHours + 1}.00`;
     }
 
-    if (date.dayofWeek === 0) {
-      setDeliveryDate('В понедельник')
-    } 
-    else if (date.hours > 15) {
-      setDeliveryDate(`${date.day + 1} ${date.monthString} в 10.00 - 11.00`)
-  
-    } 
-    else {
-      setDeliveryDate(`${date.day} ${date.monthString} в ${date.deliveryHours}.00 - ${date.deliveryHours + 1}.00`)
-    }
-
+    setDeliveryDate(calculatedDeliveryDate);
   }, [date]);
-
 
   return (
     <>
-      <span className={styles.text}>Ближайшая доставка: </span>
-      <span className={styles.date}>{deliveryDate}</span>
+      <span className={styles.deliveryText}>Ближайшая доставка: </span>
+      <span className={styles.deliveryDate}>{deliveryDate}</span>
     </>
   );
 }

@@ -1,11 +1,15 @@
 import { MdOutlineFavoriteBorder, MdFavorite } from 'react-icons/md';
-import './Favorit.css';
+import styles from './favorit.module.css';
 
 export default function Favorit({ isFavorite, text }) {
   return (
     <>
-      { isFavorite && <MdFavorite className="favorit__MdFavorite" /> }
-      { !isFavorite && <MdOutlineFavoriteBorder className="favorit__MdOutlineFavoriteBorder" /> }
+      {isFavorite ? (
+        <MdFavorite className={`${styles.icon} ${styles.iconFavorite}`} />
+      ) : (
+        <MdOutlineFavoriteBorder className={`${styles.icon} ${styles.iconOutline}`} />
+      )}
+      {text && <span className={styles.text}>{text}</span>}
     </>
   );
 }

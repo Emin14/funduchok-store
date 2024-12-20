@@ -1,0 +1,103 @@
+.productRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 0.5fr;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid #eaedf6;
+    font-size: 14px;
+    background-color: #ffffff;
+    width: 530px;
+  }
+  
+  .productImage img {
+    display: flex;
+    margin: auto;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+  }
+  
+  .productTitle {
+    font-size: 14px;
+  }
+  
+  .productTotal {
+    text-align: center;
+    position: relative;
+  }
+  
+  .productCount {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .counterButton {
+    transition: 0.2s;
+    border: 1px solid #0db14b;
+    font-weight: 700;
+    color: #fff;
+    background: #23a53c radial-gradient(circle, transparent 1%, #23a53c 1%) center/15000%;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .counterButton:hover {
+    background-color: #1e9240;
+  }
+  
+  .deleteIcon {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    font-size: 20px;
+    color: #898989;
+    cursor: pointer;
+  }
+  
+  .deleteIcon:hover {
+    color: #b32442;
+  }
+  
+  .counter {
+    font-size: 14px;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .weight {
+    text-align: center;
+    color: #6e6e6e;
+  }
+  
+  .basePrice {
+    position: relative;
+  }
+  
+  .discountedPrice {
+    color: #909090;
+    text-decoration: line-through;
+    font-size: 14px;
+  }
+  
+  .discountTag {
+    position: absolute;
+    transform: rotate(-20deg);
+    right: 15px;
+    top: -14px;
+    background-color: #ffd600;
+    color: #121214;
+    padding: 0 4px;
+    border-radius: 28px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  

@@ -1,0 +1,29 @@
+.icon {
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .iconOutline {
+    color: rgba(0, 0, 0, 0.689);
+  }
+  
+  .iconOutline:hover {
+    color: #23a53c;
+    transform: scale(1.2);
+  }
+  
+  .iconFavorite {
+    color: #f20707;
+  }
+  
+  .iconFavorite:hover {
+    color: #fdbfbf;
+    transform: scale(1.2);
+  }
+  
+  .text {
+    font-size: 10px;
+    color: #999;
+    user-select: none;
+  }
+  

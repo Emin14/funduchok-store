@@ -1,20 +1,20 @@
-.total-amount {
+.totalAmount {
     text-align: end;
     margin-right: 250px;
 }
 
-.total-amount_count {
+.count {
     font-size: 24px;
     font-weight: 600;
 }
 
-.total-amount_text {
+.text {
     font-size: 18px;
     font-weight: 500;
     margin-right: 5px;
 }
 
-.total-amount__points {
+.points {
     font-size: 12px;
     text-align: center;
     padding: 6px;
@@ -24,11 +24,11 @@
     margin: 10px -20px 10px auto;
 }
 
-.total-amount__points span:first-child {
+.points span:first-child {
     margin-right: 5px;
 }
 
-.total-amount__points2 {
+.points2 {
     font-size: 11px;
     text-align: center;
     padding: 5px;
@@ -44,7 +44,7 @@
         margin-right: 0;
     }
 
-    .total-amount__points {
+    .points {
         width: max-content;
         margin: 8px auto;
     }

@@ -1,4 +1,4 @@
-.checkout__link {
+.placeOrder {
     margin: 0 auto; 
     display: block;
 
@@ -12,13 +12,7 @@
     text-align: center;
 }
 
-.checkout__button {
-    margin: 0 auto; 
-    display: block;
-    padding: 12px 55px;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
+.placeOrder.active {
     background: #23a53c;
     color: #fff;
     cursor: pointer;
@@ -26,18 +20,18 @@
 }
 
 
-.checkout__button:hover {
+.placeOrder.active:hover {
     background: #28b945;
     transition: 0.3s;
 }
 
-.checkout__minimum-amount {
+.informationWrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.checkout__link_text {
+.information {
     font-size: 14px;
     margin-top: 10px;
 }
